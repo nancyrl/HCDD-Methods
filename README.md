@@ -3,7 +3,7 @@ URAP spring 2016
 
 Nancy Li - linanc@github.com
 
-My advisor and her research team has previously assembled a data set of scholarly papers written by designers who are working on solving global development challenges through human-centered design projects. We want to leverage this data set in order to understand what the community of authors looks like. Who is publishing together? Who is publishing the most? Who is working with international co-authors? The goal is to complete the quantitative analysis with code, network analysis, and graph visualization techniques, and to pair this analysis with qualitative insight in order to better understand what the research landscape of design for development looks like.
+My advisor and her research team has previously assembled a data set of scholarly papers written by designers who are working on solving global development challenges through human-centered design projects. We want to leverage this data set in order to understand what the community of authors looks like. Who is publishing together? Who is publishing the most? Who is working with international co-authors? The goal is to complete the quantitative analysis with network analysis, and graph visualization techniques, and to pair this analysis with qualitative insight in order to better understand what the research landscape of design for development looks like.
 
 -preprocess.py: counts unique number of authors in authors.txt, organizes them into csv file by authorship position
   
