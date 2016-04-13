@@ -9,7 +9,6 @@ def simplestats(filename):
 	authors = []
 	linelengths = []
 	global all_authors, num_papers
-	all_authors = [[] for x in range(11)] 
 	num_papers = 0
 
 	for line in f:
@@ -35,6 +34,7 @@ def simplestats(filename):
 
 	f.close()
 	m = max(linelengths)
+	all_authors = [[] for x in range(m)] 
 	print(authors)
 	print('Max number of authors writing a single paper is: ' + str(m))
 	print('Unique number of authors is: ' + str(len(authors)))
