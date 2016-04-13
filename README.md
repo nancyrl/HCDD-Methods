@@ -7,7 +7,7 @@ My advisor and her research team has previously assembled a data set of scholarl
 
 -preprocess.py: counts unique number of authors in authors.txt, organizes them into csv file by authorship position
   
-   -uses Python 3.4; to run in command line, input: python preprocess.py <inputfile.txt> <output.csv> 
+   -uses Python 3.4; to run in command line, input: python preprocess.py inputfile.txt output.csv 
 
    -assumes input file is a list of authors, where each line is a paper and authors on the same line are co-authors listed in order
   
