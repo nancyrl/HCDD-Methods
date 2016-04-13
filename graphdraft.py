@@ -2,32 +2,32 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 G = nx.Graph()
+# G.position = {}
 
-f = open('authornames.txt', 'r')
+f = open('authors.txt', 'r')
 
 nodes = []
-listofLines = []
+edges = []
 
 for line in f:
 	line.rstrip()
 	_line = line.split(",")
-	temp = []
-	for name in _line:
-		nodes.append(name.strip('\n').lstrip())
-		temp.append(name.strip('\n').lstrip())
-	listofLines.append(temp)
+	paper = []
+	for _ in _line:
+		author = _.strip('\n').strip('\t').lstrip()
+		G.add_node(author)
+		paper.append(author)
 
+	edges.append(paper)
 f.close()
-G.add_nodes_from(nodes)
 
-#there are 566 authors and 178 papers
-#how should I add edges to this graph? should I make an adjacency matrix first? 
+#there are 276 authors and 87 papers
 
-for i in range(178):
-	l = len(listofLines[i]) 
+for paper in range(87):
+	l = len(edges[paper]) 
 	for j in range(l):
 		for k in range(j + 1, l):
-			G.add_edge(listofLines[i][j], listofLines[i][k])
+			G.add_edge(edges[paper][j], edges[paper][k])
 
 plt.figure(figsize=(8,8))
 
