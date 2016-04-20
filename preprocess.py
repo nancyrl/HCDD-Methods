@@ -5,40 +5,54 @@ import sys
 
 def simplestats(filename):
 
-	f = open(filename, 'r')
-	authors = []
+	authors = set()
 	linelengths = []
-	global all_authors, num_papers
+	global num_papers
 	num_papers = 0
 
+	f = open(filename, 'r')
 	for line in f:
-		line.rstrip()
 		arrLine = line.split(",")
 		count = 0
-		position = 0
 
 		for name in arrLine:
 			count += 1
-			name = name.strip('\n').strip('\t').lstrip()
-			all_authors[position].append(name)
-			position += 1
-			if name not in authors:
-				authors.append(name)
-
-		while position < 11:
-			all_authors[position].append(' ')
-			position += 1
+			name = name.strip('\n').strip('\t').lstrip().rstrip()
+			authors.add(name)
 
 		linelengths.append(count)
 		num_papers += 1
 
 	f.close()
 	m = max(linelengths)
-	all_authors = [[] for x in range(m)] 
+
 	print(authors)
 	print('Max number of authors writing a single paper is: ' + str(m))
 	print('Unique number of authors is: ' + str(len(authors)))
 	print('Number of papers is: ' + str(num_papers))
+
+	return prep(filename, m)
+
+def prep(filename, maxauthors):
+
+	f = open(filename, 'r')
+	global all_authors
+	all_authors = [[] for x in range(maxauthors)] 
+
+	for line in f:
+		arrLine = line.split(",")
+		position = 0
+
+		for name in arrLine:
+			name = name.strip('\n').strip('\t').lstrip()
+			all_authors[position].append(name)
+			position += 1
+
+		while position < maxauthors:
+			all_authors[position].append('')
+			position += 1
+
+	f.close()
 	return
 
 def writecsv(filename):

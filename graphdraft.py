@@ -10,11 +10,10 @@ nodes = []
 edges = []
 
 for line in f:
-	line.rstrip()
 	_line = line.split(",")
 	paper = []
 	for _ in _line:
-		author = _.strip('\n').strip('\t').lstrip()
+		author = _.strip('\n').strip('\t').lstrip().rstrip()
 		G.add_node(author)
 		paper.append(author)
 
@@ -23,7 +22,7 @@ f.close()
 
 #there are 276 authors and 87 papers
 
-for paper in range(87):
+for paper in range(83):
 	l = len(edges[paper]) 
 	for j in range(l):
 		for k in range(j + 1, l):
