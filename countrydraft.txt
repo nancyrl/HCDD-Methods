@@ -80,4 +80,4 @@ TW | GB
 US | n/a
 US | n/a
 US, ES, KE, ZA | n/a
-NO | NO. DK
+NO | NO, DK
