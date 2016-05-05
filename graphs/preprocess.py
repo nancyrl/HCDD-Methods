@@ -3,69 +3,120 @@
 import csv
 import sys
 
-def simplestats(filename):
+
+def count_authors_and_papers(filename):
+	num_papers = 0
+	linelengths = []
+	with open(filename, 'r') as f:
+		for line in f:
+			arrLine = line.split(",")
+			count = 0
+			for name in arrLine:
+				count += 1
+			linelengths.append(count)
+			num_papers += 1
+
+	m = max(linelengths)
+	return [m, num_papers]
+
+
+def convert_text_to_csv(filename, outfile):
+
+	retval = count_authors_and_papers(filename)
+	max_authors = retval[0]
+	num_papers = retval[1]
+	all_authors = [[] for x in range(max_authors)] 
+
+	with open(filename, 'r') as f:
+		for line in f:
+			arrLine = line.split(",")
+			position = 0
+
+			for name in arrLine:
+				name = name.strip('\n').strip('\t').lstrip()
+				all_authors[position].append(name)
+				position += 1
+
+			while position < max_authors:
+				all_authors[position].append('')
+				position += 1
+	
+	return write_csv(all_authors, outfile, max_authors, num_papers)
+
+
+def write_csv(all_authors, csvfilename, max_authors, num_papers):
+
+	first_row = ['First Author']
+	for i in range(1, max_authors + 1):
+		first_row.append(str(i))
+
+	with open(csvfilename, 'wt', newline='') as csvf:
+		writer = csv.writer(csvf)
+		writer.writerow(first_row)
+		for j in range(num_papers):
+			row = []
+			for i in range(max_authors): 
+				row.append(all_authors[i][j])
+			writer.writerow(row)
+	return
+
+def simple_stats(filename):
 
 	authors = set()
 	linelengths = []
-	global num_papers
 	num_papers = 0
+	first_row = True
 
-	f = open(filename, 'r')
-	for line in f:
-		arrLine = line.split(",")
-		count = 0
-
-		for name in arrLine:
-			count += 1
-			name = name.strip('\n').strip('\t').lstrip().rstrip()
-			authors.add(name)
-
-		linelengths.append(count)
-		num_papers += 1
-
-	f.close()
+	with open(filename, 'r') as csvfile:
+		reader = csv.reader(csvfile, delimiter=',')
+		for row in reader:
+			if first_row: 
+				first_row = False
+				continue
+			author_count = 0
+			for i in range(len(row)):
+				author_count += 1
+				if row[i] == '':
+					continue
+				authors.add(row[i])
+			
+			linelengths.append(author_count)
+			num_papers += 1
 	m = max(linelengths)
 
+	with open('simplestats.out', 'w') as f: 
+		f.write('Max number of authors writing a single paper: ' + str(m) + '\n')
+		f.write('Total unique number of authors: ' + str(len(authors)) + '\n')
+		f.write('Total number of papers: ' + str(num_papers) + '\n')
+
 	print(authors)
-	print('Max number of authors writing a single paper is: ' + str(m))
-	print('Unique number of authors is: ' + str(len(authors)))
-	print('Number of papers is: ' + str(num_papers))
+	print('Max number of authors writing a single paper: ' + str(m))
+	print('Unique number of authors: ' + str(len(authors)))
+	print('Number of papers: ' + str(num_papers))
 
-	return prep(filename, m)
 
-def prep(filename, maxauthors):
+#code to regenerate the authors.txt file after deleting it.
+# f = open('finalauthors.txt', 'w+')
+# with open('separated-authors.csv', 'r') as csvfile:
+# 	reader = csv.reader(csvfile, delimiter=',')
+# 	for row in reader:
+# 		line = row[0]
+# 		for i in range(1, 11):
+# 			line = line + ', ' + row[i]
+# 		print(line)
+# 		f.write(line + '\n')
+# f.close()
 
-	f = open(filename, 'r')
-	global all_authors
-	all_authors = [[] for x in range(maxauthors)] 
+def main():
+	""" On the command line, expected input is python preprocessing.py <inputtextfile.txt> <pathtooutput.csv> """
 
-	for line in f:
-		arrLine = line.split(",")
-		position = 0
+	in_text_file = sys.argv[1]
+	out_csv_file = sys.argv[2]
 
-		for name in arrLine:
-			name = name.strip('\n').strip('\t').lstrip()
-			all_authors[position].append(name)
-			position += 1
+	convert_text_to_csv(in_text_file, out_csv_file)
+	simple_stats(out_csv_file)
 
-		while position < maxauthors:
-			all_authors[position].append('')
-			position += 1
-
-	f.close()
-	return
-
-def writecsv(filename):
-
-	csvf = open(filename, 'wt', newline='')
-	writer = csv.writer(csvf)
-	writer.writerow(('First Author', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'))
-	for j in range(num_papers):
-	    writer.writerow((all_authors[0][j], all_authors[1][j], all_authors[2][j], all_authors[3][j], all_authors[4][j], all_authors[5][j], all_authors[6][j], all_authors[7][j], all_authors[8][j], all_authors[9][j], all_authors[10][j]))
-	csvf.close()
-	return
-
-""" On the command line, input: python preprocessing.py <yourtextfile.txt> <output.csv> """
-
-simplestats(sys.argv[1])
-writecsv(sys.argv[2])
+	return "Finished!"
+                
+if __name__ == "__main__":
+    main()

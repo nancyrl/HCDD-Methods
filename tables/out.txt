@@ -1,85 +1,85 @@
-Place of Work
-(country)
-NL
-KZ, KG, TJ, UZ
-SE, CN
-KG
-ZA
-IN, CH
-US
-UG
-GH
-MY
-GR, CY, IT
-TH
-US, KG
-BW, ES
-US
-ZA
-MN
-BD
-SE
-US, CO
-UG
-JP
-East Africa
-US
-PY, US
-US
-KG, KZ, TJ, UZ
-BR
-UG
-KG
-MY, Middle East
-BR
-PK, AU
-KH
-IN
-BR
-IN
-IN
-ZA
-US
-IN, BR, GB
-KE
-LK
-MY
-KZ, KG, TJ, UZ
-CO
-US
-CN
-US
-US
-KE
-AE
-IR
-UG
-UZ, TJ, KG, KZ
-IN, PE
-ZA
-RW
-MW
-PK
-TH
-TZ
-JP
-ET
-CN
-US
-UG
-ZA
-ZA, RW, KE, UG, ID
-KE
-IN
-MY
-Laos
-EG
-IN
-CN
-NG
-NA
-IN
-CD
-US
-KE
-IR, TR
+Country of Publication (1st Author) | Country of Publication (Rest of authors)
+ | 
+NL | NL, NL, NL, NL, NL, NL, NL
+US | US
+SE | SE, SE, CN
+US | US, US
+ZA | ZA
+AU | AU
+US | US, US, US, US, US, US
+US | US, US, US, US, US, US, US, US, US
+US | US, US, US, US
+MY | MY, MY
+GR, CH | CY, GR, GR, GR, GR, IT, IT, IT, CY, GR
+TH | TH, TH, TH, TH
+US | US, US, US
+BW | NZ
+US | US, US, US
+NL | ZA, NL, ZA
+n/a | n/a
+BD | FR, BD
+SE | SE, SE, US
+US, BR | n/a
+US | UG
+JP | JP, JP
+US | US
+US | US, US, US, US, US
+US | US
+US | US
+US | US, US
+US | US, BR, BR, US, US, US, US
+US | US, US, US, US, US, UG
+US | US, US, IL
+MY | MY, MY
+BR | BR, BR
+AU | AU
+US | KH
+US | IN
+US | BR, BR, US, US, US, US, US
+US | n/a
+CH | IN, CH
+ZA | ZA
+US | US, US, US, US
+GB | n/a
+US | KE, KE, KE, US, KE, US, ES, US
+IT | IE,ES
+MY | MY, MY
+US | n/a
+CO | n/a
+US | US
+CN | CN
+US | US, US, US, US
+US | IT,US
+US | KE,US,ES
+AE | AE, AE
+NO | NO, SE
+US | US, US, US, US, US
+US | US, US, US
+US | US
+US | US, US, ZA, ZA, ZA, ZA
+CA | n/a
+AU | AU, AU, AU
+NL | n/a
+GB | GB, TH, TH
+DE | DE, DE
+JP | JP
+ET | IT, IT, IT, ET, ET
+CN | n/a
+US | US, US
+US | US, US, US, US, US, US, US, UG
+ZA | ZA
+GB, US | n/a
+US | US, KE, US, KE, US, US, US, KE
+KP | KP, KP
+MY | MY, MY, MY
+SG | n/a
+EG | n/a
+IN | IN, IN, IN, IN, IN, IN
+DE | n/a
+GB | US
+ZA | ZA
+TW | GB
+US | n/a
+US | n/a
+US, ES, KE, ZA | n/a
+NO | NO. DK

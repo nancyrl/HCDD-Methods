@@ -2,23 +2,9 @@ import csv
 import sys
 import getopt
 
-""" This is a snippet of code I wrote to regenerate the authors.txt file after deleting it.
-"""
-# f = open('finalauthors.txt', 'w+')
-# with open('separated-authors.csv', 'r') as csvfile:
-# 	reader = csv.reader(csvfile, delimiter=',')
-# 	for row in reader:
-# 		line = row[0]
-# 		for i in range(1, 11):
-# 			line = line + ', ' + row[i]
-# 		print(line)
-# 		f.write(line + '\n')
-# f.close()
-
 def parsedata(filename, columns):
 
 	""" Parses dataset and pulls out relevant columns from the csv data file to text file. 
-
 		@param args: 
 					filename, a string with the path to the csv data file
 					output, string with path to desired output text file
@@ -49,11 +35,9 @@ def publication(output):
 
 	""" Creates a CSV table of countries, number of first authors who published there,
 		and number of other authors who published there. 
-
 		@param args: 
 					output, a string with the path to the text file output by parsedata
 					csvfilename, user specified string with the path to new csv file
-
 		@param output: 
 					a csv file with desired analysis
 					prints string path to csv file 
@@ -61,39 +45,31 @@ def publication(output):
 
 	firstCountries = dict()
 	otherCountries = dict()
-	check = set()
+	done = set()
 	count = 0
-	verify = True
 
 	with open(output, 'r') as f: 
 		for line in f: 
-			if verify: 
+			if count < 2:
 				count += 1
-				verify = False
-				continue
-				
-			if count == 1: 
-				count = 0
 				continue
 
 			arrLine = line.split(' | ')
 			firstC = arrLine[0].split(',')
 			secC = arrLine[1].split(',')
-
-			for _ in firstC:
-				_ = _.lstrip().rstrip().strip('\n')
-				if _ in firstCountries:
-					firstCountries[_] += 1
+			for country in firstC:
+				country = country.lstrip().rstrip().strip('\n')
+				if country in firstCountries:
+					firstCountries[country] += 1
 				else: 
-					firstCountries[_] = 1
+					firstCountries[country] = 1
 
-			for _ in secC:
-				_ = _.lstrip().rstrip().strip('\n')
-				if _ in otherCountries:
-					otherCountries[_] += 1
+			for country in secC:
+				country = country.lstrip().rstrip().strip('\n')
+				if country in otherCountries:
+					otherCountries[country] += 1
 				else: 
-					otherCountries[_] = 1
-
+					otherCountries[country] = 1
 		print(firstCountries)
 		print(otherCountries)
 
@@ -107,10 +83,10 @@ def publication(output):
 				writer.writerow((key, firstCountries[key], otherCountries[key]))
 			elif key not in otherCountries:
 				writer.writerow((key, firstCountries[key], '0'))
-			check.add(key)
+			done.add(key)
 
 		for key in otherCountries:
-			if key not in check: 
+			if key not in done: 
 				if key in firstCountries:
 					writer.writerow((key, firstCountries[key], otherCountries[key]))
 				elif key not in firstCountries:
@@ -122,38 +98,29 @@ def publication(output):
 def work(output): 
 
 	""" Creates a CSV table of countries and their number of mentions as the place of work in a paper. 
-
-		@param args: 
+		@args: 
 					output, a string with the path to the text file output by parsedata
 					csvfilename, user specified string with the path to new csv file
-
-		@param output: 
+		@output: 
 					a csv file with desired analysis
 					prints the string path to csv  
 	"""
 
 	countries = dict()
-	verify = True
 	count = 0
 
 	with open(output, 'r') as f: 
 		for line in f: 
-			if verify: 
-				verify = False
+			if count < 2:
 				count += 1
 				continue
-
-			if count == 1: 
-				count = 0
-				continue
-
 			arrLine = line.split(',')
-			for _ in arrLine:
-				_ = _.lstrip().rstrip().strip('\n')
-				if _ in countries:
-					countries[_] += 1
+			for country in arrLine:
+				country = country.lstrip().rstrip().strip('\n')
+				if country in countries:
+					countries[country] += 1
 				else: 
-					countries[_] = 1
+					countries[country] = 1
 
 	with open('countries-work.csv', 'w', newline='') as csvfile:
 		writer = csv.writer(csvfile)
@@ -196,9 +163,7 @@ def main():
 	  	work(retval)
 	elif option == "publication":
 		publication(retval)
-	
-	# for arg in args:
-	#     process(arg) # process() is defined elsewhere
+
 
 if __name__ == "__main__":
 	main()

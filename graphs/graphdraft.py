@@ -1,42 +1,59 @@
 import networkx as nx
+import csv
+import sys
 import matplotlib.pyplot as plt
+from networkx.readwrite import json_graph
+import json
 
 G = nx.Graph()
-# G.position = {}
 
-f = open('authors.txt', 'r')
+def generate_graph(filename):
 
-nodes = []
-edges = []
+	author_matrix = []
 
-for line in f:
-	_line = line.split(",")
-	paper = []
-	for _ in _line:
-		author = _.strip('\n').strip('\t').lstrip().rstrip()
-		G.add_node(author)
-		paper.append(author)
+	with open(filename, 'r') as csvfile:
+		reader = csv.reader(csvfile, delimiter=',')
+		for row in reader:
+			if 'First Author' in row:
+				continue
+			line = []
+			for i in range(len(row)):
+				if row[i] != '':
+					G.add_node(row[i])
+					line.append(row[i])
+			author_matrix.append(line)
 
-	edges.append(paper)
-f.close()
+	for paper in range(len(author_matrix)):
+		num_authors = len(author_matrix[paper]) 
+		for j in range(num_authors):
+			for k in range(j + 1, num_authors):
+				G.add_edge(author_matrix[paper][j], author_matrix[paper][k])
 
-#there are 276 authors and 87 papers
+	print (author_matrix)
 
-for paper in range(83):
-	l = len(edges[paper]) 
-	for j in range(l):
-		for k in range(j + 1, l):
-			G.add_edge(edges[paper][j], edges[paper][k])
+def draw_graph():
 
-plt.figure(figsize=(8,8))
+	# plt.figure(figsize=(8,8))
 
-# nx.draw_networkx_edges(G, pos, alpha=0.4)
-# nx.draw_networkx_nodes(G, pos, node_size=80, cmap=plt.cm.Reds_r)
+	# plt.xlim(-0.05,1.05)
+	# plt.ylim(-0.05,1.05)
+	# plt.axis('off')
 
-plt.xlim(-0.05,1.05)
-plt.ylim(-0.05,1.05)
-plt.axis('off')
+	# nx.draw(G)
+	# plt.savefig('_graph.png')
+	# plt.show()
 
-nx.draw(G)
-plt.savefig('_graph.png')
-plt.show()
+	with open('networkdata1.json', 'w') as outfile1:
+		outfile1.write(json.dumps(json_graph.node_link_data(G)))
+
+
+def main():
+
+	csv_file = sys.argv[1]
+	generate_graph(csv_file)
+	draw_graph()
+
+	return "Finished"
+                
+if __name__ == "__main__":
+    main()
