@@ -5,6 +5,7 @@ import sys
 
 
 def count_authors_and_papers(filename):
+	
 	num_papers = 0
 	linelengths = []
 	with open(filename, 'r') as f:
@@ -93,6 +94,7 @@ def simple_stats(filename):
 	print('Max number of authors writing a single paper: ' + str(m))
 	print('Unique number of authors: ' + str(len(authors)))
 	print('Number of papers: ' + str(num_papers))
+	print('Done! This info has been saved to <simplestats.out>.')
 
 
 #code to regenerate the authors.txt file after deleting it.

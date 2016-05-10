@@ -1,8 +1,8 @@
 import networkx as nx
+from networkx.readwrite import json_graph
 import csv
 import sys
 import matplotlib.pyplot as plt
-from networkx.readwrite import json_graph
 import json
 
 G = nx.Graph()
@@ -23,7 +23,8 @@ def generate_graph(filename):
 					line.append(row[i])
 			author_matrix.append(line)
 
-	for paper in range(len(author_matrix)):
+	#length of author matrix = number of rows in csv
+	for paper in range(len(author_matrix)): 
 		num_authors = len(author_matrix[paper]) 
 		for j in range(num_authors):
 			for k in range(j + 1, num_authors):
@@ -31,7 +32,7 @@ def generate_graph(filename):
 
 	print (author_matrix)
 
-def draw_graph():
+def make_graph(type):
 
 	# plt.figure(figsize=(8,8))
 
@@ -43,17 +44,20 @@ def draw_graph():
 	# plt.savefig('_graph.png')
 	# plt.show()
 
-	with open('networkdata1.json', 'w') as outfile1:
-		outfile1.write(json.dumps(json_graph.node_link_data(G)))
+	if type == 'node link':
+		with open('data1.json', 'w') as outfile1:
+			outfile1.write(json.dumps(json_graph.node_link_data(G)))
+		print('Dumped into node link graph <data1.json>.')
 
 
 def main():
 
 	csv_file = sys.argv[1]
 	generate_graph(csv_file)
-	draw_graph()
+	make_graph('node link')
 
 	return "Finished"
                 
 if __name__ == "__main__":
     main()
+
