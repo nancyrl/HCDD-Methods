@@ -80,7 +80,7 @@ def generate_matrix():
 		for row in M: 
 			f.write(str(row).strip("]").strip("[") + "\n")
 
-def generate_networkX_graph():
+def generate_networkX_graph_int():
 	author_to_int = pickle.load(open("a_int.p", "rb"))
 	matrix = pickle.load(open("adjacency_matrix.p", "rb"))
 
@@ -93,7 +93,25 @@ def generate_networkX_graph():
 			if matrix[i][j] == 1:
 				G.add_edge(i, j)
 
-	make_graph('node link')
+	make_graph('int')
+
+def generate_networkX_graph_string():
+	author_to_int = pickle.load(open("a_int.p", "rb"))
+	author_matrix = pickle.load(open("a_matrix.p", "rb"))
+
+	#adding each int to the graph G
+	for key in author_to_int.keys(): 
+		G.add_node(key)
+
+	for paper in range(len(author_matrix)):
+		num_authors = len(author_matrix[paper])
+		for j in range(num_authors):
+			a1 = author_matrix[paper][j]
+			for k in range(j + 1, num_authors):
+				a2 = author_matrix[paper][k]
+				G.add_edge(a1, a2)
+
+	make_graph('string')
 
 def make_graph(type):
 
@@ -103,14 +121,19 @@ def make_graph(type):
 	plt.ylim(-0.05,1.05)
 	plt.axis('off')
 
-	if type == 'node link':
-		with open('data1.json', 'w') as outfile1:
+	if type == 'int':
+		with open('data_int.json', 'w') as outfile1:
 			outfile1.write(json.dumps(json_graph.node_link_data(G)))
-		print('Dumped into node link graph <data1.json>.')
+		print('Dumped into node link graph <data_int.json>.')
 
-	nx.draw(G)
-	plt.savefig('graph_new.png')
-	plt.show()
+	if type == 'string':
+		with open('data_string.json', 'w') as outfile1:
+			outfile1.write(json.dumps(json_graph.node_link_data(G)))
+		print('Dumped into node link graph <data_string.json>.')
+
+	# nx.draw(G)
+	# plt.savefig('graph_new.png')
+	# plt.show()
 
 
 def main():
@@ -121,8 +144,8 @@ def main():
 		csv_file = sys.argv[1]
 		generate_author_to_int_dictionary(csv_file)
 
-	generate_matrix()
-	generate_networkX_graph()
+	# generate_matrix()
+	generate_networkX_graph_string()
 
 	return "Finished"
                 
