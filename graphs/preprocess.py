@@ -34,7 +34,7 @@ def convert_text_to_csv(filename, outfile):
 			position = 0
 
 			for name in arrLine:
-				name = name.strip('\n').strip('\t').lstrip()
+				name = name.strip('\n').strip('\t').lstrip().rstrip()
 				all_authors[position].append(name)
 				position += 1
 
@@ -48,7 +48,7 @@ def convert_text_to_csv(filename, outfile):
 def write_csv(all_authors, csvfilename, max_authors, num_papers):
 
 	first_row = ['First Author']
-	for i in range(1, max_authors + 1):
+	for i in range(2, max_authors + 1):
 		first_row.append(str(i))
 
 	with open(csvfilename, 'wt', newline='') as csvf:
@@ -66,20 +66,18 @@ def simple_stats(filename):
 	authors = set()
 	linelengths = []
 	num_papers = 0
-	first_row = True
 
 	with open(filename, 'r') as csvfile:
 		reader = csv.reader(csvfile, delimiter=',')
 		for row in reader:
-			if first_row: 
-				first_row = False
+			if row[0] == 'First Author':
 				continue
 			author_count = 0
 			for i in range(len(row)):
 				author_count += 1
 				if row[i] == '':
 					continue
-				authors.add(row[i])
+				authors.add(row[i].rstrip().lstrip())
 			
 			linelengths.append(author_count)
 			num_papers += 1

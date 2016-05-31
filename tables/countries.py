@@ -140,10 +140,10 @@ def main():
 	arrCol = col.split(',')
 	columns = [int(x) for x in arrCol]
 
-	if len(sys.argv) == 2: 
+	if len(sys.argv) == 3: 
 		parsedata(dataset, columns)
 
-	elif len(sys.argv) == 3:
+	elif len(sys.argv) == 4:
 		#optional work or publication option
 		option = sys.argv[3]
 		textfile = parsedata(dataset, columns)
