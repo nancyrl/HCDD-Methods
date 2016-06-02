@@ -3,7 +3,6 @@
 import csv
 import sys
 
-
 def count_authors_and_papers(filename):
 	
 	num_papers = 0
@@ -66,6 +65,8 @@ def simple_stats(filename):
 	authors = set()
 	linelengths = []
 	num_papers = 0
+	# lastnames = set()
+	# duplicates = set()
 
 	with open(filename, 'r') as csvfile:
 		reader = csv.reader(csvfile, delimiter=',')
@@ -77,7 +78,14 @@ def simple_stats(filename):
 				author_count += 1
 				if row[i] == '':
 					continue
-				authors.add(row[i].rstrip().lstrip())
+				author = row[i].rstrip().lstrip()
+				authors.add(author)
+				# last_name = author.split(" ")
+				# last_name = ' '.join(last_name[1:])
+				# if last_name in lastnames:
+				# 	duplicates.add(last_name)
+				# else:
+				# 	lastnames.add(last_name)
 			
 			linelengths.append(author_count)
 			num_papers += 1
@@ -92,6 +100,8 @@ def simple_stats(filename):
 	print('Max number of authors writing a single paper: ' + str(m))
 	print('Unique number of authors: ' + str(len(authors)))
 	print('Number of papers: ' + str(num_papers))
+	# print('Unique number of last names: ' + str(len(lastnames)))
+	# print(duplicates)
 	print('Done! This info has been saved to <simplestats.out>.')
 
 
@@ -108,15 +118,16 @@ def simple_stats(filename):
 # f.close()
 
 def main():
-	""" On the command line, expected input is python preprocessing.py <inputtextfile.txt> <pathtooutput.csv> """
+	""" Expected input: python preprocessing.py <input.txt> <output.csv> """
 
 	in_text_file = sys.argv[1]
 	out_csv_file = sys.argv[2]
 
 	convert_text_to_csv(in_text_file, out_csv_file)
+
 	simple_stats(out_csv_file)
 
-	return "Finished!"
+	print("Finished!")
                 
 if __name__ == "__main__":
     main()

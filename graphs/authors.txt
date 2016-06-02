@@ -5,7 +5,7 @@ ML Best, D Thakur, B Kolko
 L Barnard, J Wesson
 S Bucolo, JH Matthews
 LM Haverhals, CA Lee, KA Siek, CA Darr, SA Linnebur, JM Ruscin, SE Ross
-W Brunette, W Gerard, MA Hicks, A Hope, M Ishimitsu, P Prasad, RE Anderson, G Borriello, B Kolko, R Nathan
+W Brunette, W Gerard, M Hicks, A Hope, M Ishimitsu, P Prasad, R Anderson, G Borriello, B Kolko, R Nathan
 T Gorman, E Rose, J Yaaqoubi, A Bayor, B Kolko
 I Hussein, M Mahmud, AW Yeo
 SG Mougiakakou, E Kyriacou, K Perakis, H Papadopoulos, A Androulidakis, G Konnis, R Tranfaglia, L Pecchia, U Bracale, C Pattichis, D Koutsouris
@@ -33,7 +33,7 @@ LC De Castro Salgado, CS De Souza, CF Leitao
 O Sohaib, K Kang
 JW Rosenboom, C Jacks, K Phyrum, M Roberts, T Baker
 R Rege, S Nagarkar
-A Joshi, M de Araujo Novaes, J Machiavelli, S Iyengar, R Volger, C Johnson, J Zhang, CE Hsu
+A Joshi, M de Araujo Novaes, J Machiavelli, S Iyengar, R Vogler, C Johnson, J Zhang, CE Hsu
 R Rege
 H Knoche, PRS Rao, J Huang
 MB Motlhabi, WD Tucker, MB Parker, M Glaser
@@ -48,10 +48,10 @@ S Fox, C Le Dantec
 Z Fu, X Zhang
 ML Gilliam, SL Martins, E Bartlett, SQ Mistretta, JL Holl
 M Kam, A Tibuzzi, X Hua
-R Vedanthan, JH Kamano, CR Horowitz, D Ascheim, EJ Velazquez, S Kimaiyo, V Fuster
+R Vedanthan, J Kamano, CR Horowitz, D Ascheim, EJ Velazquez, S Kimaiyo, V Fuster
 F Kamoun, N Werghi, M Al Blushi
 B Aryana, C Boks, A Navabi
-W Brunette, M Hicks, A Hope, G Ruddy, RE Anderson, B Kolko
+W Brunette, M Hicks, A Hope, G Ruddy, R Anderson, B Kolko
 B Kolko, C Putnam, E Rose, E Johnson
 AE Wood, CA Mattson
 R Chaudhri, D Vlachos, G Borriello, K Israel-Ballard, A Coutsoudis, P Reimers, N Perin
@@ -78,6 +78,6 @@ H Tawfik, O Anya
 M Ntinda, H Thinyane, I Seiborger
 A Kumar, S Maskara
 B Longo
-CA Le Dantec, S Fox
-R Vedanthan, E Blank, N Tuikong, J Kamano, L Misoi, D Tulienge, C Hutchinson, DD Ascheim, S Kimaiyo, V Fuster, MC Were
+C Le Dantec, S Fox
+R Vedanthan, E Blank, N Tuikong, J Kamano, L Misoi, D Tulienge, C Hutchinson, D Ascheim, S Kimaiyo, V Fuster, M Were
 B Aryana, T Clemmensen, C Boks

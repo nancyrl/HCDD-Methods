@@ -16,7 +16,7 @@ US | US, US, US
 BW | NZ
 US | US, US, US
 NL | ZA, NL, ZA
-n/a | n/a
+US | n/a
 BD | FR, BD
 SE | SE, SE, US
 US, BR | n/a
