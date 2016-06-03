@@ -250,23 +250,94 @@ def nx_draw_graph():
 	plt.savefig('graph_new.png')
 	plt.show()
 
+def calculate_metrics():
+
+	author_to_int = pickle.load(open("author_int_dict.p", "rb"))
+	matrix = pickle.load(open("adjacency_matrix.p", "rb"))
+	# author_matrix = pickle.load(open("author_matrix.p", "rb"))
+	# papers_per_author(author_matrix)
+	# authors_per_paper(author_matrix)
+	# density(matrix)
+	author_degrees(matrix, author_to_int)
+
+def density(matrix):
+
+	e = 0
+	v = len(matrix)
+	for i in range(v):
+		for j in range(v): 
+			if matrix[i][j] == 1:
+				e += 1
+	d = (2*e) / (v*(v-1))
+	print(d)
+	# d = 0.03507826763640717
+
+def author_degrees(matrix, author_to_int):
+
+	stats = dict()
+	v = len(matrix)
+	sorted_authors = sorted(author_to_int, key=author_to_int.get)
+	
+	for key in sorted_authors:
+		stats[key] = 0
+	
+	for i in range(v):
+		for j in range(v): 
+			if matrix[i][j] == 1:
+				stats[sorted_authors[i]] += 1
+
+	with open('author_degrees.csv', 'wt', newline='') as csvf:
+		writer = csv.writer(csvf)
+		writer.writerow(['Author', 'Degrees'])
+		for key in sorted(stats, key=stats.get):
+			writer.writerow([key, str(stats[key])])
+
+def papers_per_author(author_matrix):
+
+	stats = dict()
+	for row in author_matrix:
+		for author in row:
+			if author in stats:
+				stats[author] += 1
+			else: 
+				stats[author] = 1 
+
+	with open('papers_per_author.csv', 'wt', newline='') as csvf:
+		writer = csv.writer(csvf)
+		writer.writerow(['Author', 'Number of Papers'])
+		for key in sorted(stats, key=stats.get):
+			writer.writerow([key, str(stats[key])])
+
+def authors_per_paper(author_matrix):
+
+	linelengths = []
+	for paper in author_matrix:
+		linelengths.append(len(paper))
+	
+	with open('authors_per_paper.csv', 'wt', newline='') as csvf:
+		writer = csv.writer(csvf)
+		writer.writerow(['Paper', 'Number of Authors'])
+		for i in range(len(linelengths)):
+			writer.writerow([str(i), str(linelengths[i])])
+
 def main():
 
-	#input: python graphdraft.py <input.txt> <csvfile>
-	text_file = sys.argv[1]
-	csv_file = sys.argv[2]
+	#input: python graph.py <input.txt> <csvfile>
+	
+	# text_file = sys.argv[1]
+	# csv_file = sys.argv[2]
+	# convert_text_to_csv(text_file, csv_file)
+	# simple_stats(csv_file)
 
-	convert_text_to_csv(text_file, csv_file)
-	simple_stats(csv_file)
+	# print("Now generating json graph information...")
 
-	print("Now generating json graph information...")
+	#if dict and matrix pickle files already exist, do not execute the below lines
+	# generate_author_to_int_dictionary(csv_file)
+	# generate_adj_matrix()
 
-	#optional; if dict and matrix pickle files already exist, do not execute the below lines
-	generate_author_to_int_dictionary(csv_file)
-	generate_adj_matrix()
+	# generate_networkX_graph_string()
 
-	generate_networkX_graph_string()
-
+	calculate_metrics()
 	return "Finished"
                 
 if __name__ == "__main__":

@@ -19,7 +19,6 @@ def count_authors_and_papers(filename):
 	m = max(linelengths)
 	return [m, num_papers]
 
-
 def convert_text_to_csv(filename, outfile):
 
 	retval = count_authors_and_papers(filename)
@@ -42,7 +41,6 @@ def convert_text_to_csv(filename, outfile):
 				position += 1
 	
 	return write_csv(all_authors, outfile, max_authors, num_papers)
-
 
 def write_csv(all_authors, csvfilename, max_authors, num_papers):
 
