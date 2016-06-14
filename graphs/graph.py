@@ -206,8 +206,6 @@ def generate_networkX_graph_int():
 			if matrix[i][j] == 1:
 				G.add_edge(i, j)
 
-	write_json('int')
-
 def generate_networkX_graph_string():
 
 	global G
@@ -227,8 +225,6 @@ def generate_networkX_graph_string():
 			for k in range(j + 1, num_authors):
 				a2 = author_matrix[row][k]
 				G.add_edge(a1, a2)
-
-	write_json('string')
 
 def write_json(type):
 
@@ -254,43 +250,126 @@ def nx_draw_graph():
 
 def calculate_metrics():
 
-	author_to_int = pickle.load(open("author_int_dict.p", "rb"))
-	matrix = pickle.load(open("adjacency_matrix.p", "rb"))
+	# author_to_int = pickle.load(open("author_int_dict.p", "rb"))
+	# matrix = pickle.load(open("adjacency_matrix.p", "rb"))
 	# author_matrix = pickle.load(open("author_matrix.p", "rb"))
 	# papers_per_author(author_matrix)
 	# authors_per_paper(author_matrix)
 	# density(matrix)
 	# author_degrees(matrix, author_to_int)
+
 	# connected_components(matrix, author_to_int)
-	cut_point(author_to_int)
+	# cut_point(author_to_int)
+
+	# clustering_coefficient()
+	# betweenness_centrality()
+	closeness_centrality()
+
+	# print(diameter(matrix))
+
+def betweenness_centrality():
+
+	generate_networkX_graph_string()
+	between = nx.betweenness_centrality(G)
+	sorted_between = sorted(between, key=between.get)
+	stats = [between[key] for key in sorted_between]
+
+	average = statistics.mean(stats)
+	median = statistics.median(stats)
+	median_low = statistics.median_low(stats)
+	median_high = statistics.median_high(stats)
+	mode = statistics.mode(stats)
+
+	with open('betweenness_centrality.txt', 'w') as f: 
+		for author in sorted_between:
+			f.write(author + ": " + str(between[author]) + '\n')
+		f.write('\nAverage: ' + str(average) + '\n')
+		f.write('Median: ' + str(median) + '\n')
+		f.write('Median low: ' + str(median_low) + '\n')
+		f.write('Median high: ' + str(median_high) + '\n')
+		f.write('Mode: ' + str(median_high) + '\n')	
+
+	print("Average betweenness is: " + str(average))
+	# 6.894441787211672e-05			
+
+def clustering_coefficient():
+
+	generate_networkX_graph_string()
+	coeff = nx.clustering(G)
+	sorted_coeff = sorted(coeff, key=coeff.get)
+	stats = [coeff[key] for key in sorted_coeff]
+
+	average = statistics.mean(stats)
+	median = statistics.median(stats)
+	median_low = statistics.median_low(stats)
+	median_high = statistics.median_high(stats)
+	mode = statistics.mode(stats)
+
+	with open('clustering_coefficient.txt', 'w') as f: 
+		for author in sorted_coeff:
+			f.write(author + ": " + str(coeff[author]) + '\n')
+		f.write('\nAverage: ' + str(average) + '\n')
+		f.write('Median: ' + str(median) + '\n')
+		f.write('Median low: ' + str(median_low) + '\n')
+		f.write('Median high: ' + str(median_high) + '\n')
+		f.write('Mode: ' + str(median_high) + '\n')	
+
+	print ("Average clustering is: " + " " + str(average))
+	#clustering coefficient : 0.8099788585502871
+
+def closeness_centrality():
+
+	generate_networkX_graph_string()
+	closeness = nx.closeness_centrality(G)
+	sorted_closeness = sorted(closeness, key=closeness.get)
+	stats = [closeness[key] for key in sorted_closeness]
+
+	average = statistics.mean(stats)
+	median = statistics.median(stats)
+	median_low = statistics.median_low(stats)
+	median_high = statistics.median_high(stats)
+	mode = statistics.mode(stats)
+
+	with open('closeness_centrality.txt', 'w') as f: 
+		for author in sorted_closeness:
+			f.write(author + ": " + str(closeness[author]) + '\n')
+		f.write('\nAverage: ' + str(average) + '\n')
+		f.write('Median: ' + str(median) + '\n')
+		f.write('Median low: ' + str(median_low) + '\n')
+		f.write('Median high: ' + str(median_high) + '\n')
+		f.write('Mode: ' + str(median_high) + '\n')	
+
+	print ("Average closeness is: " + " " + str(average))
+	# 0.02251066871887446
+	
+def diameter(matrix):
+	
+	v = len(matrix)
+	dist = [[] for x in range(v)]
+	for k in range(v):
+		for i in range(v):
+			for j in range(v):
+				dist = min(dist[i][j], dist[i][k] + dist[k][j])
+	return dist
 
 def cut_point(author_to_int): 
 
 	adj_list = pickle.load(open("adj_list.p", "rb"))
 	list_of_ints = pickle.load(open("list_of_ints.p", "rb"))
-	v = len(adj_list)
 	final = set()
-	cut_points = set()
 
 	for cc in list_of_ints:
 		if len(cc) <= 4:
 			continue
 		cc = sorted(cc)
-		cc_graph = copy.deepcopy(adj_list)
-		not_in_cc = [x for x in range(v) if x not in cc]
-
-		for i in range(v):
-			if i in not_in_cc: 
-				cc_graph[i] = set() 
 		#graph contains only the connected component
 		print("Connected component: " + str(cc))
-		cut_points = find_cut_points_in_cc(cc_graph, cc, not_in_cc)
-
+		cut_points = find_cut_points_in_cc(adj_list, cc)
 		if not cut_points:
 			print("There are no cut points.")
 		else: 
 			print("Cut points: " + str(cut_points))
-			new_cut_points = filter_cut_points(cc_graph, cut_points, cc)
+			new_cut_points = filter_cut_points(adj_list, cut_points, cc)
 			if not new_cut_points:
 				print("All filtered out. \n")
 			elif new_cut_points == cut_points:
@@ -300,12 +379,11 @@ def cut_point(author_to_int):
 		final = final.union(new_cut_points)
 
 	inverse_author_dict = {v: k for k, v in author_to_int.items()}
-	string = [inverse_author_dict[int] for int in final]
+	translated = [inverse_author_dict[int] for int in author_to_int]
 
-	print("Cut points for all ccs: " + str(string))
-	
+	print("Cut points for all ccs: " + str(translated))
 
-def find_cut_points_in_cc(graph, cc, skips):
+def find_cut_points_in_cc(graph, cc):
 
 	v = len(graph)
 	visited, prev = [False for _ in range(v)], [None for _ in range(v)]
@@ -341,7 +419,6 @@ def find_cut_points_in_cc(graph, cc, skips):
 			for w in graph[vertex]:
 				if low[w] >= discover[vertex]:
 					cut_points.add(vertex)
-
 	return cut_points
 
 def filter_cut_points(graph, cut_points, cc):
@@ -368,7 +445,7 @@ def filter_cut_points(graph, cut_points, cc):
 	return filtered_cut_points
 
 def dfs(metavisited, start, graph):
-	
+
 	visited, stack = set(), [start]
 	while stack:
 		vertex = stack.pop()
@@ -474,10 +551,8 @@ def author_degrees(matrix, author_to_int):
 	stats = dict()
 	v = len(matrix)
 	sorted_authors = sorted(author_to_int, key=author_to_int.get)
-	
 	for key in sorted_authors:
 		stats[key] = 0
-	
 	for i in range(v):
 		for j in range(v): 
 			if matrix[i][j] == 1:
@@ -507,10 +582,7 @@ def papers_per_author(author_matrix):
 
 def authors_per_paper(author_matrix):
 
-	linelengths = []
-	for paper in author_matrix:
-		linelengths.append(len(paper))
-	
+	linelengths = [len(paper) for paper in author_matrix]	
 	with open('authors_per_paper.csv', 'wt', newline='') as csvf:
 		writer = csv.writer(csvf)
 		writer.writerow(['Paper', 'Number of Authors'])
@@ -520,21 +592,23 @@ def authors_per_paper(author_matrix):
 def main():
 
 	#input: python graph.py <input.txt> <csvfile>
-	
-	# text_file = sys.argv[1]
-	# csv_file = sys.argv[2]
+	# text_file, csv_file = sys.argv[1], sys.argv[2]
 	# convert_text_to_csv(text_file, csv_file)
 	# simple_stats(csv_file)
 
 	# print("Now generating json graph information...")
-
 	#if dict and matrix pickle files already exist, do not execute the below lines
 	# generate_author_to_int_dictionary(csv_file)
 	# generate_adj_matrix()
 
 	# generate_networkX_graph_string()
+	# write_json(string)
+
+	# generate_networkX_graph_int()
+	# write_json(int)
 
 	calculate_metrics()
+
 	return "Finished"
                 
 if __name__ == "__main__":
