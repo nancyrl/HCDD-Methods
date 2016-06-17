@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- saved from http://fiddle.jshell.net/linanc/qbftho6L/4/show/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <script type="text/javascript" src="./d3.v3.min.js"></script>
+  <style type="text/css">
+    .link {
+  stroke: #666;
+  opacity: 0.25;
+}
+
+.node circle {
+  stroke: #fff;
+  opacity: 0.6;
+}
+
+text {
+  font: 11px arial;
+  opacity: 1;
+}
+  </style>
+
+  <title>Node Link Graph 2010</title>
+
+<script type="text/javascript">
+window.onload=function(){
+var links = [{"source": 0, "weight": 1, "target": 1}, {"source": 0, "weight": 1, "target": 12}, {"source": 1, "weight": 1, "target": 12}, {"source": 2, "weight": 1, "target": 17}, {"source": 2, "weight": 1, "target": 13}, {"source": 2, "weight": 1, "target": 11}, {"source": 2, "weight": 1, "target": 10}, {"source": 2, "weight": 1, "target": 20}, {"source": 2, "weight": 1, "target": 21}, {"source": 2, "weight": 1, "target": 15}, {"source": 2, "weight": 1, "target": 8}, {"source": 2, "weight": 1, "target": 16}, {"source": 3, "weight": 1, "target": 14}, {"source": 4, "weight": 1, "target": 9}, {"source": 5, "weight": 1, "target": 22}, {"source": 7, "weight": 1, "target": 18}, {"source": 7, "weight": 1, "target": 19}, {"source": 8, "weight": 1, "target": 17}, {"source": 8, "weight": 1, "target": 13}, {"source": 8, "weight": 1, "target": 11}, {"source": 8, "weight": 1, "target": 10}, {"source": 8, "weight": 1, "target": 20}, {"source": 8, "weight": 1, "target": 21}, {"source": 8, "weight": 1, "target": 15}, {"source": 8, "weight": 1, "target": 16}, {"source": 10, "weight": 1, "target": 17}, {"source": 10, "weight": 1, "target": 13}, {"source": 10, "weight": 1, "target": 11}, {"source": 10, "weight": 1, "target": 20}, {"source": 10, "weight": 1, "target": 21}, {"source": 10, "weight": 1, "target": 15}, {"source": 10, "weight": 1, "target": 16}, {"source": 11, "weight": 1, "target": 17}, {"source": 11, "weight": 1, "target": 13}, {"source": 11, "weight": 1, "target": 20}, {"source": 11, "weight": 1, "target": 21}, {"source": 11, "weight": 1, "target": 15}, {"source": 11, "weight": 1, "target": 16}, {"source": 13, "weight": 1, "target": 17}, {"source": 13, "weight": 1, "target": 20}, {"source": 13, "weight": 1, "target": 21}, {"source": 13, "weight": 1, "target": 15}, {"source": 13, "weight": 1, "target": 16}, {"source": 15, "weight": 1, "target": 17}, {"source": 15, "weight": 1, "target": 20}, {"source": 15, "weight": 1, "target": 21}, {"source": 15, "weight": 1, "target": 16}, {"source": 16, "weight": 1, "target": 17}, {"source": 16, "weight": 1, "target": 20}, {"source": 16, "weight": 1, "target": 21}, {"source": 17, "weight": 1, "target": 20}, {"source": 17, "weight": 1, "target": 21}, {"source": 18, "weight": 1, "target": 19}, {"source": 20, "weight": 1, "target": 21}];
+
+var nodes = [{"id": "N Werghi", "value": 1}, {"id": "F Kamoun", "value": 1}, {"id": "M Ishimitsu", "value": 1}, {"id": "J Matovu", "value": 1}, {"id": "JH Matthews", "value": 1}, {"id": "R Rege", "value": 1}, {"id": "Z Ying", "value": 1}, {"id": "AW Yeo", "value": 1}, {"id": "R Anderson", "value": 1}, {"id": "S Bucolo", "value": 1}, {"id": "W Gerard", "value": 1}, {"id": "A Hope", "value": 1}, {"id": "M Al Blushi", "value": 1}, {"id": "B Kolko", "value": 1}, {"id": "R Hinman", "value": 1}, {"id": "M Hicks", "value": 1}, {"id": "P Prasad", "value": 1}, {"id": "R Nathan", "value": 1}, {"id": "M Mahmud", "value": 1}, {"id": "I Hussein", "value": 1}, {"id": "W Brunette", "value": 1}, {"id": "G Borriello", "value": 1}, {"id": "S Nagarkar", "value": 1}];
+
+var width = 800
+height = 800;
+
+var force = d3.layout.force()
+  .nodes(d3.values(nodes))
+  .links(links)
+  .size([width, height])
+  .linkDistance(125)
+  .charge(-230)
+  .on("tick", tick)
+  .start();
+
+var svg = d3.select("body").append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+var link = svg.selectAll(".link")
+  .data(force.links())
+  .enter().append("line")
+  .attr("class", "link")
+  .attr("stroke-width", function(d) { return d.weight * 2; });
+  
+var node = svg.selectAll(".node")
+  .data(force.nodes())
+  .enter().append("g")
+  .attr("class", "node")
+  .on("mouseover", mouseover)
+  .on("mouseout", mouseout)
+  .call(force.drag);
+
+node.append("circle")
+  .style("fill", "#C71585")
+  .attr("r", function(d) { return d.value*2 + 5; });
+
+node.append("text")
+  .attr("x", 14)
+  .attr("dy", ".35em")
+  .style("fill", "#333")
+  .text(function(d) {
+    return d.id;
+  });
+  
+function tick() {
+  link.attr("x1", function(d) {
+      return d.source.x;
+    })
+    .attr("y1", function(d) {
+      return d.source.y;
+    })
+    .attr("x2", function(d) {
+      return d.target.x;
+    })
+    .attr("y2", function(d) {
+      return d.target.y;
+    });
+
+  node.attr("transform", function(d) {
+    return "translate(" + d.x + "," + d.y + ")";
+  });
+}
+
+function mouseover() {
+  d3.select(this).select("text").transition()
+    .duration(400)
+    .attr("x", 22)
+    .style("stroke-width", ".5px")
+    .style("opacity", 1)
+    .style("font", "16px arial");
+}
+
+function mouseout() {
+  d3.select(this).select("text").transition()
+    .style("font", "10px arial");
+}
+// action to take on mouse click
+function click() {
+  d3.select(this).select("text").transition()
+    .attr("x", 22)
+    .style("stroke-width", ".5px")
+    .style("opacity", 1)
+    .style("font", "16px arial");
+}
+
+}
+
+</script>
+
+  
+</head>
+
+</html>

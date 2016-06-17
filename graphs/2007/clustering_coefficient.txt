@@ -1,0 +1,11 @@
+KL Kumar: 0.0
+M Bhattacharya: 0.0
+D Amarsaikhan: 1.0
+JS Sandhu: 1.0
+P Altankhuyag: 1.0
+
+Average: 0.6
+Median: 1.0
+Median low: 1.0
+Median high: 1.0
+Mode: 1.0

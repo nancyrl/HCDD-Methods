@@ -1,0 +1,10 @@
+F Chen: 0.0
+A Lindgren: 0.0
+PW Jordan: 0.0
+H Zhang: 0.0
+
+Average: 0.0
+Median: 0.0
+Median low: 0.0
+Median high: 0.0
+Mode: 0.0

@@ -1,0 +1,15 @@
+AM Agogino: 0.0
+JS Sandhu: 0.0
+J Hey: 0.0
+S Sriboorapa: 0.0
+N Poosanthanasarn: 0.0
+W Fungladda: 0.0
+C Lohachit: 0.0
+C Pulkate: 0.0
+C Newman: 0.0
+
+Average: 0.0
+Median: 0.0
+Median low: 0.0
+Median high: 0.0
+Mode: 0.0

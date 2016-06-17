@@ -1,0 +1,17 @@
+Connected authors: 
+3   ['A Tibuzzi', 'M Kam', 'X Hua']
+2   ['J Wesson', 'L Barnard']
+
+Connected nodes: 
+3   {0, 3, 4}
+2   {1, 2}
+
+Number of connected components: 2
+Largest component size: 3
+Largest connected component: ['A Tibuzzi', 'M Kam', 'X Hua']
+Component sizes: [2, 3]
+Average component size: 2.5
+Median: 2.5
+Low median: 2
+High median: 3
+Mode: [2, 3]

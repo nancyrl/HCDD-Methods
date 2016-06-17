@@ -1,0 +1,11 @@
+L Barnard: 0.25
+J Wesson: 0.25
+X Hua: 0.5
+M Kam: 0.5
+A Tibuzzi: 0.5
+
+Average: 0.4
+Median: 0.5
+Median low: 0.5
+Median high: 0.5
+Mode: 0.5

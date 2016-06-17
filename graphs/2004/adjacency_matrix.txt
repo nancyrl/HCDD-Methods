@@ -1,0 +1,16 @@
+Authors to Integers Dictionary 
+A Tibuzzi : 0
+J Wesson : 1
+L Barnard : 2
+M Kam : 3
+X Hua : 4
+
+
+
+Pure python matrix: 
+
+0, 0, 0, 1, 1
+0, 0, 1, 0, 0
+0, 1, 0, 0, 0
+1, 0, 0, 0, 1
+1, 0, 0, 1, 0

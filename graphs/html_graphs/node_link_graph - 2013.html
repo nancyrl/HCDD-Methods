@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- saved from http://fiddle.jshell.net/linanc/qbftho6L/4/show/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <script type="text/javascript" src="./d3.v3.min.js"></script>
+  <style type="text/css">
+    .link {
+  stroke: #666;
+  opacity: 0.25;
+}
+
+.node circle {
+  stroke: #fff;
+  opacity: 0.6;
+}
+
+text {
+  font: 11px arial;
+  opacity: 1;
+}
+  </style>
+
+  <title>Node Link Graph 2013</title>
+
+<script type="text/javascript">
+window.onload=function(){
+var links = [{"target": 15, "source": 0, "weight": 1}, {"target": 30, "source": 0, "weight": 1}, {"target": 1, "source": 0, "weight": 1}, {"target": 15, "source": 1, "weight": 1}, {"target": 30, "source": 1, "weight": 1}, {"target": 12, "source": 2, "weight": 1}, {"target": 18, "source": 2, "weight": 1}, {"target": 25, "source": 3, "weight": 1}, {"target": 16, "source": 3, "weight": 1}, {"target": 7, "source": 3, "weight": 1}, {"target": 9, "source": 3, "weight": 1}, {"target": 26, "source": 3, "weight": 1}, {"target": 10, "source": 3, "weight": 1}, {"target": 22, "source": 3, "weight": 1}, {"target": 4, "source": 3, "weight": 1}, {"target": 25, "source": 4, "weight": 1}, {"target": 16, "source": 4, "weight": 1}, {"target": 7, "source": 4, "weight": 1}, {"target": 9, "source": 4, "weight": 1}, {"target": 26, "source": 4, "weight": 1}, {"target": 10, "source": 4, "weight": 1}, {"target": 22, "source": 4, "weight": 1}, {"target": 14, "source": 5, "weight": 1}, {"target": 6, "source": 5, "weight": 1}, {"target": 21, "source": 5, "weight": 1}, {"target": 8, "source": 5, "weight": 1}, {"target": 14, "source": 6, "weight": 1}, {"target": 21, "source": 6, "weight": 1}, {"target": 8, "source": 6, "weight": 1}, {"target": 25, "source": 7, "weight": 1}, {"target": 16, "source": 7, "weight": 1}, {"target": 9, "source": 7, "weight": 1}, {"target": 26, "source": 7, "weight": 1}, {"target": 10, "source": 7, "weight": 1}, {"target": 22, "source": 7, "weight": 1}, {"target": 14, "source": 8, "weight": 1}, {"target": 21, "source": 8, "weight": 1}, {"target": 25, "source": 9, "weight": 1}, {"target": 16, "source": 9, "weight": 1}, {"target": 26, "source": 9, "weight": 1}, {"target": 10, "source": 9, "weight": 1}, {"target": 22, "source": 9, "weight": 1}, {"target": 25, "source": 10, "weight": 1}, {"target": 16, "source": 10, "weight": 1}, {"target": 26, "source": 10, "weight": 1}, {"target": 22, "source": 10, "weight": 1}, {"target": 17, "source": 11, "weight": 1}, {"target": 13, "source": 11, "weight": 1}, {"target": 29, "source": 11, "weight": 1}, {"target": 20, "source": 11, "weight": 1}, {"target": 28, "source": 11, "weight": 1}, {"target": 33, "source": 11, "weight": 1}, {"target": 18, "source": 12, "weight": 1}, {"target": 17, "source": 13, "weight": 1}, {"target": 29, "source": 13, "weight": 1}, {"target": 20, "source": 13, "weight": 1}, {"target": 28, "source": 13, "weight": 1}, {"target": 33, "source": 13, "weight": 1}, {"target": 21, "source": 14, "weight": 1}, {"target": 30, "source": 15, "weight": 1}, {"target": 25, "source": 16, "weight": 1}, {"target": 26, "source": 16, "weight": 1}, {"target": 22, "source": 16, "weight": 1}, {"target": 29, "source": 17, "weight": 1}, {"target": 20, "source": 17, "weight": 1}, {"target": 28, "source": 17, "weight": 1}, {"target": 33, "source": 17, "weight": 1}, {"target": 27, "source": 19, "weight": 1}, {"target": 29, "source": 20, "weight": 1}, {"target": 28, "source": 20, "weight": 1}, {"target": 33, "source": 20, "weight": 1}, {"target": 25, "source": 22, "weight": 1}, {"target": 26, "source": 22, "weight": 1}, {"target": 24, "source": 23, "weight": 1}, {"target": 32, "source": 23, "weight": 1}, {"target": 31, "source": 23, "weight": 1}, {"target": 32, "source": 24, "weight": 1}, {"target": 31, "source": 24, "weight": 1}, {"target": 26, "source": 25, "weight": 1}, {"target": 29, "source": 28, "weight": 1}, {"target": 33, "source": 28, "weight": 1}, {"target": 33, "source": 29, "weight": 1}, {"target": 32, "source": 31, "weight": 1}];
+
+var nodes = [{"id": "M Anda", "value": 1}, {"id": "J Pinfold", "value": 1}, {"id": "A Kavanaugh", "value": 1}, {"id": "R Vedanthan", "value": 1}, {"id": "V Fuster", "value": 1}, {"id": "M Romano", "value": 1}, {"id": "P Di Giovanni", "value": 1}, {"id": "S Kimaiyo", "value": 1}, {"id": "G Tortora", "value": 1}, {"id": "J Kamano", "value": 1}, {"id": "C Hutchinson", "value": 1}, {"id": "N Perin", "value": 1}, {"id": "A Puckett", "value": 1}, {"id": "G Borriello", "value": 1}, {"id": "M Sebillo", "value": 1}, {"id": "P Cole", "value": 1}, {"id": "E Blank", "value": 1}, {"id": "P Reimers", "value": 1}, {"id": "D Tatar", "value": 1}, {"id": "K Yamazaki", "value": 1}, {"id": "R Chaudhri", "value": 1}, {"id": "G Vitiello", "value": 1}, {"id": "L Misoi", "value": 1}, {"id": "WD Tucker", "value": 1}, {"id": "MB Parker", "value": 1}, {"id": "N Tuikong", "value": 1}, {"id": "M Were", "value": 1}, {"id": "K Asano", "value": 1}, {"id": "D Vlachos", "value": 1}, {"id": "A Coutsoudis", "value": 1}, {"id": "G Ho", "value": 1}, {"id": "MB Motlhabi", "value": 1}, {"id": "M Glaser", "value": 1}, {"id": "K Israel-Ballard", "value": 1}];
+
+var width = 800
+height = 800;
+
+var force = d3.layout.force()
+  .nodes(d3.values(nodes))
+  .links(links)
+  .size([width, height])
+  .linkDistance(125)
+  .charge(-230)
+  .on("tick", tick)
+  .start();
+
+var svg = d3.select("body").append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+var link = svg.selectAll(".link")
+  .data(force.links())
+  .enter().append("line")
+  .attr("class", "link")
+  .attr("stroke-width", function(d) { return d.weight * 2; });
+  
+var node = svg.selectAll(".node")
+  .data(force.nodes())
+  .enter().append("g")
+  .attr("class", "node")
+  .on("mouseover", mouseover)
+  .on("mouseout", mouseout)
+  .call(force.drag);
+
+node.append("circle")
+  .style("fill", "#C71585")
+  .attr("r", function(d) { return d.value*2 + 5; });
+
+node.append("text")
+  .attr("x", 14)
+  .attr("dy", ".35em")
+  .style("fill", "#333")
+  .text(function(d) {
+    return d.id;
+  });
+  
+function tick() {
+  link.attr("x1", function(d) {
+      return d.source.x;
+    })
+    .attr("y1", function(d) {
+      return d.source.y;
+    })
+    .attr("x2", function(d) {
+      return d.target.x;
+    })
+    .attr("y2", function(d) {
+      return d.target.y;
+    });
+
+  node.attr("transform", function(d) {
+    return "translate(" + d.x + "," + d.y + ")";
+  });
+}
+
+function mouseover() {
+  d3.select(this).select("text").transition()
+    .duration(400)
+    .attr("x", 22)
+    .style("stroke-width", ".5px")
+    .style("opacity", 1)
+    .style("font", "16px arial");
+}
+
+function mouseout() {
+  d3.select(this).select("text").transition()
+    .style("font", "10px arial");
+}
+// action to take on mouse click
+function click() {
+  d3.select(this).select("text").transition()
+    .attr("x", 22)
+    .style("stroke-width", ".5px")
+    .style("opacity", 1)
+    .style("font", "16px arial");
+}
+
+}
+
+</script>
+
+  
+</head>
+
+</html>

@@ -1,0 +1,14 @@
+Authors to Integers Dictionary 
+A Lindgren : 0
+F Chen : 1
+H Zhang : 2
+PW Jordan : 3
+
+
+
+Pure python matrix: 
+
+0, 1, 1, 1
+1, 0, 1, 1
+1, 1, 0, 1
+1, 1, 1, 0

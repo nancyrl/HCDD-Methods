@@ -1,0 +1,16 @@
+Authors to Integers Dictionary 
+D Amarsaikhan : 0
+JS Sandhu : 1
+KL Kumar : 2
+M Bhattacharya : 3
+P Altankhuyag : 4
+
+
+
+Pure python matrix: 
+
+0, 1, 0, 0, 1
+1, 0, 0, 0, 1
+0, 0, 0, 1, 0
+0, 0, 1, 0, 0
+1, 1, 0, 0, 0

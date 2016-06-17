@@ -1,0 +1,24 @@
+Authors to Integers Dictionary 
+AM Agogino : 0
+C Lohachit : 1
+C Newman : 2
+C Pulkate : 3
+J Hey : 4
+JS Sandhu : 5
+N Poosanthanasarn : 6
+S Sriboorapa : 7
+W Fungladda : 8
+
+
+
+Pure python matrix: 
+
+0, 0, 1, 0, 1, 1, 0, 0, 0
+0, 0, 0, 1, 0, 0, 1, 1, 1
+1, 0, 0, 0, 1, 1, 0, 0, 0
+0, 1, 0, 0, 0, 0, 1, 1, 1
+1, 0, 1, 0, 0, 1, 0, 0, 0
+1, 0, 1, 0, 1, 0, 0, 0, 0
+0, 1, 0, 1, 0, 0, 0, 1, 1
+0, 1, 0, 1, 0, 0, 1, 0, 1
+0, 1, 0, 1, 0, 0, 1, 1, 0

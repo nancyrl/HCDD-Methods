@@ -1,0 +1,27 @@
+Connected authors: 
+10   ['A Hope', 'B Kolko', 'G Borriello', 'M Hicks', 'M Ishimitsu', 'P Prasad', 'R Anderson', 'R Nathan', 'W Brunette', 'W Gerard']
+3   ['AW Yeo', 'M Mahmud', 'I Hussein']
+3   ['M Al Blushi', 'F Kamoun', 'N Werghi']
+2   ['J Matovu', 'R Hinman']
+2   ['S Bucolo', 'JH Matthews']
+2   ['R Rege', 'S Nagarkar']
+1   ['Z Ying']
+
+Connected nodes: 
+10   {0, 2, 4, 9, 10, 13, 14, 16, 20, 21}
+3   {1, 11, 5}
+3   {8, 3, 12}
+2   {6, 15}
+2   {18, 7}
+2   {17, 19}
+1   {22}
+
+Number of connected components: 7
+Largest component size: 10
+Largest connected component: ['A Hope', 'B Kolko', 'G Borriello', 'M Hicks', 'M Ishimitsu', 'P Prasad', 'R Anderson', 'R Nathan', 'W Brunette', 'W Gerard']
+Component sizes: [1, 2, 2, 2, 3, 3, 10]
+Average component size: 3.2857142857142856
+Median: 2
+Low median: 2
+High median: 2
+Mode: [2]

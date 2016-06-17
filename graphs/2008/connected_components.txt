@@ -1,0 +1,15 @@
+Connected authors: 
+4   ['A Lindgren', 'F Chen', 'H Zhang', 'PW Jordan']
+
+Connected nodes: 
+4   {0, 1, 2, 3}
+
+Number of connected components: 1
+Largest component size: 4
+Largest connected component: ['A Lindgren', 'F Chen', 'H Zhang', 'PW Jordan']
+Component sizes: [4]
+Average component size: 4.0
+Median: 4
+Low median: 4
+High median: 4
+Mode: [4]

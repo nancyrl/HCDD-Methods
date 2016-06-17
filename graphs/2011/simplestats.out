@@ -1,0 +1,38 @@
+Max number of authors writing a single paper: 11
+Total unique number of authors: 47
+Total number of papers: 11
+
+Density: 0.23311748381128586
+Connected component: [0, 9, 15, 17, 19, 21, 25, 28, 36, 39, 43]
+Cut points: {0}
+Cut vertex: 0
+[{36, 39, 9, 43, 15, 17, 19, 21, 25, 28}]
+All filtered out.
+
+Connected component: [1, 3, 6, 10, 16, 18, 20, 22, 31, 34, 41, 44]
+Cut points: {1, 18, 6}
+Cut vertex: 1
+[{34, 3, 6, 41, 10, 44, 16, 18, 20, 22, 31}]
+Cut vertex: 18
+[{1, 34, 3, 6, 41, 10, 44, 16, 20, 22, 31}]
+Cut vertex: 6
+[{1, 41, 10, 16, 18, 22}, {34, 3, 44, 20, 31}]
+Filtered cut points: {6}
+
+Connected component: [8, 24, 26, 33, 40]
+Cut points: {8}
+Cut vertex: 8
+[{24, 33, 26, 40}]
+All filtered out.
+
+Connected component: [11, 12, 23, 27, 30, 37, 38]
+Cut points: {11}
+Cut vertex: 11
+[{37, 38, 12, 23, 27, 30}]
+All filtered out.
+
+Cut points for all ccs: ['B Kolko']
+Average clustering is:  0.9137330754352031
+Average betweenness is: 0.0007400555041628122
+Average closeness is:  0.1290722683006695
+

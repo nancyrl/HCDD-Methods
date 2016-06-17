@@ -1,0 +1,27 @@
+Connected authors: 
+7   ['A Coutsoudis', 'D Vlachos', 'G Borriello', 'K Israel-Ballard', 'N Perin', 'P Reimers', 'R Chaudhri']
+3   ['A Kavanaugh', 'A Puckett', 'D Tatar']
+9   ['V Fuster', 'C Hutchinson', 'E Blank', 'J Kamano', 'L Misoi', 'M Were', 'N Tuikong', 'R Vedanthan', 'S Kimaiyo']
+4   ['G Ho', 'M Anda', 'P Cole', 'J Pinfold']
+5   ['G Tortora', 'G Vitiello', 'P Di Giovanni', 'M Sebillo', 'M Romano']
+2   ['K Asano', 'K Yamazaki']
+4   ['WD Tucker', 'M Glaser', 'MB Motlhabi', 'MB Parker']
+
+Connected nodes: 
+7   {0, 5, 7, 14, 24, 28, 29}
+3   {1, 2, 4}
+9   {32, 3, 6, 11, 16, 21, 25, 30, 31}
+4   {8, 17, 26, 12}
+5   {9, 10, 27, 20, 19}
+2   {13, 15}
+4   {33, 18, 22, 23}
+
+Number of connected components: 7
+Largest component size: 9
+Largest connected component: ['V Fuster', 'C Hutchinson', 'E Blank', 'J Kamano', 'L Misoi', 'M Were', 'N Tuikong', 'R Vedanthan', 'S Kimaiyo']
+Component sizes: [2, 3, 4, 4, 5, 7, 9]
+Average component size: 4.857142857142857
+Median: 4
+Low median: 4
+High median: 4
+Mode: [4]

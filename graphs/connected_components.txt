@@ -132,4 +132,4 @@ Average component size: 4.245901639344262
 Median: 3
 Low median: 3
 High median: 3
-Mode: 2
+Mode: [2]

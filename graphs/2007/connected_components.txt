@@ -1,0 +1,17 @@
+Connected authors: 
+3   ['D Amarsaikhan', 'JS Sandhu', 'P Altankhuyag']
+2   ['KL Kumar', 'M Bhattacharya']
+
+Connected nodes: 
+3   {0, 1, 4}
+2   {2, 3}
+
+Number of connected components: 2
+Largest component size: 3
+Largest connected component: ['D Amarsaikhan', 'JS Sandhu', 'P Altankhuyag']
+Component sizes: [2, 3]
+Average component size: 2.5
+Median: 2.5
+Low median: 2
+High median: 3
+Mode: [2, 3]

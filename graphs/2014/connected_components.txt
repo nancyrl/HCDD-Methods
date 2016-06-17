@@ -1,0 +1,51 @@
+Connected authors: 
+4   ['A Ahmad', 'AK Sin', 'R Sulaiman', 'HB Zaman']
+4   ['J Liu', 'A Boden', 'V Wulf', 'DW Randall']
+2   ['A Campbell', 'KG Brand']
+8   ['A Keny', 'L Diero', 'A Yeung', 'P Biondich', 'P Owiti', 'C Catalani', 'D Israelski', 'E Green']
+4   ['M Elteir', "A Shoa'la", 'WM Sheta', 'S Lazem']
+5   ['R Flournoy', 'J Luginbuhl', 'BP Shrimali', 'A Siegel', 'C Malin']
+2   ['CA Mattson', 'AE Wood']
+3   ['B Aryana', 'T Clemmensen', 'C Boks']
+1   ['B Longo']
+2   ['S Fox', 'C Le Dantec']
+7   ['CR Horowitz', 'D Ascheim', 'R Vedanthan', 'S Kimaiyo', 'EJ Velazquez', 'V Fuster', 'J Kamano']
+3   ['D Loffler', 'J Hurtienne', 'K Lindner']
+2   ['DK Rosner', 'M Ames']
+5   ['SL Martins', 'SQ Mistretta', 'ML Gilliam', 'JL Holl', 'E Bartlett']
+3   ['M Ntinda', 'H Thinyane', 'I Seiborger']
+3   ['S Kim', 'Y Jeong', 'J Lee']
+2   ['K Kang', 'O Sohaib']
+1   ['N Takeyama']
+2   ['R Fabricant', 'R Chhatpar']
+
+Connected nodes: 
+4   {0, 8, 50, 27}
+4   {32, 1, 60, 22}
+2   {2, 37}
+8   {3, 38, 6, 45, 46, 13, 19, 24}
+4   {40, 4, 61, 55}
+5   {49, 33, 11, 5, 15}
+2   {16, 7}
+3   {9, 58, 12}
+1   {10}
+2   {52, 14}
+7   {17, 18, 51, 54, 25, 59, 30}
+3   {20, 29, 36}
+2   {21, 39}
+5   {56, 57, 42, 34, 23}
+3   {41, 26, 28}
+3   {53, 62, 31}
+2   {35, 44}
+1   {43}
+2   {48, 47}
+
+Number of connected components: 19
+Largest component size: 8
+Largest connected component: ['A Keny', 'L Diero', 'A Yeung', 'P Biondich', 'P Owiti', 'C Catalani', 'D Israelski', 'E Green']
+Component sizes: [1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 7, 8]
+Average component size: 3.3157894736842106
+Median: 3
+Low median: 3
+High median: 3
+Mode: [2]

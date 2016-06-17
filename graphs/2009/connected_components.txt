@@ -1,0 +1,31 @@
+Connected authors: 
+5   ['A Dekhtyar', 'KK Mathias', 'C Isenhour', 'B Goldstein', 'J Goldsmith']
+11   ['A Seidakmatova', 'R Walton', 'B DeRenzi', 'B Kolko', 'C Driesbach', 'C Putnam', 'D Thakur', 'E Johnson', 'E Rose', 'ML Best', 'O Salikhbaeva']
+8   ['APD Jansen', 'RM Droes', 'C Jonker', 'E Derksen', 'FJM Meiland', 'HC Comijs', 'HG van der Roest', 'HPJ van Hout']
+4   ['B Ariyatum', 'D Prommin', 'P Sirisalee', 'R Holland']
+2   ['S Shahid', 'E Krahmer']
+3   ['E Seman', 'M Mahmud', 'I Hussein']
+1   ['K Pecknold']
+3   ['S Mehad', 'NLM Noor', 'WARWM Isa']
+1   ['R Rege']
+
+Connected nodes: 
+5   {0, 25, 8, 5, 23}
+11   {1, 33, 4, 6, 7, 10, 12, 14, 16, 27, 29}
+8   {2, 34, 9, 13, 18, 19, 20, 21}
+4   {3, 11, 30, 31}
+2   {36, 15}
+3   {17, 26, 22}
+1   {24}
+3   {35, 28, 37}
+1   {32}
+
+Number of connected components: 9
+Largest component size: 11
+Largest connected component: ['A Seidakmatova', 'R Walton', 'B DeRenzi', 'B Kolko', 'C Driesbach', 'C Putnam', 'D Thakur', 'E Johnson', 'E Rose', 'ML Best', 'O Salikhbaeva']
+Component sizes: [1, 1, 2, 3, 3, 4, 5, 8, 11]
+Average component size: 4.222222222222222
+Median: 3
+Low median: 3
+High median: 3
+Mode: [1, 3]

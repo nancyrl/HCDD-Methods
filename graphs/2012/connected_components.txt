@@ -1,0 +1,33 @@
+Connected authors: 
+4   ['A Freudenthal', 'P Chininthorn', 'M Glaser', 'WD Tucker']
+12   ['A Hope', 'R Anderson', 'R Nathan', 'R Walton', 'B Kolko', 'W Brunette', 'W Gerard', 'J Keh', 'J Yaaqoubi', 'K Saville', 'L Schlenke', 'M Kawooya']
+8   ['A Joshi', 'R Vogler', 'C Johnson', 'S Iyengar', 'CE Hsu', 'J Machiavelli', 'J Zhang', 'M de Araujo Novaes']
+6   ['A Susi', 'A Villafiorita', 'A Zewge', 'S Hailemariam', 'K Weldemariam', 'M Belachew']
+2   ['D Lilley', 'J Spencer']
+6   ['PA Biedrzycki', 'S Ahmed', 'S Opel', 'DA Nelson', 'Z Franco', 'MG Sandy']
+3   ['E Lesueur', 'T Sibieude', 'M Yunus']
+4   ['T Mullaney', 'T Nyholm', 'E Stolterman', 'H Pettersson']
+3   ['PRS Rao', 'H Knoche', 'J Huang']
+1   ['NLA Alvarez']
+
+Connected nodes: 
+4   {0, 31, 25, 47}
+12   {1, 34, 35, 37, 6, 45, 46, 16, 19, 21, 23, 26}
+8   {2, 36, 7, 40, 8, 17, 20, 28}
+6   {3, 4, 5, 39, 22, 24}
+2   {9, 18}
+6   {32, 38, 41, 10, 48, 29}
+3   {11, 44, 27}
+4   {42, 43, 12, 14}
+3   {33, 13, 15}
+1   {30}
+
+Number of connected components: 10
+Largest component size: 12
+Largest connected component: ['A Hope', 'R Anderson', 'R Nathan', 'R Walton', 'B Kolko', 'W Brunette', 'W Gerard', 'J Keh', 'J Yaaqoubi', 'K Saville', 'L Schlenke', 'M Kawooya']
+Component sizes: [1, 2, 3, 3, 4, 4, 6, 6, 8, 12]
+Average component size: 4.9
+Median: 4.0
+Low median: 4
+High median: 4
+Mode: [3, 4, 6]

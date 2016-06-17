@@ -1,0 +1,44 @@
+E Krahmer: 0.0
+S Shahid: 0.0
+K Pecknold: 0.0
+R Rege: 0.0
+B DeRenzi: 0.0
+B Kolko: 0.2222222222222222
+R Walton: 0.4
+D Prommin: 1.0
+M Mahmud: 1.0
+E Derksen: 1.0
+E Seman: 1.0
+FJM Meiland: 1.0
+O Salikhbaeva: 1.0
+HG van der Roest: 1.0
+E Rose: 1.0
+KK Mathias: 1.0
+A Seidakmatova: 1.0
+C Isenhour: 1.0
+C Putnam: 1.0
+B Goldstein: 1.0
+C Driesbach: 1.0
+APD Jansen: 1.0
+E Johnson: 1.0
+WARWM Isa: 1.0
+C Jonker: 1.0
+ML Best: 1.0
+D Thakur: 1.0
+A Dekhtyar: 1.0
+B Ariyatum: 1.0
+HC Comijs: 1.0
+P Sirisalee: 1.0
+NLM Noor: 1.0
+J Goldsmith: 1.0
+S Mehad: 1.0
+R Holland: 1.0
+HPJ van Hout: 1.0
+RM Droes: 1.0
+I Hussein: 1.0
+
+Average: 0.8321637426900585
+Median: 1.0
+Median low: 1.0
+Median high: 1.0
+Mode: 1.0

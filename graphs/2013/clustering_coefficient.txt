@@ -1,0 +1,40 @@
+K Asano: 0.0
+K Yamazaki: 0.0
+M Anda: 1.0
+G Vitiello: 1.0
+A Kavanaugh: 1.0
+R Vedanthan: 1.0
+V Fuster: 1.0
+L Misoi: 1.0
+P Di Giovanni: 1.0
+S Kimaiyo: 1.0
+G Tortora: 1.0
+J Kamano: 1.0
+C Hutchinson: 1.0
+N Perin: 1.0
+D Tatar: 1.0
+M Sebillo: 1.0
+MB Parker: 1.0
+E Blank: 1.0
+P Reimers: 1.0
+G Borriello: 1.0
+R Chaudhri: 1.0
+J Pinfold: 1.0
+M Romano: 1.0
+WD Tucker: 1.0
+P Cole: 1.0
+N Tuikong: 1.0
+M Were: 1.0
+A Puckett: 1.0
+D Vlachos: 1.0
+A Coutsoudis: 1.0
+G Ho: 1.0
+K Israel-Ballard: 1.0
+M Glaser: 1.0
+MB Motlhabi: 1.0
+
+Average: 0.9411764705882353
+Median: 1.0
+Median low: 1.0
+Median high: 1.0
+Mode: 1.0

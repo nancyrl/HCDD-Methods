@@ -1,0 +1,15 @@
+AM Agogino: 0.375
+JS Sandhu: 0.375
+J Hey: 0.375
+C Newman: 0.375
+S Sriboorapa: 0.5
+N Poosanthanasarn: 0.5
+W Fungladda: 0.5
+C Lohachit: 0.5
+C Pulkate: 0.5
+
+Average: 0.4444444444444444
+Median: 0.5
+Median low: 0.5
+Median high: 0.5
+Mode: 0.5

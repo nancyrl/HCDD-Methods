@@ -1,3 +1,5 @@
+"""HCD+D Methods Network Analysis"""
+
 import networkx as nx
 from networkx.readwrite import json_graph
 import csv
@@ -7,6 +9,12 @@ import json
 import pickle
 import statistics
 import copy
+
+
+def calc_mode(array):
+
+    most = max(list(map(array.count, array)))
+    return list(set(filter(lambda x: array.count(x) == most, array)))
 
 def count_authors_and_papers(filename):
 	
@@ -64,9 +72,8 @@ def write_csv(all_authors, csvfilename, max_authors, num_papers):
 
 def simple_stats(filename):
 
-	authors = set()
-	linelengths = []
-	num_papers = 0
+	authors, linelengths, num_papers = set(), [], 0
+	stats = dict()
 	# lastnames = set()
 	# duplicates = set()
 
@@ -77,9 +84,9 @@ def simple_stats(filename):
 				continue
 			author_count = 0
 			for i in range(len(row)):
-				author_count += 1
 				if row[i] == '':
 					continue
+				author_count += 1
 				author = row[i].rstrip().lstrip()
 				authors.add(author)
 				# last_name = author.split(" ")
@@ -88,8 +95,11 @@ def simple_stats(filename):
 				# 	duplicates.add(last_name)
 				# else:
 				# 	lastnames.add(last_name)
-			
-			linelengths.append(author_count)
+				if author in stats:
+					stats[author] += 1
+				else: 
+					stats[author] = 1 				
+				linelengths.append(author_count)
 			num_papers += 1
 	m = max(linelengths)
 
@@ -98,14 +108,20 @@ def simple_stats(filename):
 		f.write('Total unique number of authors: ' + str(len(authors)) + '\n')
 		f.write('Total number of papers: ' + str(num_papers) + '\n')
 
+	with open('papers_per_author.csv', 'wt', newline='') as csvf:
+		writer = csv.writer(csvf)
+		writer.writerow(['Author', 'Number of Papers'])
+		for key in sorted(stats, key=stats.get):
+			writer.writerow([key, str(stats[key])])
+
 	print(authors)
 	print('Max number of authors writing a single paper: ' + str(m))
 	print('Unique number of authors: ' + str(len(authors)))
 	print('Number of papers: ' + str(num_papers))
 	# print('Unique number of last names: ' + str(len(lastnames)))
 	# print(duplicates)
-	print('Done! This info has been saved to <simplestats.out>.')
-
+	print('Info has been saved to <simplestats.out>.')
+	print('Number of papers per unique author has been saved to <papers_per_author.csv>.')
 
 #code to regenerate the authors.txt file after deleting it.
 # f = open('finalauthors.txt', 'w+')
@@ -137,7 +153,6 @@ def read_from_csv(filename):
 					line.append(row[i])
 					author_nodes_set.add(row[i])
 			author_matrix.append(line)
-
 	return {'author_matrix': author_matrix, 'author_nodes': author_nodes_set}
 
 def generate_author_to_int_dictionary(filename):
@@ -149,12 +164,10 @@ def generate_author_to_int_dictionary(filename):
 	#assigning each author an integer representation
 	author_to_int, i = dict(), 0
 	sorted_authors = sorted(author_nodes)
-
 	for item in sorted_authors:
 		author_to_int[item] = i
 		i += 1
 
-	#saving the author to int dictionary
 	pickle.dump(author_to_int, open("author_int_dict.p", "wb"))
 	pickle.dump(author_matrix, open("author_matrix.p", "wb"))
 
@@ -206,37 +219,81 @@ def generate_networkX_graph_int():
 			if matrix[i][j] == 1:
 				G.add_edge(i, j)
 
-def generate_networkX_graph_string():
+def generate_networkX_graph_string(weighted=False):
 
 	global G
 	G = nx.Graph()
 	author_to_int = pickle.load(open("author_int_dict.p", "rb"))
 	author_matrix = pickle.load(open("author_matrix.p", "rb"))
 
-	#adding each author's name to the graph G
-	for key in author_to_int: 
-		G.add_node(key)
+	if not weighted: 
+		for key in author_to_int: 
+			G.add_node(key)
+		num_papers = len(author_matrix)
+		for row in range(num_papers):
+			num_authors = len(author_matrix[row])
+			for j in range(num_authors):
+				a1 = author_matrix[row][j]
+				for k in range(j + 1, num_authors):
+					a2 = author_matrix[row][k]
+					G.add_edge(a1, a2)
+	else:
+		#construct dictionary from papers_per_author.csv
+		papers_per_author_dict = dict()
+		with open('papers_per_author.csv', 'r') as csvf:
+			reader = csv.reader(csvf, delimiter=',')
+			for row in reader:
+				if row[0] == 'Author':
+					continue
+				papers_per_author_dict[row[0]] = int(row[1])
+		for key in author_to_int: 
+			node_value = papers_per_author_dict[key]
+			G.add_node(key, value=node_value)
+		seen_edge_pairs = dict()
+		num_papers = len(author_matrix)
+		for row in range(num_papers):
+			num_authors = len(author_matrix[row])
+			for j in range(num_authors):
+				a1 = author_matrix[row][j]
+				for k in range(j + 1, num_authors):
+					a2 = author_matrix[row][k]
+					author_pair = a1 + ', ' + a2
+					if author_pair not in seen_edge_pairs:
+						G.add_edge(a1, a2, weight=1)
+						seen_edge_pairs[author_pair] = 1
+					else: 
+						G[a1][a2]['weight'] += 1
+						seen_edge_pairs[author_pair] += 1
 
-	num_papers = len(author_matrix)
-	for row in range(num_papers):
-		num_authors = len(author_matrix[row])
-		for j in range(num_authors):
-			a1 = author_matrix[row][j]
-			for k in range(j + 1, num_authors):
-				a2 = author_matrix[row][k]
-				G.add_edge(a1, a2)
+		with open('pairs_publications.txt', 'w') as f: 
+			f.write('Pairs of publishing authors and their number of publications: \n')
+			seen_list = sorted(seen_edge_pairs, key=seen_edge_pairs.get)
+			for key in seen_list:
+				f.write(key + ' ' + str(seen_edge_pairs[key]) + '\n')
+		print('Saved author link weights into pairs_publications.txt.')
 
-def write_json(type):
+def write_json(type, weighted=False):
 
-	if type == 'int':
-		with open('data_int.json', 'w') as outfile1:
-			outfile1.write(json.dumps(json_graph.node_link_data(G)))
-		print('Dumped into file <data_int.json>.')
+	if not weighted: 
+		if type == 'int':
+			with open('data_int.json', 'w') as outfile1:
+				outfile1.write(json.dumps(json_graph.node_link_data(G)))
+			print('Dumped into file <data_int.json>.')
 
-	elif type == 'string':
-		with open('data_string.json', 'w') as outfile1:
-			outfile1.write(json.dumps(json_graph.node_link_data(G)))
-		print('Dumped into file <data_string.json>.')
+		elif type == 'string':
+			with open('data_string.json', 'w') as outfile1:
+				outfile1.write(json.dumps(json_graph.node_link_data(G)))
+			print('Dumped into file <data_string.json>.')
+	else:
+		if type == 'int':
+			with open('data_int_weighted.json', 'w') as outfile1:
+				outfile1.write(json.dumps(json_graph.node_link_data(G)))
+			print('Dumped into file <data_int_weighted.json>.')
+
+		elif type == 'string':
+			with open('data_string_weighted.json', 'w') as outfile1:
+				outfile1.write(json.dumps(json_graph.node_link_data(G)))
+			print('Dumped into file <data_string_weighted.json>.')
 
 def nx_draw_graph():
 
@@ -250,22 +307,21 @@ def nx_draw_graph():
 
 def calculate_metrics():
 
-	# author_to_int = pickle.load(open("author_int_dict.p", "rb"))
-	# matrix = pickle.load(open("adjacency_matrix.p", "rb"))
-	# author_matrix = pickle.load(open("author_matrix.p", "rb"))
-	# papers_per_author(author_matrix)
-	# authors_per_paper(author_matrix)
-	# density(matrix)
-	# author_degrees(matrix, author_to_int)
+	try: 
+		author_to_int = pickle.load(open("author_int_dict.p", "rb"))
+		matrix = pickle.load(open("adjacency_matrix.p", "rb"))
+		author_matrix = pickle.load(open("author_matrix.p", "rb"))
+		authors_per_paper(author_matrix)
+		density(matrix)
+		author_degrees(matrix, author_to_int)
+		connected_components(matrix, author_to_int)
+		cut_point(author_to_int)
+		clustering_coefficient()
+		betweenness_centrality()
+		closeness_centrality()
 
-	# connected_components(matrix, author_to_int)
-	# cut_point(author_to_int)
-
-	# clustering_coefficient()
-	# betweenness_centrality()
-	closeness_centrality()
-
-	# print(diameter(matrix))
+	except FileNotFoundError as err:
+		pass
 
 def betweenness_centrality():
 
@@ -278,7 +334,7 @@ def betweenness_centrality():
 	median = statistics.median(stats)
 	median_low = statistics.median_low(stats)
 	median_high = statistics.median_high(stats)
-	mode = statistics.mode(stats)
+	mode = calc_mode(stats)
 
 	with open('betweenness_centrality.txt', 'w') as f: 
 		for author in sorted_between:
@@ -288,6 +344,12 @@ def betweenness_centrality():
 		f.write('Median low: ' + str(median_low) + '\n')
 		f.write('Median high: ' + str(median_high) + '\n')
 		f.write('Mode: ' + str(median_high) + '\n')	
+	
+	with open('betweenness_centrality.csv', 'wt', newline='') as csvf:
+		writer = csv.writer(csvf)
+		writer.writerow(['Author', 'Betweenness Centrality'])
+		for author in sorted_between:
+			writer.writerow([author, str(between[author])])
 
 	print("Average betweenness is: " + str(average))
 	# 6.894441787211672e-05			
@@ -303,7 +365,7 @@ def clustering_coefficient():
 	median = statistics.median(stats)
 	median_low = statistics.median_low(stats)
 	median_high = statistics.median_high(stats)
-	mode = statistics.mode(stats)
+	mode = calc_mode(stats)
 
 	with open('clustering_coefficient.txt', 'w') as f: 
 		for author in sorted_coeff:
@@ -313,7 +375,13 @@ def clustering_coefficient():
 		f.write('Median low: ' + str(median_low) + '\n')
 		f.write('Median high: ' + str(median_high) + '\n')
 		f.write('Mode: ' + str(median_high) + '\n')	
-
+	
+	with open('clustering_coefficient.csv', 'wt', newline='') as csvf:
+		writer = csv.writer(csvf)
+		writer.writerow(['Author', 'Clustering Coefficient'])
+		for author in sorted_coeff:
+			writer.writerow([author, str(coeff[author])])
+	
 	print ("Average clustering is: " + " " + str(average))
 	#clustering coefficient : 0.8099788585502871
 
@@ -328,7 +396,7 @@ def closeness_centrality():
 	median = statistics.median(stats)
 	median_low = statistics.median_low(stats)
 	median_high = statistics.median_high(stats)
-	mode = statistics.mode(stats)
+	mode = calc_mode(stats)
 
 	with open('closeness_centrality.txt', 'w') as f: 
 		for author in sorted_closeness:
@@ -338,6 +406,12 @@ def closeness_centrality():
 		f.write('Median low: ' + str(median_low) + '\n')
 		f.write('Median high: ' + str(median_high) + '\n')
 		f.write('Mode: ' + str(median_high) + '\n')	
+
+	with open('closeness_centrality.csv', 'wt', newline='') as csvf:
+		writer = csv.writer(csvf)
+		writer.writerow(['Author', 'Closeness centrality'])
+		for author in sorted_closeness:
+			writer.writerow([author, str(closeness[author])])
 
 	print ("Average closeness is: " + " " + str(average))
 	# 0.02251066871887446
@@ -378,10 +452,13 @@ def cut_point(author_to_int):
 				print("Filtered cut points: " + str(new_cut_points) + "\n")
 		final = final.union(new_cut_points)
 
-	inverse_author_dict = {v: k for k, v in author_to_int.items()}
-	translated = [inverse_author_dict[int] for int in author_to_int]
-
-	print("Cut points for all ccs: " + str(translated))
+	if final:
+		inverse_author_dict = {v: k for k, v in author_to_int.items()}
+		translated = [inverse_author_dict[int] for int in final]
+		print("Cut points for all ccs: " + str(translated))
+	
+	else:
+		print("No cut points.")
 
 def find_cut_points_in_cc(graph, cc):
 
@@ -488,7 +565,7 @@ def connected_components(matrix, author_to_int):
 	median = statistics.median(sizes)
 	median_low = statistics.median_low(sizes)
 	median_high = statistics.median_high(sizes)
-	mode = statistics.mode(sizes)
+	mode = calc_mode(sizes)
 
 	#saving info into a text file
 	with open('connected_components.txt', 'w') as f: 
@@ -542,9 +619,9 @@ def density(matrix):
 		for j in range(v): 
 			if matrix[i][j] == 1:
 				e += 1
-	d = (2*e) / (v*(v-1))
-	print(d)
-	# d = 0.03507826763640717
+	d = (e) / (v*(v-1))
+	print('Density: ' + str(d))
+	# d = 0.017539133818203587
 
 def author_degrees(matrix, author_to_int):
 
@@ -564,22 +641,6 @@ def author_degrees(matrix, author_to_int):
 		for key in sorted(stats, key=stats.get):
 			writer.writerow([key, str(stats[key])])
 
-def papers_per_author(author_matrix):
-
-	stats = dict()
-	for row in author_matrix:
-		for author in row:
-			if author in stats:
-				stats[author] += 1
-			else: 
-				stats[author] = 1 
-
-	with open('papers_per_author.csv', 'wt', newline='') as csvf:
-		writer = csv.writer(csvf)
-		writer.writerow(['Author', 'Number of Papers'])
-		for key in sorted(stats, key=stats.get):
-			writer.writerow([key, str(stats[key])])
-
 def authors_per_paper(author_matrix):
 
 	linelengths = [len(paper) for paper in author_matrix]	
@@ -591,22 +652,19 @@ def authors_per_paper(author_matrix):
 
 def main():
 
-	#input: python graph.py <input.txt> <csvfile>
+	# # input: python graph.py <input.txt> <csvfile>
 	# text_file, csv_file = sys.argv[1], sys.argv[2]
 	# convert_text_to_csv(text_file, csv_file)
 	# simple_stats(csv_file)
 
-	# print("Now generating json graph information...")
-	#if dict and matrix pickle files already exist, do not execute the below lines
-	# generate_author_to_int_dictionary(csv_file)
-	# generate_adj_matrix()
-
+	# # print("Now generating json graph information...")
+	# #if dict and matrix pickle files already exist, do not execute the below lines
+	generate_author_to_int_dictionary(csv_file)
+	generate_adj_matrix()
 	# generate_networkX_graph_string()
-	# write_json(string)
-
-	# generate_networkX_graph_int()
-	# write_json(int)
-
+	# write_json('string')
+	generate_networkX_graph_string(True)
+	write_json('string', weighted=True)
 	calculate_metrics()
 
 	return "Finished"

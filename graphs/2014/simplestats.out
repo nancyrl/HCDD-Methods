@@ -1,0 +1,33 @@
+Max number of authors writing a single paper: 8
+Total unique number of authors: 63
+Total number of papers: 19
+
+Density: 0.053763440860215055
+Connected component: [3, 6, 13, 19, 24, 38, 45, 46]
+Cut points: {3}
+Cut vertex: 3
+[{38, 6, 13, 45, 46, 19, 24}]
+All filtered out.
+
+Connected component: [5, 11, 15, 33, 49]
+Cut points: {5}
+Cut vertex: 5
+[{49, 33, 11, 15}]
+All filtered out.
+
+Connected component: [17, 18, 25, 30, 51, 54, 59]
+Cut points: {17}
+Cut vertex: 17
+[{18, 51, 54, 25, 59, 30}]
+All filtered out.
+
+Connected component: [23, 34, 42, 56, 57]
+Cut points: {23}
+Cut vertex: 23
+[{56, 57, 34, 42}]
+All filtered out.
+
+No cut points.
+Average clustering is:  0.7777777777777778
+Average betweenness is: 0.0
+Average closeness is:  0.053763440860215055

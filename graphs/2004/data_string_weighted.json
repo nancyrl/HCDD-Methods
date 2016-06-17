@@ -1,0 +1,4 @@
+{"directed": false, "nodes": [{"value": 1, "id": "J Wesson"}, {"value": 1, "id": "A Tibuzzi"}, 
+	{"value": 1, "id": "X Hua"}, {"value": 1, "id": "M Kam"}, {"value": 1, "id": "L Barnard"}], 
+"graph": {}, "links": [{"weight": 1, "target": 4, "source": 0}, {"weight": 1, "target": 2, "source": 1}, 
+	{"weight": 1, "target": 3, "source": 1}, {"weight": 1, "target": 3, "source": 2}], "multigraph": false}

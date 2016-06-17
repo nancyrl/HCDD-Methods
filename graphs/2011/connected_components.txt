@@ -1,0 +1,33 @@
+Connected authors: 
+11   ['A Androulidakis', 'R Tranfaglia', 'SG Mougiakakou', 'C Pattichis', 'U Bracale', 'D Koutsouris', 'E Kyriacou', 'G Konnis', 'H Papadopoulos', 'K Perakis', 'L Pecchia']
+12   ['A Bayor', 'R Anderson', 'A Hope', 'B Kolko', 'T Gorman', 'C Putnam', 'W Brunette', 'E Johnson', 'E Rose', 'G Ruddy', 'J Yaaqoubi', 'M Hicks']
+3   ['M Kurosu', 'A Hashizume', 'T Yamanaka']
+3   ['A Navabi', 'B Aryana', 'C Boks']
+5   ['C Jacks', 'T Baker', 'K Phyrum', 'M Roberts', 'JW Rosenboom']
+7   ['SA Linnebur', 'SE Ross', 'CA Darr', 'CA Lee', 'JM Ruscin', 'KA Siek', 'LM Haverhals']
+3   ['CF Leitao', 'CS De Souza', 'LC De Castro Salgado']
+1   ['R Steinbeck']
+2   ['X Zhang', 'Z Fu']
+
+Connected nodes: 
+11   {0, 36, 39, 9, 43, 15, 17, 19, 21, 25, 28}
+12   {1, 34, 3, 6, 41, 10, 44, 16, 18, 20, 22, 31}
+3   {32, 2, 42}
+3   {4, 5, 7}
+5   {8, 40, 26, 33, 24}
+7   {37, 38, 11, 12, 23, 27, 30}
+3   {13, 14, 29}
+1   {35}
+2   {45, 46}
+
+Number of connected components: 9
+Largest component size: 12
+Largest connected component: ['A Bayor', 'R Anderson', 'A Hope', 'B Kolko', 'T Gorman', 'C Putnam', 'W Brunette', 'E Johnson', 'E Rose', 'G Ruddy', 'J Yaaqoubi', 'M Hicks']
+Component sizes: [1, 2, 3, 3, 3, 5, 7, 11, 12]
+Average component size: 5.222222222222222
+Median: 3
+Low median: 3
+High median: 3
+Mode: [3]
+
+Cut points: B Kolko
