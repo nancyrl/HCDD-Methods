@@ -9,6 +9,7 @@ import json
 import pickle
 import statistics
 import copy
+import math
 
 
 def calc_mode(array):
@@ -308,20 +309,49 @@ def nx_draw_graph():
 def calculate_metrics():
 
 	try: 
-		author_to_int = pickle.load(open("author_int_dict.p", "rb"))
+		# author_to_int = pickle.load(open("author_int_dict.p", "rb"))
 		matrix = pickle.load(open("adjacency_matrix.p", "rb"))
-		author_matrix = pickle.load(open("author_matrix.p", "rb"))
-		authors_per_paper(author_matrix)
-		density(matrix)
-		author_degrees(matrix, author_to_int)
-		connected_components(matrix, author_to_int)
-		cut_point(author_to_int)
-		clustering_coefficient()
-		betweenness_centrality()
-		closeness_centrality()
+		# author_matrix = pickle.load(open("author_matrix.p", "rb"))
+		# authors_per_paper(author_matrix)
+		diameter(matrix)
+		# author_degrees(matrix, author_to_int)
+		# connected_components(matrix, author_to_int)
+		# cut_point(author_to_int)
+		# clustering_coefficient()
+		# betweenness_centrality()
+		# closeness_centrality()
 
 	except FileNotFoundError as err:
 		pass
+
+def density_per_component(list_of_ints, matrix, author_to_int):
+
+	inverse_author_dict = {v: k for k, v in author_to_int.items()}
+	v = len(matrix)
+	d_per_cc, d = dict(), 0
+	for cc in list_of_ints:
+		e = 0
+		cc_size = len(cc)
+		for i in cc: 
+			for j in range(v): 
+				if matrix[i][j] == 1:
+					e += 1
+		translated = [inverse_author_dict[int] for int in cc]
+		try: 
+			d = (e) / (cc_size*(cc_size-1))
+			print('CC: ' + str(translated))
+			print('Density: ' + str(d))
+		except ZeroDivisionError as err:
+			if len(cc) == 1:
+				d = 1
+				print('Density: 1')
+			else:
+				d = 0
+				print("Uh oh. Something went wrong...")
+		d_per_cc[str(translated)] = d 
+
+	return d_per_cc
+	# d = 0.017539133818203587
 
 def betweenness_centrality():
 
@@ -419,12 +449,29 @@ def closeness_centrality():
 def diameter(matrix):
 	
 	v = len(matrix)
-	dist = [[] for x in range(v)]
+	d, inf = [], 100000
+	dist = [[inf for x in range(v)] for y in range(v)]
+	
+	#constructing dist matrix
+	for i in range(v):
+		dist[i][i] = 0
+		for j in range(v):
+			if matrix[i][j] == 1:
+				dist[i][j] = 1
+
+	#floyd warshall algorithm
 	for k in range(v):
 		for i in range(v):
 			for j in range(v):
-				dist = min(dist[i][j], dist[i][k] + dist[k][j])
-	return dist
+				dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
+	
+	for i in range(v):
+		for j in range(v):
+			if i != j and dist[i][j] != inf:
+				d.append(dist[i][j])
+	diameter = max(d)
+	print(diameter)
+
 
 def cut_point(author_to_int): 
 
@@ -436,7 +483,6 @@ def cut_point(author_to_int):
 		if len(cc) <= 4:
 			continue
 		cc = sorted(cc)
-		#graph contains only the connected component
 		print("Connected component: " + str(cc))
 		cut_points = find_cut_points_in_cc(adj_list, cc)
 		if not cut_points:
@@ -447,7 +493,7 @@ def cut_point(author_to_int):
 			if not new_cut_points:
 				print("All filtered out. \n")
 			elif new_cut_points == cut_points:
-				print("No need to filter. \n")
+				print("Nothing was filtered. \n")
 			else: 
 				print("Filtered cut points: " + str(new_cut_points) + "\n")
 		final = final.union(new_cut_points)
@@ -456,7 +502,6 @@ def cut_point(author_to_int):
 		inverse_author_dict = {v: k for k, v in author_to_int.items()}
 		translated = [inverse_author_dict[int] for int in final]
 		print("Cut points for all ccs: " + str(translated))
-	
 	else:
 		print("No cut points.")
 
@@ -486,7 +531,7 @@ def find_cut_points_in_cc(graph, cc):
 		if not visited[vertex]:
 			time = 0
 			cut_dfs(vertex)
-		break
+		break #cc is connected so only one iteration is needed
 
 	for vertex in cc:
 		if prev[vertex] == None:
@@ -567,11 +612,15 @@ def connected_components(matrix, author_to_int):
 	median_high = statistics.median_high(sizes)
 	mode = calc_mode(sizes)
 
+	#density per connected component
+	d_per_component = density_per_component(list_of_ints, matrix, author_to_int)
+
 	#saving info into a text file
 	with open('connected_components.txt', 'w') as f: 
 		f.write('Connected authors: ' + '\n')
 		for cc in list_of_strings:
-			f.write(str(len(cc)) + '   ' + str(cc) + '\n')
+			f.write('\n' + str(len(cc)) + '   ' + str(cc) + '\n')
+			f.write('Density : ' + str(d_per_component[str(cc)]) + '\n')
 		f.write('\n')
 		f.write('Connected nodes: ' + '\n')
 		for cc in list_of_ints:
@@ -659,12 +708,12 @@ def main():
 
 	# # print("Now generating json graph information...")
 	# #if dict and matrix pickle files already exist, do not execute the below lines
-	generate_author_to_int_dictionary(csv_file)
-	generate_adj_matrix()
+	# generate_author_to_int_dictionary(csv_file)
+	# generate_adj_matrix()
 	# generate_networkX_graph_string()
 	# write_json('string')
-	generate_networkX_graph_string(True)
-	write_json('string', weighted=True)
+	# generate_networkX_graph_string(True)
+	# write_json('string', weighted=True)
 	calculate_metrics()
 
 	return "Finished"

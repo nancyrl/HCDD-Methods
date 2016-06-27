@@ -1,65 +1,187 @@
-Connected authors: 
+Connected components: 
+
 4   ['A Ahmad', 'R Sulaiman', 'AK Sin', 'HB Zaman']
+Density : 1.0
+
 11   ['A Androulidakis', 'H Papadopoulos', 'K Perakis', 'SG Mougiakakou', 'E Kyriacou', 'C Pattichis', 'R Tranfaglia', 'L Pecchia', 'U Bracale', 'G Konnis', 'D Koutsouris']
+Density : 1.0
+
 34   ['A Bayor', 'K Israel-Ballard', 'A Coutsoudis', 'K Saville', 'A Hope', 'A Seidakmatova', 'L Schlenke', 'M Hicks', 'M Ishimitsu', 'M Kawooya', 'B DeRenzi', 'B Kolko', 'C Driesbach', 'ML Best', 'N Perin', 'C Putnam', 'O Salikhbaeva', 'P Prasad', 'P Reimers', 'D Thakur', 'D Vlachos', 'R Chaudhri', 'R Anderson', 'E Johnson', 'R Nathan', 'E Rose', 'R Walton', 'G Borriello', 'G Ruddy', 'T Gorman', 'J Keh', 'W Brunette', 'W Gerard', 'J Yaaqoubi']
+Density : 0.22638146167557932
+
 4   ['DW Randall', 'A Boden', 'J Liu', 'V Wulf']
+Density : 1.0
+
 2   ['A Campbell', 'KG Brand']
+Density : 1.0
+
 5   ['C Isenhour', 'B Goldstein', 'J Goldsmith', 'KK Mathias', 'A Dekhtyar']
+Density : 1.0
+
 6   ['A Freudenthal', 'MB Motlhabi', 'MB Parker', 'WD Tucker', 'P Chininthorn', 'M Glaser']
+Density : 0.7333333333333333
+
 3   ['A Hashizume', 'M Kurosu', 'T Yamanaka']
+Density : 1.0
+
 8   ['M de Araujo Novaes', 'A Joshi', 'C Johnson', 'R Vogler', 'J Machiavelli', 'CE Hsu', 'J Zhang', 'S Iyengar']
+Density : 1.0
+
 3   ['A Puckett', 'A Kavanaugh', 'D Tatar']
+Density : 1.0
+
 8   ['C Catalani', 'A Keny', 'E Green', 'L Diero', 'A Yeung', 'P Biondich', 'D Israelski', 'P Owiti']
+Density : 1.0
+
 2   ['S Maskara', 'A Kumar']
+Density : 1.0
+
 4   ['H Zhang', 'PW Jordan', 'A Lindgren', 'F Chen']
+Density : 1.0
+
 4   ['B Aryana', 'C Boks', 'T Clemmensen', 'A Navabi']
+Density : 0.8333333333333334
+
 4   ["A Shoa'la", 'M Elteir', 'WM Sheta', 'S Lazem']
+Density : 1.0
+
 5   ['R Flournoy', 'A Siegel', 'J Luginbuhl', 'BP Shrimali', 'C Malin']
+Density : 1.0
+
 6   ['K Weldemariam', 'A Susi', 'A Villafiorita', 'A Zewge', 'M Belachew', 'S Hailemariam']
+Density : 1.0
+
 3   ['A Tibuzzi', 'X Hua', 'M Kam']
+Density : 1.0
+
 2   ['AE Wood', 'CA Mattson']
+Density : 1.0
+
 6   ['J Hey', 'C Newman', 'P Altankhuyag', 'AM Agogino', 'D Amarsaikhan', 'JS Sandhu']
+Density : 0.6
+
 8   ['HC Comijs', 'HG van der Roest', 'HPJ van Hout', 'C Jonker', 'E Derksen', 'RM Droes', 'FJM Meiland', 'APD Jansen']
+Density : 1.0
+
 4   ['M Mahmud', 'E Seman', 'I Hussein', 'AW Yeo']
+Density : 0.8333333333333334
+
 4   ['P Sirisalee', 'D Prommin', 'R Holland', 'B Ariyatum']
+Density : 1.0
+
 1   ['B Longo']
+Density : 1
+
 13   ['D Tulienge', 'M Were', 'C Hutchinson', 'E Blank', 'J Kamano', 'L Misoi', 'N Tuikong', 'R Vedanthan', 'V Fuster', 'EJ Velazquez', 'CR Horowitz', 'D Ascheim', 'S Kimaiyo']
+Density : 0.8461538461538461
+
 5   ['JW Rosenboom', 'C Jacks', 'M Roberts', 'T Baker', 'K Phyrum']
+Density : 1.0
+
 2   ['S Fox', 'C Le Dantec']
+Density : 1.0
+
 5   ['W Fungladda', 'N Poosanthanasarn', 'C Pulkate', 'C Lohachit', 'S Sriboorapa']
+Density : 1.0
+
 7   ['SA Linnebur', 'SE Ross', 'KA Siek', 'CA Darr', 'LM Haverhals', 'CA Lee', 'JM Ruscin']
+Density : 1.0
+
 3   ['CF Leitao', 'CS De Souza', 'LC De Castro Salgado']
+Density : 1.0
+
 2   ['J Spencer', 'D Lilley']
+Density : 1.0
+
 3   ['D Loffler', 'K Lindner', 'J Hurtienne']
+Density : 1.0
+
 7   ['D Modi', 'P Shah', 'S Shah', 'S Venkatraman', 'R Gopalan', 'S Desai', 'G Desai']
+Density : 1.0
+
 6   ['Z Franco', 'S Opel', 'PA Biedrzycki', 'DA Nelson', 'MG Sandy', 'S Ahmed']
+Density : 1.0
+
 2   ['DK Rosner', 'M Ames']
+Density : 1.0
+
 5   ['E Bartlett', 'SL Martins', 'SQ Mistretta', 'JL Holl', 'ML Gilliam']
+Density : 1.0
+
 2   ['S Shahid', 'E Krahmer']
+Density : 1.0
+
 3   ['M Yunus', 'E Lesueur', 'T Sibieude']
+Density : 1.0
+
 4   ['T Mullaney', 'T Nyholm', 'H Pettersson', 'E Stolterman']
+Density : 1.0
+
 3   ['N Werghi', 'M Al Blushi', 'F Kamoun']
+Density : 1.0
+
 4   ['M Anda', 'G Ho', 'P Cole', 'J Pinfold']
+Density : 1.0
+
 5   ['G Vitiello', 'P Di Giovanni', 'M Romano', 'G Tortora', 'M Sebillo']
+Density : 1.0
+
 3   ['H Knoche', 'PRS Rao', 'J Huang']
+Density : 1.0
+
 2   ['H Tawfik', 'O Anya']
+Density : 1.0
+
 3   ['M Ntinda', 'H Thinyane', 'I Seiborger']
+Density : 1.0
+
 3   ['J Lee', 'S Kim', 'Y Jeong']
+Density : 1.0
+
 2   ['R Hinman', 'J Matovu']
+Density : 1.0
+
 2   ['J Wesson', 'L Barnard']
+Density : 1.0
+
 2   ['S Bucolo', 'JH Matthews']
+Density : 1.0
+
 2   ['K Asano', 'K Yamazaki']
+Density : 1.0
+
 2   ['O Sohaib', 'K Kang']
+Density : 1.0
+
 1   ['K Pecknold']
+Density : 1
+
 2   ['M Bhattacharya', 'KL Kumar']
+Density : 1.0
+
 1   ['N Takeyama']
+Density : 1
+
 1   ['NLA Alvarez']
+Density : 1
+
 3   ['S Mehad', 'WARWM Isa', 'NLM Noor']
+Density : 1.0
+
 2   ['R Chhatpar', 'R Fabricant']
+Density : 1.0
+
 2   ['S Nagarkar', 'R Rege']
+Density : 1.0
+
 1   ['R Steinbeck']
+Density : 1
+
 2   ['Z Fu', 'X Zhang']
+Density : 1.0
+
 1   ['Z Ying']
+Density : 1
 
 Connected nodes: 
 4   {0, 209, 26, 102}
