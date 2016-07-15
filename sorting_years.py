@@ -8,14 +8,12 @@ path_to_graphs = 'C:/Users/Nancy/HCD+D/HCDD-Methods/graphs/'
 years_papers_dict = {}
 
 def generate_paper_years_dict():
-
 	with open(path_to_dataset, 'r') as csvfile:
 		reader = csv.reader(csvfile, delimiter=',')
-		# skip first two lines
 		skip, count = 0, 0
 		for row in reader:
-			skip += 1
-			if skip <= 2:
+			while skip < 2:
+				skip += 1
 				continue
 			if row[3] == "":
 				break
@@ -27,12 +25,10 @@ def generate_paper_years_dict():
 			count += 1
 
 def generate_author_txt_by_years():
-
 	for year in years_papers_dict:
 		write_authors_text_file(year, years_papers_dict[year])
 
 def write_authors_text_file(year, papers):
-
 	lines = []
 	with open(path_to_authors, 'r') as f:
 		reader = csv.reader(f, delimiter=',') 
@@ -48,21 +44,17 @@ def write_authors_text_file(year, papers):
 	# make a directory for each year
 	path = path_to_graphs + str(year)
 	os.makedirs(path, exist_ok=True)
-
 	text_file = path + '/authors' + str(year) + '.txt'
 	with open(text_file, 'w') as f:
 		for line in lines:
 			str_line = str(line).strip('[').strip(']').translate(str.maketrans({"'":None})) 
 			print(str_line)
 			f.write(str_line + '\n') 
-			
-	print("Finished making " + text_file)
+	print("Made " + text_file)
 
 def main():
-
 	generate_paper_years_dict()
 	generate_author_txt_by_years()
-	return "Finished"
                 
 if __name__ == "__main__":
     main()
