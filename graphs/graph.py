@@ -309,17 +309,17 @@ def nx_draw_graph():
 def calculate_metrics():
 
 	try: 
-		# author_to_int = pickle.load(open("author_int_dict.p", "rb"))
+		author_to_int = pickle.load(open("author_int_dict.p", "rb"))
 		matrix = pickle.load(open("adjacency_matrix.p", "rb"))
-		# author_matrix = pickle.load(open("author_matrix.p", "rb"))
-		# authors_per_paper(author_matrix)
+		author_matrix = pickle.load(open("author_matrix.p", "rb"))
+		authors_per_paper(author_matrix)
 		diameter(matrix)
-		# author_degrees(matrix, author_to_int)
-		# connected_components(matrix, author_to_int)
-		# cut_point(author_to_int)
-		# clustering_coefficient()
-		# betweenness_centrality()
-		# closeness_centrality()
+		author_degrees(matrix, author_to_int)
+		connected_components(matrix, author_to_int)
+		cut_point(author_to_int)
+		clustering_coefficient()
+		betweenness_centrality()
+		closeness_centrality()
 
 	except FileNotFoundError as err:
 		pass
@@ -701,19 +701,19 @@ def authors_per_paper(author_matrix):
 
 def main():
 
-	# # input: python graph.py <input.txt> <csvfile>
-	# text_file, csv_file = sys.argv[1], sys.argv[2]
-	# convert_text_to_csv(text_file, csv_file)
-	# simple_stats(csv_file)
+	# input: python graph.py <input.txt> <csvfile>
+	text_file, csv_file = sys.argv[1], sys.argv[2]
+	convert_text_to_csv(text_file, csv_file)
+	simple_stats(csv_file)
 
-	# # print("Now generating json graph information...")
-	# #if dict and matrix pickle files already exist, do not execute the below lines
-	# generate_author_to_int_dictionary(csv_file)
-	# generate_adj_matrix()
-	# generate_networkX_graph_string()
-	# write_json('string')
-	# generate_networkX_graph_string(True)
-	# write_json('string', weighted=True)
+	# print("Now generating json graph information...")
+	#if dict and matrix pickle files already exist, do not execute the below lines
+	generate_author_to_int_dictionary(csv_file)
+	generate_adj_matrix()
+	generate_networkX_graph_string()
+	write_json('string')
+	generate_networkX_graph_string(True)
+	write_json('string', weighted=True)
 	calculate_metrics()
 
 	return "Finished"
