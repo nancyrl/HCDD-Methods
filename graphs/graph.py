@@ -1,7 +1,5 @@
 import preprocess
-import utils
 import metrics
-
 import networkx as nx
 from networkx.readwrite import json_graph
 import csv
@@ -66,7 +64,6 @@ def generate_adj_matrix():
 			f.write(str(row).strip("]").strip("[") + "\n")
 
 def generate_networkX_graph_int():
-	global G
 	G = nx.Graph()
 	author_to_int = pickle.load(open("author_int_dict.p", "rb"))
 	matrix = pickle.load(open("adjacency_matrix.p", "rb"))
@@ -79,9 +76,9 @@ def generate_networkX_graph_int():
 		for j in range(s):
 			if matrix[i][j] == 1:
 				G.add_edge(i, j)
+	return G
 
 def generate_networkX_graph_string(weighted=False):
-	global G
 	G = nx.Graph()
 	author_to_int = pickle.load(open("author_int_dict.p", "rb"))
 	author_matrix = pickle.load(open("author_matrix.p", "rb"))
@@ -131,8 +128,9 @@ def generate_networkX_graph_string(weighted=False):
 			for key in seen_list:
 				f.write(key + ' ' + str(seen_edge_pairs[key]) + '\n')
 		print('Saved author link weights into pairs_publications.txt.')
+	return G
 
-def write_json(type, weighted=False):
+def write_json(G, type, weighted=False):
 	if not weighted: 
 		if type == 'int':
 			with open('data_int.json', 'w') as outfile1:
@@ -164,20 +162,25 @@ def nx_draw_graph():
 	plt.show()
 
 def main():
-	# input: python graph.py <input.txt> <csvfile>
-	text_file, csv_file = sys.argv[1], sys.argv[2]
-	convert_text_to_csv(text_file, csv_file)
-	simple_stats(csv_file)
+	try: 
+		text_file, csv_file = sys.argv[1], sys.argv[2]
+	except IndexError as err:
+		print('Please type python graph.py <input.txt> <output.csv>.')
+		sys.exit()
+
+	preprocess.convert_text_to_csv(text_file, csv_file)
+	preprocess.simple_stats(csv_file)
 
 	print("Now generating json graph information...")
-	#if dict and matrix pickle files already exist, do not execute the below lines
 	generate_author_to_int_dictionary(csv_file)
 	generate_adj_matrix()
-	generate_networkX_graph_string()
-	write_json('string')
-	generate_networkX_graph_string(True)
-	write_json('string', weighted=True)
-	calculate_metrics()
+	G = generate_networkX_graph_string()
+	write_json(G, 'string')
+	G_s = generate_networkX_graph_string(True)
+	write_json(G_s, 'string', weighted=True)
+
+	print("Now calculating metrics...")
+	metrics.calculate_metrics()
                 
 if __name__ == "__main__":
     main()

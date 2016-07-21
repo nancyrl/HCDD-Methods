@@ -5,7 +5,7 @@ def count_authors_and_papers(filename):
 	with open(filename, 'r') as f:
 		for line in f:
 			arrLine = line.split(",")
-			count = 
+			count = 0
 			for name in arrLine:
 				count += 1
 			line_len.append(count)
@@ -24,7 +24,7 @@ def convert_text_to_csv(filename, outfile):
 				name = name.strip('\n').strip('\t').lstrip().rstrip()
 				all_authors[pos].append(name)
 				pos += 1
-			while position < max_authors:
+			while pos < max_authors:
 				all_authors[pos].append('')
 				pos += 1
 	return write_csv(all_authors, outfile, max_authors, num_papers)
@@ -71,17 +71,18 @@ def simple_stats(filename):
 					stats[author] = 1 				
 				linelengths.append(author_count)
 			num_papers += 1
+	m = max(linelengths)
 
 	with open('simplestats.out', 'w') as f: 
-		f.write('Max number of authors writing a single paper: ' + str(max(linelengths) + '\n')
+		f.write('Max number of authors writing a single paper: ' + str(m) + '\n')
 		f.write('Total unique number of authors: ' + str(len(authors)) + '\n')
 		f.write('Total number of papers: ' + str(num_papers) + '\n')
-
 	with open('papers_per_author.csv', 'wt', newline='') as csvf:
 		writer = csv.writer(csvf)
 		writer.writerow(['Author', 'Number of Papers'])
 		for key in sorted(stats, key=stats.get):
 			writer.writerow([key, str(stats[key])])
+
 	print(authors)
 	print('Max number of authors writing a single paper: ' + str(m))
 	print('Unique number of authors: ' + str(len(authors)))

@@ -52,9 +52,5 @@ def write_authors_text_file(year, papers):
 			f.write(str_line + '\n') 
 	print("Made " + text_file)
 
-def main():
-	generate_paper_years_dict()
-	generate_author_txt_by_years()
-                
-if __name__ == "__main__":
-    main()
+generate_paper_years_dict()
+generate_author_txt_by_years()

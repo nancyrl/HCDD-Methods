@@ -1,7 +1,11 @@
+import graph
 import pickle
 import statistics
 import copy
 import math
+import csv
+import networkx as nx
+import sys
 
 def calc_mode(array):
     most = max(list(map(array.count, array)))
@@ -19,14 +23,14 @@ def density_per_component(list_of_ints, matrix, author_to_int):
 				if matrix[i][j] == 1:
 					e += 1
 		translated = [inverse_author_dict[int] for int in cc]
+		print(str(cc))
 		try: 
 			d = (e) / (cc_size*(cc_size-1))
-			print('CC: ' + str(translated))
-			print('Density: ' + str(d))
+			print('Density: ' + str(d) + '\n')
 		except ZeroDivisionError as err:
 			if len(cc) == 1:
 				d = 1
-				print('Density: 1')
+				print('Density: 1 \n')
 			else:
 				d = 0
 				print("Uh oh. Something went wrong...")
@@ -35,7 +39,6 @@ def density_per_component(list_of_ints, matrix, author_to_int):
 	# d = 0.017539133818203587
 
 def betweenness_centrality():
-	generate_networkX_graph_string()
 	between = nx.betweenness_centrality(G)
 	sorted_between = sorted(between, key=between.get)
 	stats = [between[key] for key in sorted_between]
@@ -64,7 +67,6 @@ def betweenness_centrality():
 	# 6.894441787211672e-05			
 
 def clustering_coefficient():
-	generate_networkX_graph_string()
 	coeff = nx.clustering(G)
 	sorted_coeff = sorted(coeff, key=coeff.get)
 	stats = [coeff[key] for key in sorted_coeff]
@@ -93,7 +95,6 @@ def clustering_coefficient():
 	#clustering coefficient : 0.8099788585502871
 
 def closeness_centrality():
-	generate_networkX_graph_string()
 	closeness = nx.closeness_centrality(G)
 	sorted_closeness = sorted(closeness, key=closeness.get)
 	stats = [closeness[key] for key in sorted_closeness]
@@ -142,7 +143,7 @@ def diameter(matrix):
 			if i != j and dist[i][j] != inf:
 				d.append(dist[i][j])
 	diameter = max(d)
-	print(diameter)
+	print('Diameter of graph: ' + str(diameter) + '\n')
 
 def cut_point(author_to_int): 
 	adj_list = pickle.load(open("adj_list.p", "rb"))
@@ -280,7 +281,7 @@ def connected_components(matrix, author_to_int):
 			f.write('\n' + str(len(cc)) + '   ' + str(cc) + '\n')
 			f.write('Density : ' + str(d_per_component[str(cc)]) + '\n')
 		f.write('\n')
-		f.write('Connected nodes: ' + '\n')
+		f.write('Connected components: ' + '\n')
 		for cc in list_of_ints:
 			f.write(str(len(cc)) + '   ' + str(cc) + '\n')
 		f.write('\n')
@@ -323,7 +324,7 @@ def density(matrix):
 			if matrix[i][j] == 1:
 				e += 1
 	d = (e) / (v*(v-1))
-	print('Density: ' + str(d))
+	print('Density: ' + str(d) + '\n')
 	# d = 0.017539133818203587
 
 def author_degrees(matrix, author_to_int):
@@ -353,9 +354,14 @@ def authors_per_paper(author_matrix):
 
 def calculate_metrics():
 	try: 
+		sys.stdout = open('console_verbose.txt', 'w')
 		author_to_int = pickle.load(open("author_int_dict.p", "rb"))
 		matrix = pickle.load(open("adjacency_matrix.p", "rb"))
 		author_matrix = pickle.load(open("author_matrix.p", "rb"))
+		global G
+		G = graph.generate_networkX_graph_string()
+
+		density(matrix)
 		authors_per_paper(author_matrix)
 		diameter(matrix)
 		author_degrees(matrix, author_to_int)
@@ -364,5 +370,6 @@ def calculate_metrics():
 		clustering_coefficient()
 		betweenness_centrality()
 		closeness_centrality()
+		sys.stdout.close()
 	except FileNotFoundError as err:
 		pass
