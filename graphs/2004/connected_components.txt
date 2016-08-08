@@ -1,8 +1,12 @@
 Connected authors: 
-3   ['A Tibuzzi', 'M Kam', 'X Hua']
-2   ['J Wesson', 'L Barnard']
 
-Connected nodes: 
+3   ['A Tibuzzi', 'M Kam', 'X Hua']
+Density : 1.0
+
+2   ['J Wesson', 'L Barnard']
+Density : 1.0
+
+Connected components: 
 3   {0, 3, 4}
 2   {1, 2}
 

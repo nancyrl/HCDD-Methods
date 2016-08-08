@@ -20,7 +20,8 @@ def density_per_component(list_of_ints, matrix, author_to_int):
 		cc_size = len(cc)
 		for i in cc: 
 			for j in range(v): 
-				if matrix[i][j] == 1:
+				# no need to check if j is in cc
+				if matrix[i][j] == 1: 
 					e += 1
 		translated = [inverse_author_dict[int] for int in cc]
 		print(str(cc))
@@ -121,7 +122,23 @@ def closeness_centrality():
 
 	print ("Average closeness is: " + " " + str(average))
 	# 0.02251066871887446
-	
+
+def avg_pathlengths():
+	pathlengths = []
+	with open('averagepaths.txt', 'w') as f:
+		for g in nx.connected_component_subgraphs(G):
+			print(str(list(g)))
+			if len(g) == 1:
+				print('Skipped \n')
+				continue
+			fig = nx.average_shortest_path_length(g)
+			pathlengths.append(fig)
+			print(fig)
+			f.write(str(list(g)) + '\n')
+			f.write(str(fig) + '\n\n')
+		avg = statistics.mean(pathlengths)
+		f.write('Avg fig :' + str(avg))
+
 def diameter(matrix):
 	v = len(matrix)
 	d, inf = [], 100000
@@ -354,13 +371,12 @@ def authors_per_paper(author_matrix):
 
 def calculate_metrics():
 	try: 
-		sys.stdout = open('console_verbose.txt', 'w')
+
 		author_to_int = pickle.load(open("author_int_dict.p", "rb"))
 		matrix = pickle.load(open("adjacency_matrix.p", "rb"))
 		author_matrix = pickle.load(open("author_matrix.p", "rb"))
 		global G
 		G = graph.generate_networkX_graph_string()
-
 		density(matrix)
 		authors_per_paper(author_matrix)
 		diameter(matrix)
@@ -370,6 +386,6 @@ def calculate_metrics():
 		clustering_coefficient()
 		betweenness_centrality()
 		closeness_centrality()
-		sys.stdout.close()
+		avg_pathlengths()
 	except FileNotFoundError as err:
 		pass

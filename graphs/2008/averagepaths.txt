@@ -1,0 +1,19 @@
+['S Sriboorapa', 'C Pulkate', 'N Poosanthanasarn', 'W Fungladda', 'C Lohachit']
+1.0
+
+['A Lindgren', 'H Zhang', 'PW Jordan', 'F Chen']
+1.0
+
+['L Barnard', 'J Wesson']
+1.0
+
+['J Hey', 'C Newman', 'AM Agogino', 'JS Sandhu', 'D Amarsaikhan', 'P Altankhuyag']
+1.4
+
+['A Tibuzzi', 'X Hua', 'M Kam']
+1.0
+
+['M Bhattacharya', 'KL Kumar']
+1.0
+
+Avg fig :1.0666666666666667

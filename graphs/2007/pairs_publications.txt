@@ -1,0 +1,25 @@
+Pairs of publishing authors and their number of publications: 
+M Kam, A Tibuzzi 1
+N Poosanthanasarn, C Pulkate 1
+M Kam, X Hua 1
+JS Sandhu, C Newman 1
+J Hey, C Newman 1
+P Altankhuyag, D Amarsaikhan 1
+JS Sandhu, P Altankhuyag 1
+C Lohachit, C Pulkate 1
+JS Sandhu, J Hey 1
+C Newman, AM Agogino 1
+W Fungladda, S Sriboorapa 1
+J Hey, AM Agogino 1
+JS Sandhu, D Amarsaikhan 1
+S Sriboorapa, C Pulkate 1
+W Fungladda, C Pulkate 1
+N Poosanthanasarn, C Lohachit 1
+C Lohachit, W Fungladda 1
+A Tibuzzi, X Hua 1
+L Barnard, J Wesson 1
+N Poosanthanasarn, S Sriboorapa 1
+JS Sandhu, AM Agogino 1
+N Poosanthanasarn, W Fungladda 1
+C Lohachit, S Sriboorapa 1
+KL Kumar, M Bhattacharya 1

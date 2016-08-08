@@ -1,0 +1,40 @@
+['HC Comijs', 'HG van der Roest', 'HPJ van Hout', 'E Derksen', 'RM Droes', 'APD Jansen', 'C Jonker', 'FJM Meiland']
+1.0
+
+['O Salikhbaeva', 'D Thakur', 'B Kolko', 'C Putnam', 'E Johnson', 'A Seidakmatova', 'B DeRenzi', 'ML Best', 'C Driesbach', 'R Walton', 'E Rose']
+1.7454545454545454
+
+['J Goldsmith', 'A Dekhtyar', 'C Isenhour', 'KK Mathias', 'B Goldstein']
+1.0
+
+['P Sirisalee', 'B Ariyatum', 'R Holland', 'D Prommin']
+1.0
+
+['M Mahmud', 'I Hussein', 'E Seman']
+1.0
+
+['F Chen', 'H Zhang', 'PW Jordan', 'A Lindgren']
+1.0
+
+['M Bhattacharya', 'KL Kumar']
+1.0
+
+['A Tibuzzi', 'X Hua', 'M Kam']
+1.0
+
+['N Poosanthanasarn', 'C Pulkate', 'S Sriboorapa', 'C Lohachit', 'W Fungladda']
+1.0
+
+['AM Agogino', 'D Amarsaikhan', 'C Newman', 'JS Sandhu', 'J Hey', 'P Altankhuyag']
+1.4
+
+['NLM Noor', 'WARWM Isa', 'S Mehad']
+1.0
+
+['S Shahid', 'E Krahmer']
+1.0
+
+['L Barnard', 'J Wesson']
+1.0
+
+Avg fig :1.088111888111888

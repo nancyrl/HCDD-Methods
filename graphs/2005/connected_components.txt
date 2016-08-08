@@ -1,17 +1,29 @@
 Connected authors: 
+
+3   ['A Tibuzzi', 'M Kam', 'X Hua']
+Density : 1.0
+
 4   ['AM Agogino', 'C Newman', 'J Hey', 'JS Sandhu']
-5   ['W Fungladda', 'C Lohachit', 'C Pulkate', 'N Poosanthanasarn', 'S Sriboorapa']
+Density : 1.0
 
-Connected nodes: 
-4   {0, 2, 4, 5}
-5   {8, 1, 3, 6, 7}
+5   ['C Lohachit', 'S Sriboorapa', 'W Fungladda', 'C Pulkate', 'N Poosanthanasarn']
+Density : 1.0
 
-Number of connected components: 2
+2   ['L Barnard', 'J Wesson']
+Density : 1.0
+
+Connected components: 
+3   {0, 9, 13}
+4   {1, 3, 5, 7}
+5   {2, 11, 12, 4, 10}
+2   {8, 6}
+
+Number of connected components: 4
 Largest component size: 5
-Largest connected component: ['W Fungladda', 'C Lohachit', 'C Pulkate', 'N Poosanthanasarn', 'S Sriboorapa']
-Component sizes: [4, 5]
-Average component size: 4.5
-Median: 4.5
-Low median: 4
-High median: 5
-Mode: [4, 5]
+Largest connected component: ['C Lohachit', 'S Sriboorapa', 'W Fungladda', 'C Pulkate', 'N Poosanthanasarn']
+Component sizes: [2, 3, 4, 5]
+Average component size: 3.5
+Median: 3.5
+Low median: 3
+High median: 4
+Mode: [2, 3, 4, 5]

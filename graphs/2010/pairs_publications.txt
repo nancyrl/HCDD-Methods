@@ -1,0 +1,154 @@
+Pairs of publishing authors and their number of publications: 
+WARWM Isa, NLM Noor 1
+I Hussein, AW Yeo 1
+W Fungladda, C Pulkate 1
+F Chen, H Zhang 1
+J Goldsmith, B Goldstein 1
+F Chen, PW Jordan 1
+G Borriello, B Kolko 1
+G Borriello, R Nathan 1
+HG van der Roest, RM Droes 1
+B Kolko, O Salikhbaeva 1
+JS Sandhu, C Newman 1
+J Goldsmith, KK Mathias 1
+E Johnson, O Salikhbaeva 1
+W Gerard, B Kolko 1
+E Derksen, C Jonker 1
+PW Jordan, H Zhang 1
+P Prasad, R Anderson 1
+J Hey, AM Agogino 1
+A Lindgren, H Zhang 1
+B Ariyatum, P Sirisalee 1
+B Kolko, C Putnam 1
+W Brunette, G Borriello 1
+M Ishimitsu, B Kolko 1
+M Hicks, R Nathan 1
+W Brunette, B Kolko 1
+ML Best, B Kolko 1
+A Tibuzzi, X Hua 1
+R Rege, S Nagarkar 1
+P Altankhuyag, D Amarsaikhan 1
+E Derksen, APD Jansen 1
+C Newman, AM Agogino 1
+HC Comijs, RM Droes 1
+C Driesbach, A Seidakmatova 1
+S Bucolo, JH Matthews 1
+JS Sandhu, J Hey 1
+P Sirisalee, D Prommin 1
+C Putnam, B Kolko 1
+R Hinman, J Matovu 1
+I Hussein, E Seman 1
+NLM Noor, S Mehad 1
+W Brunette, W Gerard 1
+FJM Meiland, HC Comijs 1
+KL Kumar, M Bhattacharya 1
+W Brunette, A Hope 1
+A Hope, P Prasad 1
+HC Comijs, E Derksen 1
+S Shahid, E Krahmer 1
+APD Jansen, HPJ van Hout 1
+N Poosanthanasarn, S Sriboorapa 1
+B Kolko, A Seidakmatova 1
+R Walton, A Seidakmatova 1
+E Rose, R Walton 1
+E Derksen, HPJ van Hout 1
+A Hope, G Borriello 1
+M Hicks, B Kolko 1
+A Hope, B Kolko 1
+M Hicks, P Prasad 1
+F Kamoun, N Werghi 1
+A Dekhtyar, B Goldstein 1
+FJM Meiland, HPJ van Hout 1
+L Barnard, J Wesson 1
+B Goldstein, KK Mathias 1
+R Walton, B DeRenzi 1
+B Goldstein, C Isenhour 1
+W Brunette, R Nathan 1
+HPJ van Hout, C Jonker 1
+W Brunette, R Anderson 1
+C Lohachit, W Fungladda 1
+HC Comijs, HPJ van Hout 1
+C Driesbach, B Kolko 1
+N Poosanthanasarn, C Lohachit 1
+A Hope, R Nathan 1
+M Hicks, G Borriello 1
+R Anderson, G Borriello 1
+HG van der Roest, E Derksen 1
+D Thakur, B Kolko 1
+A Hope, R Anderson 1
+A Lindgren, F Chen 1
+M Hicks, M Ishimitsu 1
+M Ishimitsu, P Prasad 1
+HG van der Roest, APD Jansen 1
+E Derksen, RM Droes 1
+A Dekhtyar, KK Mathias 1
+F Kamoun, M Al Blushi 1
+P Prasad, B Kolko 1
+W Fungladda, S Sriboorapa 1
+A Dekhtyar, C Isenhour 1
+M Ishimitsu, G Borriello 1
+W Gerard, R Anderson 1
+M Hicks, A Hope 1
+B Kolko, R Nathan 1
+HPJ van Hout, RM Droes 1
+HC Comijs, APD Jansen 1
+W Gerard, M Hicks 1
+E Seman, M Mahmud 1
+A Hope, M Ishimitsu 1
+HG van der Roest, HPJ van Hout 1
+C Putnam, E Rose 1
+M Kam, A Tibuzzi 1
+W Gerard, R Nathan 1
+APD Jansen, C Jonker 1
+C Driesbach, R Walton 1
+M Hicks, R Anderson 1
+WARWM Isa, S Mehad 1
+P Prasad, R Nathan 1
+M Kam, X Hua 1
+A Dekhtyar, J Goldsmith 1
+M Ishimitsu, R Anderson 1
+FJM Meiland, APD Jansen 1
+P Prasad, G Borriello 1
+APD Jansen, RM Droes 1
+C Lohachit, S Sriboorapa 1
+M Mahmud, AW Yeo 1
+HG van der Roest, FJM Meiland 1
+HC Comijs, C Jonker 1
+M Ishimitsu, R Nathan 1
+R Anderson, R Nathan 1
+W Brunette, M Ishimitsu 1
+C Lohachit, C Pulkate 1
+E Johnson, B Kolko 1
+FJM Meiland, C Jonker 1
+B Ariyatum, R Holland 1
+C Jonker, RM Droes 1
+W Brunette, M Hicks 1
+S Sriboorapa, C Pulkate 1
+FJM Meiland, RM Droes 1
+JS Sandhu, AM Agogino 1
+W Gerard, P Prasad 1
+HG van der Roest, HC Comijs 1
+J Goldsmith, C Isenhour 1
+N Poosanthanasarn, C Pulkate 1
+R Holland, D Prommin 1
+B Ariyatum, D Prommin 1
+W Gerard, A Hope 1
+FJM Meiland, E Derksen 1
+W Brunette, P Prasad 1
+A Lindgren, PW Jordan 1
+R Holland, P Sirisalee 1
+W Gerard, M Ishimitsu 1
+N Werghi, M Al Blushi 1
+W Gerard, G Borriello 1
+E Rose, B Kolko 1
+KK Mathias, C Isenhour 1
+HG van der Roest, C Jonker 1
+N Poosanthanasarn, W Fungladda 1
+C Putnam, R Walton 1
+JS Sandhu, D Amarsaikhan 1
+ML Best, D Thakur 1
+J Hey, C Newman 1
+JS Sandhu, P Altankhuyag 1
+R Anderson, B Kolko 1
+R Walton, B Kolko 2
+I Hussein, M Mahmud 2

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- saved from http://fiddle.jshell.net/linanc/qbftho6L/4/show/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <script type="text/javascript" src="./d3.v3.min.js"></script>
+  <style type="text/css">
+    .link {
+  stroke: #666;
+  opacity: 0.25;
+}
+
+.node circle {
+  stroke: #fff;
+  opacity: 0.6;
+}
+
+text {
+  font: 11px arial;
+  opacity: 1;
+}
+  </style>
+
+  <title>Node Link Graph 2008</title>
+
+<script type="text/javascript">
+window.onload=function(){
+var links = [{"target": 11, "weight": 1, "source": 0}, {"target": 15, "weight": 1, "source": 0}, {"target": 7, "weight": 1, "source": 0}, {"target": 4, "weight": 1, "source": 0}, {"target": 12, "weight": 1, "source": 1}, {"target": 19, "weight": 1, "source": 1}, {"target": 13, "weight": 1, "source": 1}, {"target": 8, "weight": 1, "source": 2}, {"target": 21, "weight": 1, "source": 3}, {"target": 16, "weight": 1, "source": 3}, {"target": 9, "weight": 1, "source": 3}, {"target": 17, "weight": 1, "source": 3}, {"target": 10, "weight": 1, "source": 3}, {"target": 11, "weight": 1, "source": 4}, {"target": 15, "weight": 1, "source": 4}, {"target": 7, "weight": 1, "source": 4}, {"target": 20, "weight": 1, "source": 5}, {"target": 18, "weight": 1, "source": 5}, {"target": 14, "weight": 1, "source": 6}, {"target": 15, "weight": 1, "source": 7}, {"target": 11, "weight": 1, "source": 7}, {"target": 21, "weight": 1, "source": 9}, {"target": 16, "weight": 1, "source": 9}, {"target": 17, "weight": 1, "source": 10}, {"target": 15, "weight": 1, "source": 11}, {"target": 19, "weight": 1, "source": 12}, {"target": 13, "weight": 1, "source": 12}, {"target": 19, "weight": 1, "source": 13}, {"target": 21, "weight": 1, "source": 16}, {"target": 20, "weight": 1, "source": 18}];
+
+var nodes = [{"id": "C Pulkate", "value": 1}, {"id": "H Zhang", "value": 1}, {"id": "J Wesson", "value": 1}, {"id": "JS Sandhu", "value": 2}, {"id": "W Fungladda", "value": 1}, {"id": "M Kam", "value": 1}, {"id": "M Bhattacharya", "value": 1}, {"id": "C Lohachit", "value": 1}, {"id": "L Barnard", "value": 1}, {"id": "C Newman", "value": 1}, {"id": "P Altankhuyag", "value": 1}, {"id": "S Sriboorapa", "value": 1}, {"id": "A Lindgren", "value": 1}, {"id": "F Chen", "value": 1}, {"id": "KL Kumar", "value": 1}, {"id": "N Poosanthanasarn", "value": 1}, {"id": "J Hey", "value": 1}, {"id": "D Amarsaikhan", "value": 1}, {"id": "X Hua", "value": 1}, {"id": "PW Jordan", "value": 1}, {"id": "A Tibuzzi", "value": 1}, {"id": "AM Agogino", "value": 1}];
+
+var width = 700
+height = 700;
+
+var force = d3.layout.force()
+  .nodes(d3.values(nodes))
+  .links(links)
+  .size([width, height])
+  .linkDistance(75)
+  .charge(-110)
+  .on("tick", tick)
+  .start();
+
+var svg = d3.select("body").append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+var link = svg.selectAll(".link")
+  .data(force.links())
+  .enter().append("line")
+  .attr("class", "link")
+  .attr("stroke-width", function(d) { return d.weight * 2; });
+  
+var node = svg.selectAll(".node")
+  .data(force.nodes())
+  .enter().append("g")
+  .attr("class", "node")
+  .on("mouseover", mouseover)
+  .on("mouseout", mouseout)
+  .call(force.drag);
+
+node.append("circle")
+  .style("fill", "#C71585")
+  .attr("r", function(d) { return d.value*2 + 5; });
+
+// node.append("text")
+//   .attr("x", 14)
+//   .attr("dy", ".35em")
+//   .style("fill", "#333")
+//   .text(function(d) {
+//     return d.id;
+//   });
+  
+function tick() {
+  link.attr("x1", function(d) {
+      return d.source.x;
+    })
+    .attr("y1", function(d) {
+      return d.source.y;
+    })
+    .attr("x2", function(d) {
+      return d.target.x;
+    })
+    .attr("y2", function(d) {
+      return d.target.y;
+    });
+
+  node.attr("transform", function(d) {
+    return "translate(" + d.x + "," + d.y + ")";
+  });
+}
+
+function mouseover() {
+  d3.select(this).select("text").transition()
+    .duration(400)
+    .attr("x", 22)
+    .style("stroke-width", ".5px")
+    .style("opacity", 1)
+    .style("font", "16px arial");
+}
+
+function mouseout() {
+  d3.select(this).select("text").transition()
+    .style("font", "10px arial");
+}
+// action to take on mouse click
+function click() {
+  d3.select(this).select("text").transition()
+    .attr("x", 22)
+    .style("stroke-width", ".5px")
+    .style("opacity", 1)
+    .style("font", "16px arial");
+}
+
+}
+
+</script>
+
+  
+</head>
+
+</html>

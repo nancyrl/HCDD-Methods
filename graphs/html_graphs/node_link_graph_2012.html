@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- saved from http://fiddle.jshell.net/linanc/qbftho6L/4/show/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <script type="text/javascript" src="./d3.v3.min.js"></script>
+  <style type="text/css">
+    .link {
+  stroke: #666;
+  opacity: 0.25;
+}
+
+.node circle {
+  stroke: #fff;
+  opacity: 0.6;
+}
+
+text {
+  font: 11px arial;
+  opacity: 1;
+}
+  </style>
+
+  <title>Node Link Graph 2012</title>
+
+<script type="text/javascript">
+window.onload=function(){
+var links = [{"source": 0, "target": 97, "weight": 1}, {"source": 1, "target": 85, "weight": 1}, {"source": 1, "target": 93, "weight": 1}, {"source": 1, "target": 69, "weight": 1}, {"source": 1, "target": 120, "weight": 1}, {"source": 1, "target": 53, "weight": 1}, {"source": 1, "target": 112, "weight": 1}, {"source": 1, "target": 95, "weight": 1}, {"source": 2, "target": 139, "weight": 1}, {"source": 2, "target": 17, "weight": 1}, {"source": 2, "target": 131, "weight": 1}, {"source": 2, "target": 65, "weight": 3}, {"source": 2, "target": 125, "weight": 1}, {"source": 2, "target": 51, "weight": 1}, {"source": 2, "target": 50, "weight": 1}, {"source": 2, "target": 98, "weight": 2}, {"source": 2, "target": 33, "weight": 1}, {"source": 2, "target": 56, "weight": 2}, {"source": 2, "target": 81, "weight": 1}, {"source": 2, "target": 29, "weight": 1}, {"source": 2, "target": 156, "weight": 1}, {"source": 3, "target": 119, "weight": 1}, {"source": 3, "target": 26, "weight": 1}, {"source": 3, "target": 158, "weight": 1}, {"source": 4, "target": 38, "weight": 1}, {"source": 4, "target": 86, "weight": 1}, {"source": 5, "target": 99, "weight": 1}, {"source": 5, "target": 88, "weight": 1}, {"source": 5, "target": 9, "weight": 1}, {"source": 5, "target": 148, "weight": 1}, {"source": 6, "target": 106, "weight": 1}, {"source": 6, "target": 82, "weight": 1}, {"source": 6, "target": 154, "weight": 1}, {"source": 6, "target": 62, "weight": 1}, {"source": 6, "target": 102, "weight": 1}, {"source": 6, "target": 67, "weight": 1}, {"source": 7, "target": 58, "weight": 1}, {"source": 7, "target": 65, "weight": 1}, {"source": 7, "target": 155, "weight": 1}, {"source": 7, "target": 36, "weight": 1}, {"source": 8, "target": 22, "weight": 1}, {"source": 9, "target": 99, "weight": 1}, {"source": 9, "target": 88, "weight": 1}, {"source": 9, "target": 148, "weight": 1}, {"source": 10, "target": 101, "weight": 1}, {"source": 10, "target": 90, "weight": 1}, {"source": 11, "target": 133, "weight": 1}, {"source": 11, "target": 141, "weight": 1}, {"source": 11, "target": 57, "weight": 1}, {"source": 12, "target": 140, "weight": 1}, {"source": 12, "target": 83, "weight": 1}, {"source": 12, "target": 41, "weight": 1}, {"source": 12, "target": 142, "weight": 1}, {"source": 12, "target": 143, "weight": 1}, {"source": 12, "target": 47, "weight": 1}, {"source": 12, "target": 144, "weight": 1}, {"source": 12, "target": 134, "weight": 1}, {"source": 12, "target": 92, "weight": 1}, {"source": 12, "target": 37, "weight": 1}, {"source": 13, "target": 34, "weight": 1}, {"source": 13, "target": 75, "weight": 1}, {"source": 13, "target": 25, "weight": 1}, {"source": 13, "target": 42, "weight": 1}, {"source": 13, "target": 127, "weight": 1}, {"source": 14, "target": 28, "weight": 1}, {"source": 15, "target": 31, "weight": 1}, {"source": 15, "target": 129, "weight": 1}, {"source": 15, "target": 77, "weight": 1}, {"source": 16, "target": 109, "weight": 1}, {"source": 16, "target": 80, "weight": 1}, {"source": 16, "target": 137, "weight": 1}, {"source": 17, "target": 56, "weight": 1}, {"source": 17, "target": 65, "weight": 1}, {"source": 17, "target": 81, "weight": 1}, {"source": 17, "target": 33, "weight": 1}, {"source": 18, "target": 138, "weight": 2}, {"source": 18, "target": 128, "weight": 2}, {"source": 18, "target": 64, "weight": 2}, {"source": 18, "target": 35, "weight": 2}, {"source": 18, "target": 110, "weight": 2}, {"source": 18, "target": 19, "weight": 2}, {"source": 18, "target": 132, "weight": 2}, {"source": 19, "target": 138, "weight": 2}, {"source": 19, "target": 128, "weight": 2}, {"source": 19, "target": 64, "weight": 2}, {"source": 19, "target": 35, "weight": 2}, {"source": 19, "target": 110, "weight": 2}, {"source": 19, "target": 132, "weight": 2}, {"source": 20, "target": 153, "weight": 1}, {"source": 20, "target": 63, "weight": 1}, {"source": 21, "target": 24, "weight": 1}, {"source": 21, "target": 122, "weight": 1}, {"source": 21, "target": 100, "weight": 1}, {"source": 21, "target": 104, "weight": 1}, {"source": 23, "target": 76, "weight": 1}, {"source": 23, "target": 60, "weight": 1}, {"source": 24, "target": 122, "weight": 1}, {"source": 24, "target": 100, "weight": 1}, {"source": 24, "target": 104, "weight": 1}, {"source": 25, "target": 34, "weight": 1}, {"source": 25, "target": 75, "weight": 1}, {"source": 25, "target": 42, "weight": 1}, {"source": 25, "target": 127, "weight": 1}, {"source": 26, "target": 119, "weight": 1}, {"source": 26, "target": 158, "weight": 1}, {"source": 27, "target": 117, "weight": 1}, {"source": 27, "target": 130, "weight": 1}, {"source": 29, "target": 56, "weight": 1}, {"source": 29, "target": 98, "weight": 1}, {"source": 29, "target": 33, "weight": 1}, {"source": 29, "target": 51, "weight": 1}, {"source": 29, "target": 65, "weight": 1}, {"source": 29, "target": 81, "weight": 1}, {"source": 29, "target": 125, "weight": 1}, {"source": 29, "target": 156, "weight": 1}, {"source": 30, "target": 46, "weight": 1}, {"source": 30, "target": 45, "weight": 1}, {"source": 31, "target": 77, "weight": 1}, {"source": 31, "target": 129, "weight": 1}, {"source": 32, "target": 150, "weight": 1}, {"source": 33, "target": 139, "weight": 2}, {"source": 33, "target": 131, "weight": 1}, {"source": 33, "target": 65, "weight": 2}, {"source": 33, "target": 125, "weight": 1}, {"source": 33, "target": 51, "weight": 2}, {"source": 33, "target": 50, "weight": 1}, {"source": 33, "target": 98, "weight": 2}, {"source": 33, "target": 56, "weight": 2}, {"source": 33, "target": 81, "weight": 2}, {"source": 33, "target": 157, "weight": 1}, {"source": 33, "target": 156, "weight": 1}, {"source": 34, "target": 75, "weight": 1}, {"source": 34, "target": 42, "weight": 1}, {"source": 34, "target": 127, "weight": 1}, {"source": 35, "target": 138, "weight": 2}, {"source": 35, "target": 128, "weight": 2}, {"source": 35, "target": 64, "weight": 2}, {"source": 35, "target": 110, "weight": 2}, {"source": 35, "target": 132, "weight": 2}, {"source": 36, "target": 65, "weight": 2}, {"source": 36, "target": 58, "weight": 1}, {"source": 36, "target": 155, "weight": 1}, {"source": 36, "target": 146, "weight": 1}, {"source": 37, "target": 83, "weight": 1}, {"source": 37, "target": 41, "weight": 1}, {"source": 37, "target": 142, "weight": 1}, {"source": 37, "target": 143, "weight": 1}, {"source": 37, "target": 47, "weight": 1}, {"source": 37, "target": 144, "weight": 1}, {"source": 37, "target": 134, "weight": 1}, {"source": 37, "target": 92, "weight": 1}, {"source": 37, "target": 140, "weight": 1}, {"source": 38, "target": 86, "weight": 1}, {"source": 39, "target": 74, "weight": 1}, {"source": 39, "target": 43, "weight": 1}, {"source": 39, "target": 96, "weight": 1}, {"source": 39, "target": 84, "weight": 1}, {"source": 41, "target": 140, "weight": 1}, {"source": 41, "target": 83, "weight": 1}, {"source": 41, "target": 142, "weight": 1}, {"source": 41, "target": 143, "weight": 1}, {"source": 41, "target": 47, "weight": 1}, {"source": 41, "target": 144, "weight": 1}, {"source": 41, "target": 134, "weight": 1}, {"source": 41, "target": 92, "weight": 1}, {"source": 42, "target": 75, "weight": 1}, {"source": 42, "target": 127, "weight": 1}, {"source": 43, "target": 74, "weight": 1}, {"source": 43, "target": 96, "weight": 1}, {"source": 43, "target": 84, "weight": 1}, {"source": 44, "target": 65, "weight": 1}, {"source": 44, "target": 149, "weight": 1}, {"source": 45, "target": 46, "weight": 1}, {"source": 47, "target": 140, "weight": 1}, {"source": 47, "target": 83, "weight": 1}, {"source": 47, "target": 142, "weight": 1}, {"source": 47, "target": 143, "weight": 1}, {"source": 47, "target": 144, "weight": 1}, {"source": 47, "target": 134, "weight": 1}, {"source": 47, "target": 92, "weight": 1}, {"source": 49, "target": 136, "weight": 1}, {"source": 50, "target": 131, "weight": 1}, {"source": 50, "target": 139, "weight": 1}, {"source": 50, "target": 98, "weight": 1}, {"source": 50, "target": 51, "weight": 1}, {"source": 50, "target": 81, "weight": 1}, {"source": 50, "target": 65, "weight": 1}, {"source": 51, "target": 139, "weight": 2}, {"source": 51, "target": 65, "weight": 2}, {"source": 51, "target": 125, "weight": 1}, {"source": 51, "target": 131, "weight": 1}, {"source": 51, "target": 98, "weight": 2}, {"source": 51, "target": 56, "weight": 1}, {"source": 51, "target": 81, "weight": 3}, {"source": 51, "target": 157, "weight": 1}, {"source": 51, "target": 156, "weight": 1}, {"source": 52, "target": 79, "weight": 1}, {"source": 52, "target": 65, "weight": 1}, {"source": 53, "target": 85, "weight": 1}, {"source": 53, "target": 93, "weight": 1}, {"source": 53, "target": 120, "weight": 1}, {"source": 53, "target": 112, "weight": 1}, {"source": 53, "target": 69, "weight": 1}, {"source": 53, "target": 95, "weight": 1}, {"source": 54, "target": 147, "weight": 1}, {"source": 54, "target": 107, "weight": 1}, {"source": 55, "target": 103, "weight": 1}, {"source": 55, "target": 91, "weight": 1}, {"source": 55, "target": 124, "weight": 1}, {"source": 55, "target": 121, "weight": 1}, {"source": 55, "target": 78, "weight": 1}, {"source": 56, "target": 156, "weight": 1}, {"source": 56, "target": 98, "weight": 1}, {"source": 56, "target": 65, "weight": 2}, {"source": 56, "target": 81, "weight": 2}, {"source": 56, "target": 125, "weight": 1}, {"source": 57, "target": 133, "weight": 1}, {"source": 57, "target": 141, "weight": 1}, {"source": 58, "target": 79, "weight": 1}, {"source": 58, "target": 108, "weight": 2}, {"source": 58, "target": 65, "weight": 1}, {"source": 58, "target": 146, "weight": 1}, {"source": 58, "target": 155, "weight": 1}, {"source": 59, "target": 118, "weight": 1}, {"source": 59, "target": 68, "weight": 1}, {"source": 60, "target": 76, "weight": 1}, {"source": 61, "target": 73, "weight": 1}, {"source": 61, "target": 76, "weight": 1}, {"source": 61, "target": 111, "weight": 1}, {"source": 62, "target": 106, "weight": 1}, {"source": 62, "target": 154, "weight": 1}, {"source": 62, "target": 82, "weight": 1}, {"source": 62, "target": 102, "weight": 1}, {"source": 62, "target": 67, "weight": 1}, {"source": 63, "target": 153, "weight": 1}, {"source": 64, "target": 138, "weight": 2}, {"source": 64, "target": 128, "weight": 2}, {"source": 64, "target": 110, "weight": 2}, {"source": 64, "target": 132, "weight": 2}, {"source": 65, "target": 79, "weight": 1}, {"source": 65, "target": 71, "weight": 1}, {"source": 65, "target": 125, "weight": 1}, {"source": 65, "target": 131, "weight": 1}, {"source": 65, "target": 98, "weight": 2}, {"source": 65, "target": 139, "weight": 2}, {"source": 65, "target": 72, "weight": 1}, {"source": 65, "target": 81, "weight": 2}, {"source": 65, "target": 146, "weight": 3}, {"source": 65, "target": 149, "weight": 1}, {"source": 65, "target": 108, "weight": 2}, {"source": 65, "target": 155, "weight": 1}, {"source": 65, "target": 157, "weight": 1}, {"source": 65, "target": 156, "weight": 1}, {"source": 66, "target": 146, "weight": 1}, {"source": 67, "target": 106, "weight": 1}, {"source": 67, "target": 154, "weight": 1}, {"source": 67, "target": 82, "weight": 1}, {"source": 67, "target": 102, "weight": 1}, {"source": 68, "target": 118, "weight": 1}, {"source": 69, "target": 85, "weight": 1}, {"source": 69, "target": 93, "weight": 1}, {"source": 69, "target": 120, "weight": 1}, {"source": 69, "target": 112, "weight": 1}, {"source": 69, "target": 95, "weight": 1}, {"source": 71, "target": 146, "weight": 1}, {"source": 71, "target": 72, "weight": 1}, {"source": 72, "target": 146, "weight": 1}, {"source": 73, "target": 76, "weight": 1}, {"source": 73, "target": 111, "weight": 1}, {"source": 74, "target": 96, "weight": 1}, {"source": 74, "target": 84, "weight": 1}, {"source": 75, "target": 127, "weight": 1}, {"source": 76, "target": 111, "weight": 1}, {"source": 77, "target": 129, "weight": 1}, {"source": 78, "target": 103, "weight": 1}, {"source": 78, "target": 91, "weight": 1}, {"source": 78, "target": 121, "weight": 1}, {"source": 78, "target": 124, "weight": 1}, {"source": 79, "target": 108, "weight": 1}, {"source": 80, "target": 109, "weight": 1}, {"source": 80, "target": 137, "weight": 1}, {"source": 81, "target": 139, "weight": 2}, {"source": 81, "target": 131, "weight": 1}, {"source": 81, "target": 125, "weight": 1}, {"source": 81, "target": 98, "weight": 2}, {"source": 81, "target": 157, "weight": 1}, {"source": 81, "target": 156, "weight": 1}, {"source": 82, "target": 106, "weight": 1}, {"source": 82, "target": 154, "weight": 1}, {"source": 82, "target": 102, "weight": 1}, {"source": 83, "target": 140, "weight": 1}, {"source": 83, "target": 142, "weight": 1}, {"source": 83, "target": 143, "weight": 1}, {"source": 83, "target": 144, "weight": 1}, {"source": 83, "target": 134, "weight": 1}, {"source": 83, "target": 92, "weight": 1}, {"source": 84, "target": 96, "weight": 1}, {"source": 85, "target": 93, "weight": 1}, {"source": 85, "target": 120, "weight": 1}, {"source": 85, "target": 112, "weight": 1}, {"source": 85, "target": 95, "weight": 1}, {"source": 87, "target": 116, "weight": 1}, {"source": 87, "target": 105, "weight": 1}, {"source": 88, "target": 99, "weight": 1}, {"source": 88, "target": 148, "weight": 1}, {"source": 89, "target": 151, "weight": 1}, {"source": 90, "target": 101, "weight": 1}, {"source": 91, "target": 103, "weight": 1}, {"source": 91, "target": 124, "weight": 1}, {"source": 91, "target": 121, "weight": 1}, {"source": 92, "target": 142, "weight": 1}, {"source": 92, "target": 143, "weight": 1}, {"source": 92, "target": 144, "weight": 1}, {"source": 92, "target": 134, "weight": 1}, {"source": 92, "target": 140, "weight": 1}, {"source": 93, "target": 120, "weight": 1}, {"source": 93, "target": 112, "weight": 1}, {"source": 93, "target": 95, "weight": 1}, {"source": 94, "target": 145, "weight": 1}, {"source": 95, "target": 120, "weight": 1}, {"source": 95, "target": 112, "weight": 1}, {"source": 98, "target": 139, "weight": 1}, {"source": 98, "target": 125, "weight": 1}, {"source": 98, "target": 131, "weight": 1}, {"source": 98, "target": 156, "weight": 1}, {"source": 99, "target": 148, "weight": 1}, {"source": 100, "target": 122, "weight": 1}, {"source": 100, "target": 104, "weight": 1}, {"source": 102, "target": 106, "weight": 1}, {"source": 102, "target": 154, "weight": 1}, {"source": 103, "target": 124, "weight": 1}, {"source": 103, "target": 121, "weight": 1}, {"source": 104, "target": 122, "weight": 1}, {"source": 105, "target": 116, "weight": 1}, {"source": 106, "target": 154, "weight": 1}, {"source": 107, "target": 147, "weight": 1}, {"source": 108, "target": 146, "weight": 1}, {"source": 109, "target": 137, "weight": 1}, {"source": 110, "target": 138, "weight": 2}, {"source": 110, "target": 128, "weight": 2}, {"source": 110, "target": 132, "weight": 2}, {"source": 112, "target": 120, "weight": 1}, {"source": 113, "target": 135, "weight": 1}, {"source": 114, "target": 123, "weight": 1}, {"source": 114, "target": 126, "weight": 1}, {"source": 115, "target": 117, "weight": 1}, {"source": 115, "target": 130, "weight": 1}, {"source": 117, "target": 130, "weight": 2}, {"source": 119, "target": 158, "weight": 1}, {"source": 121, "target": 124, "weight": 1}, {"source": 123, "target": 126, "weight": 1}, {"source": 125, "target": 156, "weight": 1}, {"source": 128, "target": 138, "weight": 2}, {"source": 128, "target": 132, "weight": 2}, {"source": 131, "target": 139, "weight": 1}, {"source": 132, "target": 138, "weight": 2}, {"source": 133, "target": 141, "weight": 1}, {"source": 134, "target": 140, "weight": 1}, {"source": 134, "target": 142, "weight": 1}, {"source": 134, "target": 143, "weight": 1}, {"source": 134, "target": 144, "weight": 1}, {"source": 139, "target": 157, "weight": 1}, {"source": 140, "target": 142, "weight": 1}, {"source": 140, "target": 143, "weight": 1}, {"source": 140, "target": 144, "weight": 1}, {"source": 142, "target": 143, "weight": 1}, {"source": 142, "target": 144, "weight": 1}, {"source": 143, "target": 144, "weight": 1}];
+
+var nodes = [{"value": 1, "id": "E Krahmer"}, {"value": 1, "id": "HG van der Roest"}, {"value": 3, "id": "R Anderson"}, {"value": 1, "id": "E Stolterman"}, {"value": 1, "id": "N Werghi"}, {"value": 1, "id": "C Jacks"}, {"value": 1, "id": "KA Siek"}, {"value": 1, "id": "T Gorman"}, {"value": 1, "id": "R Hinman"}, {"value": 1, "id": "JW Rosenboom"}, {"value": 1, "id": "PRS Rao"}, {"value": 1, "id": "P Chininthorn"}, {"value": 1, "id": "C Pattichis"}, {"value": 1, "id": "A Zewge"}, {"value": 1, "id": "D Lilley"}, {"value": 1, "id": "PW Jordan"}, {"value": 1, "id": "R Holland"}, {"value": 1, "id": "G Ruddy"}, {"value": 2, "id": "A Joshi"}, {"value": 2, "id": "C Johnson"}, {"value": 1, "id": "B Aryana"}, {"value": 1, "id": "KK Mathias"}, {"value": 1, "id": "J Matovu"}, {"value": 1, "id": "P Altankhuyag"}, {"value": 1, "id": "C Isenhour"}, {"value": 1, "id": "M Belachew"}, {"value": 1, "id": "H Pettersson"}, {"value": 1, "id": "E Seman"}, {"value": 1, "id": "J Spencer"}, {"value": 1, "id": "M Ishimitsu"}, {"value": 1, "id": "T Sibieude"}, {"value": 1, "id": "A Lindgren"}, {"value": 1, "id": "L Barnard"}, {"value": 4, "id": "A Hope"}, {"value": 1, "id": "A Susi"}, {"value": 2, "id": "M de Araujo Novaes"}, {"value": 2, "id": "J Yaaqoubi"}, {"value": 1, "id": "K Perakis"}, {"value": 1, "id": "M Al Blushi"}, {"value": 1, "id": "C Lohachit"}, {"value": 1, "id": "K Pecknold"}, {"value": 1, "id": "SG Mougiakakou"}, {"value": 1, "id": "K Weldemariam"}, {"value": 1, "id": "C Pulkate"}, {"value": 1, "id": "ML Best"}, {"value": 1, "id": "M Yunus"}, {"value": 1, "id": "E Lesueur"}, {"value": 1, "id": "E Kyriacou"}, {"value": 1, "id": "NLA Alvarez"}, {"value": 1, "id": "M Bhattacharya"}, {"value": 1, "id": "J Keh"}, {"value": 3, "id": "W Gerard"}, {"value": 1, "id": "O Salikhbaeva"}, {"value": 1, "id": "C Jonker"}, {"value": 1, "id": "A Hashizume"}, {"value": 1, "id": "PA Biedrzycki"}, {"value": 2, "id": "M Hicks"}, {"value": 1, "id": "M Glaser"}, {"value": 3, "id": "E Rose"}, {"value": 1, "id": "NLM Noor"}, {"value": 1, "id": "D Amarsaikhan"}, {"value": 1, "id": "AM Agogino"}, {"value": 1, "id": "SA Linnebur"}, {"value": 1, "id": "C Boks"}, {"value": 2, "id": "J Machiavelli"}, {"value": 12, "id": "B Kolko"}, {"value": 1, "id": "B DeRenzi"}, {"value": 1, "id": "CA Darr"}, {"value": 1, "id": "S Mehad"}, {"value": 1, "id": "E Derksen"}, {"value": 1, "id": "Z Ying"}, {"value": 1, "id": "C Driesbach"}, {"value": 1, "id": "A Seidakmatova"}, {"value": 1, "id": "J Hey"}, {"value": 1, "id": "N Poosanthanasarn"}, {"value": 1, "id": "A Villafiorita"}, {"value": 2, "id": "JS Sandhu"}, {"value": 1, "id": "H Zhang"}, {"value": 1, "id": "S Ahmed"}, {"value": 2, "id": "E Johnson"}, {"value": 1, "id": "P Sirisalee"}, {"value": 4, "id": "W Brunette"}, {"value": 1, "id": "JM Ruscin"}, {"value": 1, "id": "U Bracale"}, {"value": 1, "id": "S Sriboorapa"}, {"value": 1, "id": "FJM Meiland"}, {"value": 1, "id": "F Kamoun"}, {"value": 1, "id": "X Hua"}, {"value": 1, "id": "T Baker"}, {"value": 1, "id": "Z Fu"}, {"value": 1, "id": "H Knoche"}, {"value": 1, "id": "MG Sandy"}, {"value": 1, "id": "G Konnis"}, {"value": 1, "id": "HC Comijs"}, {"value": 2, "id": "R Rege"}, {"value": 1, "id": "HPJ van Hout"}, {"value": 1, "id": "W Fungladda"}, {"value": 1, "id": "S Shahid"}, {"value": 2, "id": "R Nathan"}, {"value": 1, "id": "K Phyrum"}, {"value": 1, "id": "B Goldstein"}, {"value": 1, "id": "J Huang"}, {"value": 1, "id": "LM Haverhals"}, {"value": 1, "id": "DA Nelson"}, {"value": 1, "id": "J Goldsmith"}, {"value": 1, "id": "A Tibuzzi"}, {"value": 1, "id": "SE Ross"}, {"value": 1, "id": "T Yamanaka"}, {"value": 3, "id": "C Putnam"}, {"value": 1, "id": "D Prommin"}, {"value": 2, "id": "S Iyengar"}, {"value": 1, "id": "C Newman"}, {"value": 1, "id": "APD Jansen"}, {"value": 1, "id": "S Bucolo"}, {"value": 1, "id": "CS De Souza"}, {"value": 1, "id": "AW Yeo"}, {"value": 1, "id": "M Kam"}, {"value": 2, "id": "M Mahmud"}, {"value": 1, "id": "WARWM Isa"}, {"value": 1, "id": "T Nyholm"}, {"value": 1, "id": "RM Droes"}, {"value": 1, "id": "Z Franco"}, {"value": 1, "id": "A Dekhtyar"}, {"value": 1, "id": "CF Leitao"}, {"value": 1, "id": "S Opel"}, {"value": 1, "id": "P Prasad"}, {"value": 1, "id": "LC De Castro Salgado"}, {"value": 1, "id": "S Hailemariam"}, {"value": 2, "id": "J Zhang"}, {"value": 1, "id": "F Chen"}, {"value": 2, "id": "I Hussein"}, {"value": 1, "id": "L Schlenke"}, {"value": 2, "id": "R Vogler"}, {"value": 1, "id": "A Freudenthal"}, {"value": 1, "id": "R Tranfaglia"}, {"value": 1, "id": "JH Matthews"}, {"value": 1, "id": "KL Kumar"}, {"value": 1, "id": "B Ariyatum"}, {"value": 2, "id": "CE Hsu"}, {"value": 2, "id": "M Kawooya"}, {"value": 1, "id": "D Koutsouris"}, {"value": 1, "id": "WD Tucker"}, {"value": 1, "id": "A Androulidakis"}, {"value": 1, "id": "H Papadopoulos"}, {"value": 1, "id": "L Pecchia"}, {"value": 1, "id": "S Nagarkar"}, {"value": 4, "id": "R Walton"}, {"value": 1, "id": "M Kurosu"}, {"value": 1, "id": "M Roberts"}, {"value": 1, "id": "D Thakur"}, {"value": 1, "id": "J Wesson"}, {"value": 1, "id": "X Zhang"}, {"value": 1, "id": "R Steinbeck"}, {"value": 1, "id": "A Navabi"}, {"value": 1, "id": "CA Lee"}, {"value": 1, "id": "A Bayor"}, {"value": 1, "id": "G Borriello"}, {"value": 1, "id": "K Saville"}, {"value": 1, "id": "T Mullaney"}];
+
+var width = 1200
+height = 1200;
+
+var force = d3.layout.force()
+  .nodes(d3.values(nodes))
+  .links(links)
+  .size([width, height])
+  .linkDistance(75)
+  .charge(-90)
+  .on("tick", tick)
+  .start();
+
+var svg = d3.select("body").append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+var link = svg.selectAll(".link")
+  .data(force.links())
+  .enter().append("line")
+  .attr("class", "link")
+  .attr("stroke-width", function(d) { return d.weight * 2; });
+  
+var node = svg.selectAll(".node")
+  .data(force.nodes())
+  .enter().append("g")
+  .attr("class", "node")
+  .on("mouseover", mouseover)
+  .on("mouseout", mouseout)
+  .call(force.drag);
+
+node.append("circle")
+  .style("fill", "#C71585")
+  .attr("r", function(d) { return d.value*2 + 5; });
+
+// node.append("text")
+//   .attr("x", 14)
+//   .attr("dy", ".35em")
+//   .style("fill", "#333")
+//   .text(function(d) {
+//     return d.id;
+//   });
+  
+function tick() {
+  link.attr("x1", function(d) {
+      return d.source.x;
+    })
+    .attr("y1", function(d) {
+      return d.source.y;
+    })
+    .attr("x2", function(d) {
+      return d.target.x;
+    })
+    .attr("y2", function(d) {
+      return d.target.y;
+    });
+
+  node.attr("transform", function(d) {
+    return "translate(" + d.x + "," + d.y + ")";
+  });
+}
+
+function mouseover() {
+  d3.select(this).select("text").transition()
+    .duration(400)
+    .attr("x", 22)
+    .style("stroke-width", ".5px")
+    .style("opacity", 1)
+    .style("font", "16px arial");
+}
+
+function mouseout() {
+  d3.select(this).select("text").transition()
+    .style("font", "10px arial");
+}
+// action to take on mouse click
+function click() {
+  d3.select(this).select("text").transition()
+    .attr("x", 22)
+    .style("stroke-width", ".5px")
+    .style("opacity", 1)
+    .style("font", "16px arial");
+}
+
+}
+
+</script>
+
+  
+</head>
+
+</html>

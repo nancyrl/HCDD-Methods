@@ -1,31 +1,73 @@
 Connected authors: 
-5   ['A Dekhtyar', 'KK Mathias', 'C Isenhour', 'B Goldstein', 'J Goldsmith']
-11   ['A Seidakmatova', 'R Walton', 'B DeRenzi', 'B Kolko', 'C Driesbach', 'C Putnam', 'D Thakur', 'E Johnson', 'E Rose', 'ML Best', 'O Salikhbaeva']
-8   ['APD Jansen', 'RM Droes', 'C Jonker', 'E Derksen', 'FJM Meiland', 'HC Comijs', 'HG van der Roest', 'HPJ van Hout']
-4   ['B Ariyatum', 'D Prommin', 'P Sirisalee', 'R Holland']
-2   ['S Shahid', 'E Krahmer']
+
+5   ['A Dekhtyar', 'J Goldsmith', 'B Goldstein', 'C Isenhour', 'KK Mathias']
+Density : 1.0
+
+4   ['A Lindgren', 'PW Jordan', 'H Zhang', 'F Chen']
+Density : 1.0
+
+11   ['A Seidakmatova', 'B DeRenzi', 'B Kolko', 'C Driesbach', 'ML Best', 'O Salikhbaeva', 'C Putnam', 'D Thakur', 'R Walton', 'E Johnson', 'E Rose']
+Density : 0.32727272727272727
+
+3   ['M Kam', 'A Tibuzzi', 'X Hua']
+Density : 1.0
+
+6   ['J Hey', 'JS Sandhu', 'AM Agogino', 'C Newman', 'P Altankhuyag', 'D Amarsaikhan']
+Density : 0.6
+
+8   ['APD Jansen', 'C Jonker', 'E Derksen', 'RM Droes', 'FJM Meiland', 'HC Comijs', 'HG van der Roest', 'HPJ van Hout']
+Density : 1.0
+
+4   ['P Sirisalee', 'R Holland', 'D Prommin', 'B Ariyatum']
+Density : 1.0
+
+5   ['S Sriboorapa', 'W Fungladda', 'N Poosanthanasarn', 'C Lohachit', 'C Pulkate']
+Density : 1.0
+
+2   ['E Krahmer', 'S Shahid']
+Density : 1.0
+
 3   ['E Seman', 'M Mahmud', 'I Hussein']
+Density : 1.0
+
+2   ['J Wesson', 'L Barnard']
+Density : 1.0
+
 1   ['K Pecknold']
-3   ['S Mehad', 'NLM Noor', 'WARWM Isa']
+Density : 1
+
+2   ['M Bhattacharya', 'KL Kumar']
+Density : 1.0
+
+3   ['WARWM Isa', 'NLM Noor', 'S Mehad']
+Density : 1.0
+
 1   ['R Rege']
+Density : 1
 
-Connected nodes: 
-5   {0, 25, 8, 5, 23}
-11   {1, 33, 4, 6, 7, 10, 12, 14, 16, 27, 29}
-8   {2, 34, 9, 13, 18, 19, 20, 21}
-4   {3, 11, 30, 31}
-2   {36, 15}
-3   {17, 26, 22}
-1   {24}
-3   {35, 28, 37}
-1   {32}
+Connected components: 
+5   {0, 32, 8, 11, 37}
+4   {1, 49, 27, 25}
+11   {2, 7, 9, 10, 43, 46, 16, 19, 52, 21, 23}
+3   {41, 3, 59}
+6   {33, 35, 4, 14, 47, 17}
+8   {5, 12, 20, 53, 26, 28, 29, 30}
+4   {48, 50, 18, 6}
+5   {56, 57, 44, 13, 15}
+2   {22, 55}
+3   {24, 42, 31}
+2   {34, 39}
+1   {36}
+2   {40, 38}
+3   {58, 45, 54}
+1   {51}
 
-Number of connected components: 9
+Number of connected components: 15
 Largest component size: 11
-Largest connected component: ['A Seidakmatova', 'R Walton', 'B DeRenzi', 'B Kolko', 'C Driesbach', 'C Putnam', 'D Thakur', 'E Johnson', 'E Rose', 'ML Best', 'O Salikhbaeva']
-Component sizes: [1, 1, 2, 3, 3, 4, 5, 8, 11]
-Average component size: 4.222222222222222
+Largest connected component: ['A Seidakmatova', 'B DeRenzi', 'B Kolko', 'C Driesbach', 'ML Best', 'O Salikhbaeva', 'C Putnam', 'D Thakur', 'R Walton', 'E Johnson', 'E Rose']
+Component sizes: [1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5, 6, 8, 11]
+Average component size: 4.0
 Median: 3
 Low median: 3
 High median: 3
-Mode: [1, 3]
+Mode: [2, 3]

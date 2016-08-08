@@ -164,23 +164,22 @@ def nx_draw_graph():
 def main():
 	try: 
 		text_file, csv_file = sys.argv[1], sys.argv[2]
+		preprocess.convert_text_to_csv(text_file, csv_file)
+		preprocess.simple_stats(csv_file)
+		print("Now generating json graph information...")
+		generate_author_to_int_dictionary(csv_file)
+		generate_adj_matrix()
+		G = generate_networkX_graph_string()
+		write_json(G, 'string')
+		G_s = generate_networkX_graph_string(True)
+		write_json(G_s, 'string', weighted=True)
+		print("Now calculating metrics...")
+		metrics.calculate_metrics()
 	except IndexError as err:
 		print('Please type python graph.py <input.txt> <output.csv>.')
 		sys.exit()
 
-	preprocess.convert_text_to_csv(text_file, csv_file)
-	preprocess.simple_stats(csv_file)
 
-	print("Now generating json graph information...")
-	generate_author_to_int_dictionary(csv_file)
-	generate_adj_matrix()
-	G = generate_networkX_graph_string()
-	write_json(G, 'string')
-	G_s = generate_networkX_graph_string(True)
-	write_json(G_s, 'string', weighted=True)
-
-	print("Now calculating metrics...")
-	metrics.calculate_metrics()
                 
 if __name__ == "__main__":
     main()

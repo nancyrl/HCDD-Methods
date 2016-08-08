@@ -1,10 +1,23 @@
+L Barnard: 0.0
+J Wesson: 0.0
 KL Kumar: 0.0
 M Bhattacharya: 0.0
-D Amarsaikhan: 1.0
-JS Sandhu: 1.0
+JS Sandhu: 0.4
+C Lohachit: 1.0
 P Altankhuyag: 1.0
+A Tibuzzi: 1.0
+X Hua: 1.0
+M Kam: 1.0
+J Hey: 1.0
+W Fungladda: 1.0
+AM Agogino: 1.0
+S Sriboorapa: 1.0
+D Amarsaikhan: 1.0
+C Pulkate: 1.0
+C Newman: 1.0
+N Poosanthanasarn: 1.0
 
-Average: 0.6
+Average: 0.7444444444444445
 Median: 1.0
 Median low: 1.0
 Median high: 1.0

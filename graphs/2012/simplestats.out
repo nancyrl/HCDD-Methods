@@ -1,36 +1,269 @@
-Max number of authors writing a single paper: 9
-Total unique number of authors: 49
-Total number of papers: 13
+Max number of authors writing a single paper: 11
+Total unique number of authors: 159
+Total number of papers: 52
 
-Density: 0.10289115646258504
-Connected component: [1, 6, 16, 19, 21, 23, 26, 34, 35, 37, 45, 46]
-Cut points: {1, 6}
+Density: 0.02929703049120293
+
+Diameter of graph: 3
+
+{0, 39, 141, 47, 81, 148, 56, 89, 59, 126, 30}
+Density: 1.0
+
+{128, 1, 5, 9, 143, 19, 21, 149, 151, 23, 32, 42, 45, 49, 55, 57, 69, 74, 83, 90, 97, 98, 100, 107, 112, 115, 120, 123}
+Density: 0.2804232804232804
+
+{24, 2, 66, 20, 86}
+Density: 1.0
+
+{96, 153, 114, 3}
+Density: 1.0
+
+{147, 4, 101}
+Density: 1.0
+
+{35, 133, 70, 6, 105, 75, 26, 127}
+Density: 1.0
+
+{119, 52, 61, 7}
+Density: 1.0
+
+{8, 18, 22}
+Density: 1.0
+
+{132, 10, 12, 13, 84, 94}
+Density: 1.0
+
+{154, 11, 99}
+Density: 1.0
+
+{67, 38, 14, 78, 113, 29}
+Density: 0.6
+
+{64, 129, 44, 15, 54, 27, 62, 63}
+Density: 1.0
+
+{16, 65, 50, 102}
+Density: 0.8333333333333334
+
+{17, 122, 41, 116}
+Density: 1.0
+
+{79, 25, 82, 142, 103}
+Density: 1.0
+
+{138, 28, 108, 150, 31}
+Density: 1.0
+
+{33, 34, 139, 140, 77, 85, 92}
+Density: 1.0
+
+{91, 36, 37}
+Density: 1.0
+
+{40, 72}
+Density: 1.0
+
+{130, 136, 106, 43, 117, 156}
+Density: 1.0
+
+{137, 46}
+Density: 1.0
+
+{48, 104, 146}
+Density: 1.0
+
+{144, 145, 51, 60}
+Density: 1.0
+
+{53, 109, 93}
+Density: 1.0
+
+{58, 68, 118}
+Density: 1.0
+
+{121, 71}
+Density: 1.0
+
+{88, 73}
+Density: 1.0
+
+{131, 76}
+Density: 1.0
+
+{80}
+Density: 1
+
+{95, 87}
+Density: 1.0
+
+{110}
+Density: 1
+
+{152, 134, 111}
+Density: 1.0
+
+{124, 135}
+Density: 1.0
+
+{125}
+Density: 1
+
+{155, 157}
+Density: 1.0
+
+{158}
+Density: 1
+
+Connected component: [0, 30, 39, 47, 56, 59, 81, 89, 126, 141, 148]
+Cut points: {0}
+Cut vertex: 0
+[{39, 141, 47, 81, 148, 56, 89, 59, 30, 126}]
+All filtered out.
+
+Connected component: [1, 5, 9, 19, 21, 23, 32, 42, 45, 49, 55, 57, 69, 74, 83, 90, 97, 98, 100, 107, 112, 115, 120, 123, 128, 143, 149, 151]
+Cut points: {128, 1, 49, 21}
+Cut vertex: 128
+[{1, 5, 9, 143, 21, 149, 151, 23, 32, 42, 45, 49, 55, 57, 69, 74, 83, 90, 97, 98, 100, 107, 112, 115, 120, 123}, {19}]
 Cut vertex: 1
-[{34, 35, 37, 6, 45, 46, 16, 19, 21, 23, 26}]
-Cut vertex: 6
-[{1, 34, 35, 45, 46, 16, 21, 23, 26}, {19, 37}]
-Filtered cut points: {6}
+[{128, 5, 9, 143, 19, 149, 21, 151, 23, 32, 42, 45, 49, 55, 57, 69, 74, 83, 90, 97, 98, 100, 107, 112, 115, 120, 123}]
+Cut vertex: 49
+[{128, 1, 5, 9, 143, 19, 21, 149, 151, 23, 32, 42, 45, 55, 57, 69, 74, 83, 90, 97, 98, 100, 107, 112, 115, 120, 123}]
+Cut vertex: 21
+[{32, 1, 128, 9, 74, 45, 143, 112, 49, 19, 23}, {97, 98, 100, 5, 69, 115, 83, 149, 151, 55, 57, 90, 123, 120}, {42, 107}]
+Filtered cut points: {128, 21}
 
-Connected component: [2, 7, 8, 17, 20, 28, 36, 40]
+Connected component: [2, 20, 24, 66, 86]
 Cut points: {2}
 Cut vertex: 2
-[{36, 7, 40, 8, 17, 20, 28}]
+[{24, 66, 20, 86}]
 All filtered out.
 
-Connected component: [3, 4, 5, 22, 24, 39]
-Cut points: {3}
-Cut vertex: 3
-[{24, 4, 5, 22, 39}]
+Connected component: [6, 26, 35, 70, 75, 105, 127, 133]
+Cut points: {6}
+Cut vertex: 6
+[{35, 133, 70, 105, 75, 26, 127}]
 All filtered out.
 
-Connected component: [10, 29, 32, 38, 41, 48]
+Connected component: [10, 12, 13, 84, 94, 132]
 Cut points: {10}
 Cut vertex: 10
-[{48, 41, 32, 29, 38}]
+[{84, 12, 132, 94, 13}]
 All filtered out.
 
-Cut points for all ccs: ['B Kolko']
-Average clustering is:  0.9215419501133787
-Average betweenness is: 0.00039803155304675056
-Average closeness is:  0.1088519748558764
+Connected component: [14, 29, 38, 67, 78, 113]
+Cut points: {14, 78}
+Cut vertex: 14
+[{113, 67, 29, 78, 38}]
+Cut vertex: 78
+[{67, 29, 14}, {113, 38}]
+Filtered cut points: {78}
 
+Connected component: [15, 27, 44, 54, 62, 63, 64, 129]
+Cut points: {15}
+Cut vertex: 15
+[{64, 129, 44, 54, 27, 62, 63}]
+All filtered out.
+
+Connected component: [25, 79, 82, 103, 142]
+Cut points: {25}
+Cut vertex: 25
+[{103, 82, 142, 79}]
+All filtered out.
+
+Connected component: [28, 31, 108, 138, 150]
+Cut points: {28}
+Cut vertex: 28
+[{138, 108, 150, 31}]
+All filtered out.
+
+Connected component: [33, 34, 77, 85, 92, 139, 140]
+Cut points: {33}
+Cut vertex: 33
+[{34, 139, 140, 77, 85, 92}]
+All filtered out.
+
+Connected component: [43, 106, 117, 130, 136, 156]
+Cut points: {43}
+Cut vertex: 43
+[{136, 106, 130, 156, 117}]
+All filtered out.
+
+Cut points for all ccs: ['R Walton', 'B Kolko', 'JS Sandhu']
+Average clustering is:  0.8344312431104883
+Average betweenness is: 0.00015161679792421897
+Average closeness is:  0.0384006527666751
+['E Krahmer', 'S Shahid']
+1.0
+['HC Comijs', 'FJM Meiland', 'HG van der Roest', 'RM Droes', 'C Jonker', 'APD Jansen', 'E Derksen', 'HPJ van Hout']
+1.0
+['E Johnson', 'G Ruddy', 'C Putnam', 'ML Best', 'P Prasad', 'L Schlenke', 'J Keh', 'R Nathan', 'W Gerard', 'O Salikhbaeva', 'T Gorman', 'M Ishimitsu', 'M Kawooya', 'E Rose', 'A Seidakmatova', 'W Brunette', 'R Walton', 'R Anderson', 'B Kolko', 'B DeRenzi', 'D Thakur', 'C Driesbach', 'A Hope', 'M Hicks', 'A Bayor', 'K Saville', 'J Yaaqoubi', 'G Borriello']
+1.7724867724867726
+['E Stolterman', 'T Nyholm', 'T Mullaney', 'H Pettersson']
+1.0
+['M Al Blushi', 'N Werghi', 'F Kamoun']
+1.0
+['K Phyrum', 'C Jacks', 'T Baker', 'JW Rosenboom', 'M Roberts']
+1.0
+['SE Ross', 'KA Siek', 'JM Ruscin', 'CA Lee', 'SA Linnebur', 'LM Haverhals', 'CA Darr']
+1.0
+['J Matovu', 'R Hinman']
+1.0
+['PRS Rao', 'J Huang', 'H Knoche']
+1.0
+['P Chininthorn', 'A Freudenthal', 'WD Tucker', 'M Glaser']
+1.0
+['C Pattichis', 'U Bracale', 'SG Mougiakakou', 'A Androulidakis', 'H Papadopoulos', 'E Kyriacou', 'L Pecchia', 'R Tranfaglia', 'D Koutsouris', 'G Konnis', 'K Perakis']
+1.0
+['A Zewge', 'K Weldemariam', 'A Susi', 'A Villafiorita', 'M Belachew', 'S Hailemariam']
+1.0
+['D Lilley', 'J Spencer']
+1.0
+['PW Jordan', 'A Lindgren', 'F Chen', 'H Zhang']
+1.0
+['R Holland', 'D Prommin', 'B Ariyatum', 'P Sirisalee']
+1.0
+['CE Hsu', 'J Zhang', 'J Machiavelli', 'M de Araujo Novaes', 'S Iyengar', 'A Joshi', 'C Johnson', 'R Vogler']
+1.0
+['A Navabi', 'C Boks', 'B Aryana']
+1.0
+['C Isenhour', 'A Dekhtyar', 'B Goldstein', 'J Goldsmith', 'KK Mathias']
+1.0
+['P Altankhuyag', 'AM Agogino', 'D Amarsaikhan', 'C Newman', 'J Hey', 'JS Sandhu']
+1.4
+['AW Yeo', 'M Mahmud', 'I Hussein', 'E Seman']
+1.1666666666666667
+['T Sibieude', 'E Lesueur', 'M Yunus']
+1.0
+['J Wesson', 'L Barnard']
+1.0
+['N Poosanthanasarn', 'C Pulkate', 'C Lohachit', 'W Fungladda', 'S Sriboorapa']
+1.0
+['K Pecknold']
+Skipped
+
+['NLA Alvarez']
+Skipped
+
+['M Bhattacharya', 'KL Kumar']
+1.0
+['A Hashizume', 'M Kurosu', 'T Yamanaka']
+1.0
+['S Opel', 'DA Nelson', 'MG Sandy', 'PA Biedrzycki', 'Z Franco', 'S Ahmed']
+1.0
+['WARWM Isa', 'NLM Noor', 'S Mehad']
+1.0
+['Z Ying']
+Skipped
+
+['M Kam', 'X Hua', 'A Tibuzzi']
+1.0
+['Z Fu', 'X Zhang']
+1.0
+['S Nagarkar', 'R Rege']
+1.0
+['JH Matthews', 'S Bucolo']
+1.0
+['CF Leitao', 'LC De Castro Salgado', 'CS De Souza']
+1.0
+['R Steinbeck']
+Skipped

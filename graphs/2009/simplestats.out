@@ -1,32 +1,125 @@
 Max number of authors writing a single paper: 8
-Total unique number of authors: 38
-Total number of papers: 14
+Total unique number of authors: 60
+Total number of papers: 21
 
-Density: 0.09815078236130868
-Connected component: [0, 5, 8, 23, 25]
+Density: 0.05593220338983051
+
+Diameter of graph: 3
+
+{0, 32, 8, 11, 37}
+Density: 1.0
+
+{1, 49, 27, 25}
+Density: 1.0
+
+{2, 7, 9, 10, 43, 46, 16, 19, 52, 21, 23}
+Density: 0.32727272727272727
+
+{41, 3, 59}
+Density: 1.0
+
+{33, 35, 4, 14, 47, 17}
+Density: 0.6
+
+{5, 12, 20, 53, 26, 28, 29, 30}
+Density: 1.0
+
+{48, 50, 18, 6}
+Density: 1.0
+
+{56, 57, 44, 13, 15}
+Density: 1.0
+
+{22, 55}
+Density: 1.0
+
+{24, 42, 31}
+Density: 1.0
+
+{34, 39}
+Density: 1.0
+
+{36}
+Density: 1
+
+{40, 38}
+Density: 1.0
+
+{58, 45, 54}
+Density: 1.0
+
+{51}
+Density: 1
+
+Connected component: [0, 8, 11, 32, 37]
 Cut points: {0}
 Cut vertex: 0
-[{8, 25, 5, 23}]
+[{8, 32, 11, 37}]
 All filtered out.
 
-Connected component: [1, 4, 6, 7, 10, 12, 14, 16, 27, 29, 33]
-Cut points: {1, 33, 6}
-Cut vertex: 1
-[{33, 4, 6, 7, 10, 12, 14, 16, 27, 29}]
-Cut vertex: 33
-[{1, 6, 7, 10, 12, 14, 16, 27, 29}, {4}]
-Cut vertex: 6
-[{1, 33, 4, 7, 10, 16}, {27, 12}, {29, 14}]
-Filtered cut points: {33, 6}
-
-Connected component: [2, 9, 13, 18, 19, 20, 21, 34]
-Cut points: {2}
+Connected component: [2, 7, 9, 10, 16, 19, 21, 23, 43, 46, 52]
+Cut points: {9, 2, 52}
+Cut vertex: 9
+[{2, 7, 10, 16, 52, 23}, {19, 43}, {21, 46}]
 Cut vertex: 2
-[{34, 9, 13, 18, 19, 20, 21}]
+[{7, 9, 10, 43, 46, 16, 19, 52, 21, 23}]
+Cut vertex: 52
+[{2, 9, 10, 43, 46, 16, 19, 21, 23}, {7}]
+Filtered cut points: {9, 52}
+
+Connected component: [4, 14, 17, 33, 35, 47]
+Cut points: {35, 4}
+Cut vertex: 35
+[{33, 4, 14}, {17, 47}]
+Cut vertex: 4
+[{17, 33, 35, 14, 47}]
+Filtered cut points: {35}
+
+Connected component: [5, 12, 20, 26, 28, 29, 30, 53]
+Cut points: {5}
+Cut vertex: 5
+[{12, 20, 53, 26, 28, 29, 30}]
 All filtered out.
 
-Cut points for all ccs: ['R Walton', 'B Kolko']
-Average clustering is:  0.8321637426900585
-Average betweenness is: 0.0016200410937253042
-Average closeness is:  0.11889305523782079
+Connected component: [13, 15, 44, 56, 57]
+Cut points: {13}
+Cut vertex: 13
+[{56, 57, 44, 15}]
+All filtered out.
 
+Cut points for all ccs: ['B Kolko', 'JS Sandhu', 'R Walton']
+Average clustering is:  0.8170370370370371
+Average betweenness is: 0.00045782193648938237
+Average closeness is:  0.06529037327080839
+['HC Comijs', 'HG van der Roest', 'HPJ van Hout', 'E Derksen', 'RM Droes', 'APD Jansen', 'C Jonker', 'FJM Meiland']
+1.0
+['O Salikhbaeva', 'D Thakur', 'B Kolko', 'C Putnam', 'E Johnson', 'A Seidakmatova', 'B DeRenzi', 'ML Best', 'C Driesbach', 'R Walton', 'E Rose']
+1.7454545454545454
+['J Goldsmith', 'A Dekhtyar', 'C Isenhour', 'KK Mathias', 'B Goldstein']
+1.0
+['P Sirisalee', 'B Ariyatum', 'R Holland', 'D Prommin']
+1.0
+['M Mahmud', 'I Hussein', 'E Seman']
+1.0
+['F Chen', 'H Zhang', 'PW Jordan', 'A Lindgren']
+1.0
+['M Bhattacharya', 'KL Kumar']
+1.0
+['A Tibuzzi', 'X Hua', 'M Kam']
+1.0
+['N Poosanthanasarn', 'C Pulkate', 'S Sriboorapa', 'C Lohachit', 'W Fungladda']
+1.0
+['AM Agogino', 'D Amarsaikhan', 'C Newman', 'JS Sandhu', 'J Hey', 'P Altankhuyag']
+1.4
+['NLM Noor', 'WARWM Isa', 'S Mehad']
+1.0
+['K Pecknold']
+Skipped
+
+['R Rege']
+Skipped
+
+['S Shahid', 'E Krahmer']
+1.0
+['L Barnard', 'J Wesson']
+1.0

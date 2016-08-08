@@ -1,0 +1,97 @@
+['E Krahmer', 'S Shahid']
+1.0
+
+['HC Comijs', 'FJM Meiland', 'HG van der Roest', 'RM Droes', 'C Jonker', 'APD Jansen', 'E Derksen', 'HPJ van Hout']
+1.0
+
+['E Johnson', 'G Ruddy', 'C Putnam', 'ML Best', 'P Prasad', 'L Schlenke', 'J Keh', 'R Nathan', 'W Gerard', 'O Salikhbaeva', 'T Gorman', 'M Ishimitsu', 'M Kawooya', 'E Rose', 'A Seidakmatova', 'W Brunette', 'R Walton', 'R Anderson', 'B Kolko', 'B DeRenzi', 'D Thakur', 'C Driesbach', 'A Hope', 'M Hicks', 'A Bayor', 'K Saville', 'J Yaaqoubi', 'G Borriello']
+1.7724867724867726
+
+['E Stolterman', 'T Nyholm', 'T Mullaney', 'H Pettersson']
+1.0
+
+['M Al Blushi', 'N Werghi', 'F Kamoun']
+1.0
+
+['K Phyrum', 'C Jacks', 'T Baker', 'JW Rosenboom', 'M Roberts']
+1.0
+
+['SE Ross', 'KA Siek', 'JM Ruscin', 'CA Lee', 'SA Linnebur', 'LM Haverhals', 'CA Darr']
+1.0
+
+['J Matovu', 'R Hinman']
+1.0
+
+['PRS Rao', 'J Huang', 'H Knoche']
+1.0
+
+['P Chininthorn', 'A Freudenthal', 'WD Tucker', 'M Glaser']
+1.0
+
+['C Pattichis', 'U Bracale', 'SG Mougiakakou', 'A Androulidakis', 'H Papadopoulos', 'E Kyriacou', 'L Pecchia', 'R Tranfaglia', 'D Koutsouris', 'G Konnis', 'K Perakis']
+1.0
+
+['A Zewge', 'K Weldemariam', 'A Susi', 'A Villafiorita', 'M Belachew', 'S Hailemariam']
+1.0
+
+['D Lilley', 'J Spencer']
+1.0
+
+['PW Jordan', 'A Lindgren', 'F Chen', 'H Zhang']
+1.0
+
+['R Holland', 'D Prommin', 'B Ariyatum', 'P Sirisalee']
+1.0
+
+['CE Hsu', 'J Zhang', 'J Machiavelli', 'M de Araujo Novaes', 'S Iyengar', 'A Joshi', 'C Johnson', 'R Vogler']
+1.0
+
+['A Navabi', 'C Boks', 'B Aryana']
+1.0
+
+['C Isenhour', 'A Dekhtyar', 'B Goldstein', 'J Goldsmith', 'KK Mathias']
+1.0
+
+['P Altankhuyag', 'AM Agogino', 'D Amarsaikhan', 'C Newman', 'J Hey', 'JS Sandhu']
+1.4
+
+['AW Yeo', 'M Mahmud', 'I Hussein', 'E Seman']
+1.1666666666666667
+
+['T Sibieude', 'E Lesueur', 'M Yunus']
+1.0
+
+['J Wesson', 'L Barnard']
+1.0
+
+['N Poosanthanasarn', 'C Pulkate', 'C Lohachit', 'W Fungladda', 'S Sriboorapa']
+1.0
+
+['M Bhattacharya', 'KL Kumar']
+1.0
+
+['A Hashizume', 'M Kurosu', 'T Yamanaka']
+1.0
+
+['S Opel', 'DA Nelson', 'MG Sandy', 'PA Biedrzycki', 'Z Franco', 'S Ahmed']
+1.0
+
+['WARWM Isa', 'NLM Noor', 'S Mehad']
+1.0
+
+['M Kam', 'X Hua', 'A Tibuzzi']
+1.0
+
+['Z Fu', 'X Zhang']
+1.0
+
+['S Nagarkar', 'R Rege']
+1.0
+
+['JH Matthews', 'S Bucolo']
+1.0
+
+['CF Leitao', 'LC De Castro Salgado', 'CS De Souza']
+1.0
+
+Avg fig :1.041848544973545

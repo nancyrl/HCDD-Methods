@@ -1,1 +1,1 @@
-{"graph": {}, "nodes": [{"id": "A Tibuzzi"}, {"id": "M Kam"}, {"id": "X Hua"}, {"id": "J Wesson"}, {"id": "L Barnard"}], "links": [{"target": 1, "source": 0}, {"target": 2, "source": 0}, {"target": 2, "source": 1}, {"target": 4, "source": 3}], "directed": false, "multigraph": false}
+{"graph": {}, "multigraph": false, "links": [{"target": 3, "source": 0}, {"target": 2, "source": 1}, {"target": 4, "source": 1}, {"target": 4, "source": 2}], "directed": false, "nodes": [{"id": "J Wesson"}, {"id": "A Tibuzzi"}, {"id": "M Kam"}, {"id": "L Barnard"}, {"id": "X Hua"}]}

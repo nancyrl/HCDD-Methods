@@ -3,6 +3,21 @@ Total unique number of authors: 5
 Total number of papers: 2
 
 Density: 0.4
+
+Diameter of graph: 1
+
+{0, 3, 4}
+Density: 1.0
+
+{1, 2}
+Density: 1.0
+
+No cut points.
 Average clustering is:  0.6
 Average betweenness is: 0.0
 Average closeness is:  0.4
+['J Wesson', 'L Barnard']
+1.0
+['A Tibuzzi', 'M Kam', 'X Hua']
+1.0
+

@@ -129,9 +129,7 @@ def main():
 	""" Expects csv input
 	    On the command line type: python countries.py <dataset.csv>
 	"""
-	#csv file name
 	dataset = sys.argv[1]
-
 	#convert column strings into array
 	# col = sys.argv[2].strip('[').strip(']')
 	# arrCol = col.split(',')

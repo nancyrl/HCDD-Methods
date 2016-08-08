@@ -1,0 +1,7 @@
+['J Wesson', 'L Barnard']
+1.0
+
+['A Tibuzzi', 'M Kam', 'X Hua']
+1.0
+
+Avg fig :1.0

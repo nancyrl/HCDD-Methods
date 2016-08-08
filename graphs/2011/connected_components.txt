@@ -1,33 +1,121 @@
 Connected authors: 
-11   ['A Androulidakis', 'R Tranfaglia', 'SG Mougiakakou', 'C Pattichis', 'U Bracale', 'D Koutsouris', 'E Kyriacou', 'G Konnis', 'H Papadopoulos', 'K Perakis', 'L Pecchia']
-12   ['A Bayor', 'R Anderson', 'A Hope', 'B Kolko', 'T Gorman', 'C Putnam', 'W Brunette', 'E Johnson', 'E Rose', 'G Ruddy', 'J Yaaqoubi', 'M Hicks']
-3   ['M Kurosu', 'A Hashizume', 'T Yamanaka']
-3   ['A Navabi', 'B Aryana', 'C Boks']
-5   ['C Jacks', 'T Baker', 'K Phyrum', 'M Roberts', 'JW Rosenboom']
-7   ['SA Linnebur', 'SE Ross', 'CA Darr', 'CA Lee', 'JM Ruscin', 'KA Siek', 'LM Haverhals']
-3   ['CF Leitao', 'CS De Souza', 'LC De Castro Salgado']
+
+11   ['A Androulidakis', 'R Tranfaglia', 'D Koutsouris', 'L Pecchia', 'E Kyriacou', 'SG Mougiakakou', 'G Konnis', 'U Bracale', 'H Papadopoulos', 'C Pattichis', 'K Perakis']
+Density : 1.0
+
+24   ['A Bayor', 'A Hope', 'A Seidakmatova', 'B DeRenzi', 'B Kolko', 'C Driesbach', 'C Putnam', 'D Thakur', 'E Johnson', 'E Rose', 'G Borriello', 'G Ruddy', 'J Yaaqoubi', 'M Hicks', 'M Ishimitsu', 'ML Best', 'O Salikhbaeva', 'P Prasad', 'R Anderson', 'R Nathan', 'R Walton', 'T Gorman', 'W Brunette', 'W Gerard']
+Density : 0.286231884057971
+
+5   ['A Dekhtyar', 'C Isenhour', 'KK Mathias', 'J Goldsmith', 'B Goldstein']
+Density : 1.0
+
+3   ['A Hashizume', 'T Yamanaka', 'M Kurosu']
+Density : 1.0
+
+4   ['PW Jordan', 'F Chen', 'H Zhang', 'A Lindgren']
+Density : 1.0
+
+3   ['C Boks', 'B Aryana', 'A Navabi']
+Density : 1.0
+
+3   ['A Tibuzzi', 'X Hua', 'M Kam']
+Density : 1.0
+
+6   ['AM Agogino', 'P Altankhuyag', 'J Hey', 'C Newman', 'JS Sandhu', 'D Amarsaikhan']
+Density : 0.6
+
+8   ['RM Droes', 'E Derksen', 'APD Jansen', 'FJM Meiland', 'HC Comijs', 'HG van der Roest', 'HPJ van Hout', 'C Jonker']
+Density : 1.0
+
+4   ['E Seman', 'AW Yeo', 'I Hussein', 'M Mahmud']
+Density : 0.8333333333333334
+
+4   ['D Prommin', 'R Holland', 'B Ariyatum', 'P Sirisalee']
+Density : 1.0
+
+5   ['K Phyrum', 'T Baker', 'C Jacks', 'JW Rosenboom', 'M Roberts']
+Density : 1.0
+
+5   ['S Sriboorapa', 'N Poosanthanasarn', 'C Pulkate', 'C Lohachit', 'W Fungladda']
+Density : 1.0
+
+7   ['KA Siek', 'LM Haverhals', 'SA Linnebur', 'SE Ross', 'CA Darr', 'CA Lee', 'JM Ruscin']
+Density : 1.0
+
+3   ['CF Leitao', 'LC De Castro Salgado', 'CS De Souza']
+Density : 1.0
+
+2   ['E Krahmer', 'S Shahid']
+Density : 1.0
+
+3   ['M Al Blushi', 'F Kamoun', 'N Werghi']
+Density : 1.0
+
+2   ['R Hinman', 'J Matovu']
+Density : 1.0
+
+2   ['J Wesson', 'L Barnard']
+Density : 1.0
+
+2   ['JH Matthews', 'S Bucolo']
+Density : 1.0
+
+1   ['K Pecknold']
+Density : 1
+
+2   ['M Bhattacharya', 'KL Kumar']
+Density : 1.0
+
+3   ['WARWM Isa', 'NLM Noor', 'S Mehad']
+Density : 1.0
+
+2   ['S Nagarkar', 'R Rege']
+Density : 1.0
+
 1   ['R Steinbeck']
+Density : 1
+
 2   ['X Zhang', 'Z Fu']
+Density : 1.0
 
-Connected nodes: 
-11   {0, 36, 39, 9, 43, 15, 17, 19, 21, 25, 28}
-12   {1, 34, 3, 6, 41, 10, 44, 16, 18, 20, 22, 31}
-3   {32, 2, 42}
-3   {4, 5, 7}
-5   {8, 40, 26, 33, 24}
-7   {37, 38, 11, 12, 23, 27, 30}
-3   {13, 14, 29}
-1   {35}
-2   {45, 46}
+1   ['Z Ying']
+Density : 1
 
-Number of connected components: 9
-Largest component size: 12
-Largest connected component: ['A Bayor', 'R Anderson', 'A Hope', 'B Kolko', 'T Gorman', 'C Putnam', 'W Brunette', 'E Johnson', 'E Rose', 'G Ruddy', 'J Yaaqoubi', 'M Hicks']
-Component sizes: [1, 2, 3, 3, 3, 5, 7, 11, 12]
-Average component size: 5.222222222222222
+Connected components: 
+11   {0, 95, 32, 69, 38, 105, 45, 109, 47, 24, 63}
+24   {1, 4, 7, 14, 16, 18, 26, 34, 36, 39, 44, 46, 57, 74, 75, 80, 84, 86, 89, 92, 96, 107, 110, 112}
+5   {2, 19, 66, 53, 15}
+3   {3, 108, 77}
+4   {88, 41, 48, 5}
+3   {17, 13, 6}
+3   {8, 114, 76}
+6   {9, 85, 54, 23, 60, 31}
+8   {97, 35, 10, 43, 49, 50, 51, 21}
+4   {40, 11, 52, 78}
+4   {33, 91, 12, 87}
+5   {64, 106, 20, 61, 79}
+5   {102, 81, 25, 22, 111}
+7   {65, 71, 103, 104, 27, 28, 59}
+3   {29, 70, 30}
+2   {37, 101}
+3   {72, 42, 82}
+2   {90, 55}
+2   {56, 68}
+2   {58, 98}
+1   {62}
+2   {73, 67}
+3   {113, 83, 99}
+2   {100, 93}
+1   {94}
+2   {115, 116}
+1   {117}
+
+Number of connected components: 27
+Largest component size: 24
+Largest connected component: ['A Bayor', 'A Hope', 'A Seidakmatova', 'B DeRenzi', 'B Kolko', 'C Driesbach', 'C Putnam', 'D Thakur', 'E Johnson', 'E Rose', 'G Borriello', 'G Ruddy', 'J Yaaqoubi', 'M Hicks', 'M Ishimitsu', 'ML Best', 'O Salikhbaeva', 'P Prasad', 'R Anderson', 'R Nathan', 'R Walton', 'T Gorman', 'W Brunette', 'W Gerard']
+Component sizes: [1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 7, 8, 11, 24]
+Average component size: 4.37037037037037
 Median: 3
 Low median: 3
 High median: 3
-Mode: [3]
-
-Cut points: B Kolko
+Mode: [2]

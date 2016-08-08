@@ -1,9 +1,51 @@
-Max number of authors writing a single paper: 3
-Total unique number of authors: 5
-Total number of papers: 2
+Max number of authors writing a single paper: 5
+Total unique number of authors: 18
+Total number of papers: 6
 
-Density: 0.4
-Average clustering is:  0.6
-Average betweenness is: 0.0
-Average closeness is:  0.4
+Density: 0.1568627450980392
 
+Diameter of graph: 2
+
+{0, 17, 12}
+Density: 1.0
+
+{1, 3, 5, 6, 8, 14}
+Density: 0.6
+
+{16, 2, 4, 13, 15}
+Density: 1.0
+
+{10, 7}
+Density: 1.0
+
+{9, 11}
+Density: 1.0
+
+Connected component: [1, 3, 5, 6, 8, 14]
+Cut points: {8, 1}
+Cut vertex: 8
+[{1, 3, 6}, {5, 14}]
+Cut vertex: 1
+[{8, 3, 5, 6, 14}]
+Filtered cut points: {8}
+
+Connected component: [2, 4, 13, 15, 16]
+Cut points: {2}
+Cut vertex: 2
+[{16, 4, 13, 15}]
+All filtered out.
+
+Cut points for all ccs: ['JS Sandhu']
+Average clustering is:  0.7444444444444445
+Average betweenness is: 0.0024509803921568627
+Average closeness is:  0.16981792717086833
+['P Altankhuyag', 'AM Agogino', 'D Amarsaikhan', 'JS Sandhu', 'J Hey', 'C Newman']
+1.4
+['S Sriboorapa', 'N Poosanthanasarn', 'C Pulkate', 'C Lohachit', 'W Fungladda']
+1.0
+['J Wesson', 'L Barnard']
+1.0
+['X Hua', 'M Kam', 'A Tibuzzi']
+1.0
+['KL Kumar', 'M Bhattacharya']
+1.0

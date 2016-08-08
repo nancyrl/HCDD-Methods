@@ -1,15 +1,37 @@
 Connected authors: 
-4   ['A Lindgren', 'F Chen', 'H Zhang', 'PW Jordan']
 
-Connected nodes: 
-4   {0, 1, 2, 3}
+4   ['A Lindgren', 'H Zhang', 'PW Jordan', 'F Chen']
+Density : 1.0
 
-Number of connected components: 1
-Largest component size: 4
-Largest connected component: ['A Lindgren', 'F Chen', 'H Zhang', 'PW Jordan']
-Component sizes: [4]
-Average component size: 4.0
-Median: 4
-Low median: 4
+3   ['A Tibuzzi', 'X Hua', 'M Kam']
+Density : 1.0
+
+6   ['AM Agogino', 'C Newman', 'D Amarsaikhan', 'J Hey', 'JS Sandhu', 'P Altankhuyag']
+Density : 0.6
+
+5   ['N Poosanthanasarn', 'C Lohachit', 'W Fungladda', 'C Pulkate', 'S Sriboorapa']
+Density : 1.0
+
+2   ['J Wesson', 'L Barnard']
+Density : 1.0
+
+2   ['KL Kumar', 'M Bhattacharya']
+Density : 1.0
+
+Connected components: 
+4   {0, 8, 18, 7}
+3   {1, 21, 15}
+6   {2, 4, 6, 9, 11, 17}
+5   {16, 3, 20, 5, 19}
+2   {10, 13}
+2   {12, 14}
+
+Number of connected components: 6
+Largest component size: 6
+Largest connected component: ['AM Agogino', 'C Newman', 'D Amarsaikhan', 'J Hey', 'JS Sandhu', 'P Altankhuyag']
+Component sizes: [2, 2, 3, 4, 5, 6]
+Average component size: 3.6666666666666665
+Median: 3.5
+Low median: 3
 High median: 4
-Mode: [4]
+Mode: [2]

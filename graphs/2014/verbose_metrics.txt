@@ -1,0 +1,422 @@
+Density: 0.018037589282775417
+
+Diameter of graph: 4
+
+{0, 201, 97, 25}
+Density: 1.0
+
+{1, 129, 232, 202, 141, 77, 48, 88, 93, 222, 61}
+Density: 1.0
+
+{2, 131, 5, 9, 142, 16, 152, 153, 155, 31, 33, 38, 168, 170, 177, 50, 185, 186, 191, 192, 66, 67, 198, 75, 205, 79, 86, 89, 227, 235, 108, 237, 117, 125}
+Density: 0.22638146167557932
+
+{234, 3, 110, 70}
+Density: 1.0
+
+{4, 135}
+Density: 1.0
+
+{136, 40, 32, 6, 103}
+Density: 1.0
+
+{165, 166, 7, 239, 181, 151}
+Density: 0.7333333333333333
+
+{8, 156, 231}
+Density: 1.0
+
+{164, 10, 42, 204, 112, 211, 118, 54}
+Density: 1.0
+
+{65, 11, 15}
+Density: 1.0
+
+{37, 74, 139, 12, 180, 22, 184, 60}
+Density: 1.0
+
+{96, 83, 13, 190}
+Density: 1.0
+
+{226, 36, 14, 30}
+Density: 0.8333333333333334
+
+{240, 17, 214, 150}
+Density: 1.0
+
+{18, 195, 35, 46, 111}
+Density: 1.0
+
+{132, 210, 19, 148, 21, 23}
+Density: 1.0
+
+{241, 154, 20}
+Density: 1.0
+
+{24, 53}
+Density: 1.0
+
+{104, 47, 179, 26, 122, 58}
+Density: 0.6
+
+{98, 99, 100, 73, 43, 206, 85, 27}
+Density: 1.0
+
+{80, 28, 157, 101}
+Density: 0.8333333333333334
+
+{64, 187, 29, 197}
+Density: 1.0
+
+{34}
+Density: 1 
+
+{162, 39, 72, 233, 203, 107, 173, 140, 82, 213, 56, 59}
+Density: 0.7727272727272727
+
+{41, 130, 123, 225, 159}
+Density: 1.0
+
+{209, 44}
+Density: 1.0
+
+{49, 219, 236, 45, 171}
+Density: 1.0
+
+{134, 144, 51, 52, 121, 220, 221}
+Density: 1.0
+
+{143, 57, 55}
+Density: 1.0
+
+{115, 62}
+Density: 1.0
+
+{127, 106, 63}
+Density: 1.0
+
+{68, 167, 207, 244, 217, 188}
+Density: 1.0
+
+{146, 69}
+Density: 1.0
+
+{223, 224, 169, 120, 71}
+Density: 1.0
+
+{218, 76}
+Density: 1.0
+
+{163, 78, 230}
+Density: 1.0
+
+{81, 228, 229, 94}
+Density: 1.0
+
+{145, 84, 174}
+Density: 1.0
+
+{114, 147, 182, 87}
+Density: 1.0
+
+{160, 161, 90, 91, 183}
+Density: 1.0
+
+{105, 92, 189}
+Density: 1.0
+
+{102, 158, 95}
+Density: 1.0
+
+{243, 212, 109}
+Density: 1.0
+
+{113, 196}
+Density: 1.0
+
+{138, 116}
+Density: 1.0
+
+{208, 119}
+Density: 1.0
+
+{124, 133}
+Density: 1.0
+
+{178, 126}
+Density: 1.0
+
+{128}
+Density: 1 
+
+{137, 149}
+Density: 1.0
+
+{172}
+Density: 1 
+
+{175}
+Density: 1 
+
+{176, 238, 215}
+Density: 1.0
+
+{193, 194}
+Density: 1.0
+
+{216, 199}
+Density: 1.0
+
+{200}
+Density: 1 
+
+{242, 245}
+Density: 1.0
+
+{246}
+Density: 1 
+
+Connected component: [1, 48, 61, 77, 88, 93, 129, 141, 202, 222, 232]
+Cut points: {1}
+Cut vertex: 1
+[{129, 232, 202, 141, 77, 48, 88, 93, 222, 61}]
+All filtered out. 
+
+Connected component: [2, 5, 9, 16, 31, 33, 38, 50, 66, 67, 75, 79, 86, 89, 108, 117, 125, 131, 142, 152, 153, 155, 168, 170, 177, 185, 186, 191, 192, 198, 205, 227, 235, 237]
+Cut points: {33, 2, 205, 86}
+Cut vertex: 33
+[{2, 227, 38, 75, 205, 79, 16, 177, 50, 117, 31}, {192, 131, 67, 5, 198, 9, 170, 235, 108, 237, 142, 86, 152, 185, 153, 155, 89, 125, 186, 191}, {168, 66}]
+Cut vertex: 2
+[{131, 5, 9, 142, 16, 152, 153, 155, 31, 33, 38, 168, 170, 177, 50, 185, 186, 191, 192, 66, 67, 198, 75, 205, 79, 86, 89, 227, 235, 108, 237, 117, 125}]
+Cut vertex: 205
+[{2, 131, 5, 9, 142, 16, 152, 153, 155, 33, 38, 168, 170, 177, 50, 185, 186, 191, 192, 66, 67, 198, 75, 79, 86, 89, 227, 235, 108, 237, 117, 125}, {31}]
+Cut vertex: 86
+[{2, 131, 9, 142, 16, 152, 153, 155, 31, 33, 38, 168, 177, 50, 185, 191, 66, 198, 75, 205, 79, 89, 227, 235, 108, 237, 117}, {192, 67, 5, 170, 186, 125}]
+Filtered cut points: {33, 205, 86}
+
+Connected component: [6, 32, 40, 103, 136]
+Cut points: {6}
+Cut vertex: 6
+[{32, 136, 40, 103}]
+All filtered out. 
+
+Connected component: [7, 151, 165, 166, 181, 239]
+Cut points: {7}
+Cut vertex: 7
+[{239, 181, 165, 166, 151}]
+All filtered out. 
+
+Connected component: [10, 42, 54, 112, 118, 164, 204, 211]
+Cut points: {10}
+Cut vertex: 10
+[{164, 42, 204, 112, 211, 118, 54}]
+All filtered out. 
+
+Connected component: [12, 22, 37, 60, 74, 139, 180, 184]
+Cut points: {12}
+Cut vertex: 12
+[{37, 74, 139, 180, 22, 184, 60}]
+All filtered out. 
+
+Connected component: [18, 35, 46, 111, 195]
+Cut points: {18}
+Cut vertex: 18
+[{35, 195, 46, 111}]
+All filtered out. 
+
+Connected component: [19, 21, 23, 132, 148, 210]
+Cut points: {19}
+Cut vertex: 19
+[{210, 148, 21, 132, 23}]
+All filtered out. 
+
+Connected component: [26, 47, 58, 104, 122, 179]
+Cut points: {26, 122}
+Cut vertex: 26
+[{104, 122, 179, 58, 47}]
+Cut vertex: 122
+[{104, 26, 47}, {58, 179}]
+Filtered cut points: {122}
+
+Connected component: [27, 43, 73, 85, 98, 99, 100, 206]
+Cut points: {27}
+Cut vertex: 27
+[{98, 99, 100, 73, 43, 206, 85}]
+All filtered out. 
+
+Connected component: [39, 56, 59, 72, 82, 107, 140, 162, 173, 203, 213, 233]
+Cut points: {233, 39}
+Cut vertex: 233
+[{162, 39, 72, 203, 107, 173, 140, 82, 213, 56, 59}]
+Cut vertex: 39
+[{162, 72, 233, 203, 140, 173, 107, 82, 213, 56, 59}]
+All filtered out. 
+
+Connected component: [41, 123, 130, 159, 225]
+Cut points: {41}
+Cut vertex: 41
+[{225, 130, 123, 159}]
+All filtered out. 
+
+Connected component: [45, 49, 171, 219, 236]
+Cut points: {45}
+Cut vertex: 45
+[{49, 219, 236, 171}]
+All filtered out. 
+
+Connected component: [51, 52, 121, 134, 144, 220, 221]
+Cut points: {51}
+Cut vertex: 51
+[{134, 144, 52, 121, 220, 221}]
+All filtered out. 
+
+Connected component: [68, 167, 188, 207, 217, 244]
+Cut points: {68}
+Cut vertex: 68
+[{207, 217, 244, 188, 167}]
+All filtered out. 
+
+Connected component: [71, 120, 169, 223, 224]
+Cut points: {71}
+Cut vertex: 71
+[{120, 169, 224, 223}]
+All filtered out. 
+
+Connected component: [90, 91, 160, 161, 183]
+Cut points: {90}
+Cut vertex: 90
+[{160, 161, 91, 183}]
+All filtered out. 
+
+Cut points for all ccs: ['B Kolko', 'JS Sandhu', 'R Walton', 'G Borriello']
+Average clustering is:  0.8162052881890939
+Average betweenness is: 7.993717878185144e-05
+Average closeness is:  0.02354095331181708
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skipped 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skipped 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skipped 
+
+
+
+Skipped 
+
+
+
+Skipped 
+
+
+
+Skipped 
+

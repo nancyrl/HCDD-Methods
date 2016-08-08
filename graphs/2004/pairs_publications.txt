@@ -1,0 +1,5 @@
+Pairs of publishing authors and their number of publications: 
+M Kam, A Tibuzzi 1
+M Kam, X Hua 1
+L Barnard, J Wesson 1
+A Tibuzzi, X Hua 1

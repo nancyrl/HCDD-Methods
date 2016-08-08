@@ -1,0 +1,73 @@
+['C Jonker', 'FJM Meiland', 'HG van der Roest', 'APD Jansen', 'RM Droes', 'E Derksen', 'HC Comijs', 'HPJ van Hout']
+1.0
+
+['NLM Noor', 'S Mehad', 'WARWM Isa']
+1.0
+
+['C Boks', 'A Navabi', 'B Aryana']
+1.0
+
+['B DeRenzi', 'ML Best', 'C Putnam', 'G Ruddy', 'E Rose', 'M Ishimitsu', 'W Gerard', 'P Prasad', 'O Salikhbaeva', 'R Nathan', 'D Thakur', 'J Yaaqoubi', 'R Anderson', 'B Kolko', 'R Walton', 'M Hicks', 'A Bayor', 'C Driesbach', 'E Johnson', 'W Brunette', 'T Gorman', 'A Hope', 'A Seidakmatova', 'G Borriello']
+1.7753623188405796
+
+['A Tibuzzi', 'M Kam', 'X Hua']
+1.0
+
+['D Koutsouris', 'H Papadopoulos', 'U Bracale', 'A Androulidakis', 'C Pattichis', 'SG Mougiakakou', 'E Kyriacou', 'L Pecchia', 'G Konnis', 'R Tranfaglia', 'K Perakis']
+1.0
+
+['JW Rosenboom', 'M Roberts', 'K Phyrum', 'T Baker', 'C Jacks']
+1.0
+
+['A Dekhtyar', 'KK Mathias', 'B Goldstein', 'C Isenhour', 'J Goldsmith']
+1.0
+
+['SE Ross', 'CA Darr', 'KA Siek', 'SA Linnebur', 'LM Haverhals', 'CA Lee', 'JM Ruscin']
+1.0
+
+['S Shahid', 'E Krahmer']
+1.0
+
+['F Kamoun', 'M Al Blushi', 'N Werghi']
+1.0
+
+['A Hashizume', 'M Kurosu', 'T Yamanaka']
+1.0
+
+['KL Kumar', 'M Bhattacharya']
+1.0
+
+['AW Yeo', 'E Seman', 'I Hussein', 'M Mahmud']
+1.1666666666666667
+
+['A Lindgren', 'H Zhang', 'PW Jordan', 'F Chen']
+1.0
+
+['D Amarsaikhan', 'J Hey', 'AM Agogino', 'C Newman', 'JS Sandhu', 'P Altankhuyag']
+1.4
+
+['R Rege', 'S Nagarkar']
+1.0
+
+['X Zhang', 'Z Fu']
+1.0
+
+['CS De Souza', 'LC De Castro Salgado', 'CF Leitao']
+1.0
+
+['W Fungladda', 'C Pulkate', 'S Sriboorapa', 'C Lohachit', 'N Poosanthanasarn']
+1.0
+
+['J Matovu', 'R Hinman']
+1.0
+
+['J Wesson', 'L Barnard']
+1.0
+
+['B Ariyatum', 'P Sirisalee', 'R Holland', 'D Prommin']
+1.0
+
+['S Bucolo', 'JH Matthews']
+1.0
+
+Avg fig :1.0559178743961353
