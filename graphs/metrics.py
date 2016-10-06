@@ -40,20 +40,20 @@ def density_per_component(list_of_ints, matrix, author_to_int):
 	# d = 0.017539133818203587
 
 def get_overall_stats(results_dict):
-    average = statistics.mean(stats)
-    median = statistics.median(stats)
-    median_low = statistics.median_low(stats)
-    median_high = statistics.median_high(stats)
-    mode = calc_mode(stats)
+    average = statistics.mean(results_dict)
+    median = statistics.median(results_dict)
+    median_low = statistics.median_low(results_dict)
+    median_high = statistics.median_high(results_dict)
+    mode = calc_mode(results_dict)
     return {'avg': average, 'med': median, 'medlo': median_low, 'medhi': median_high, 'mode': mode}
 
 def write_overall_stats(filename, stats):
     with open(filename, 'w') as f:
-		f.write('\nAverage: ' + str(stats['avg']) + '\n')
-		f.write('Median: ' + str(stats['med']) + '\n')
-		f.write('Median low: ' + str(stats['medlo']) + '\n')
-		f.write('Median high: ' + str(stats['medhi']) + '\n')
-		f.write('Mode: ' + str(stats['mode']) + '\n')
+    	f.write('\nAverage: ' + str(stats['avg']) + '\n')
+    	f.write('Median: ' + str(stats['med']) + '\n')
+    	f.write('Median low: ' + str(stats['medlo']) + '\n')
+    	f.write('Median high: ' + str(stats['medhi']) + '\n')
+    	f.write('Mode: ' + str(stats['mode']) + '\n')
 
 def write_author_stats(filename, centrality, result):
     with open(filename, 'wt', newline='') as csvf:
@@ -63,21 +63,21 @@ def write_author_stats(filename, centrality, result):
     		writer.writerow([author, str(result[author])])
 
 def get_stats(results_dict):
-    sorted_results_dict = sorted(results_dict, key=results.get)
+    sorted_results_dict = sorted(results_dict, key=results_dict.get)
     stats = [results_dict[key] for key in sorted_results_dict]
     return stats
 
 def betweenness_centrality():
     result = nx.betweenness_centrality(G)
     stats = get_stats(result)
-	overall_stats = get_overall_stats(stats)
+    overall_stats = get_overall_stats(stats)
     write_overall_stats('betweenness_centrality.txt', overall_stats)
     write_author_stats('betweenness_centrality.csv', 'Betweenness Centrality', result)
 
 def clustering_coefficient():
     result = nx.clustering(G)
     stats = get_stats(result)
-	overall_stats = get_overall_stats(stats)
+    overall_stats = get_overall_stats(stats)
     write_overall_stats('clustering_coefficient.txt', overall_stats)
     write_author_stats('clustering_coefficient.csv', 'Clustering Coefficient', result)
 

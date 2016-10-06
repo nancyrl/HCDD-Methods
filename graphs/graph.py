@@ -109,8 +109,8 @@ def generate_networkX_graph_string():
 		# print_edge_pairs_info('pairs_publications.txt')
 	return G
 
-def write_json(G, name=None):
-	f_output = 'data_' + type + '_weighted_' + name + '.json'
+def write_json(G, name=''):
+	f_output = 'data_weighted_' + name + '.json'
 	with open(f_output, 'w') as f:
 		f.write(json.dumps(json_graph.node_link_data(G)))
 	print('Dumped into file <' + f_output + '>.')
