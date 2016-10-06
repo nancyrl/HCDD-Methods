@@ -84,12 +84,7 @@ def work(output):
 				skip += 1
 				continue
 			arrLine = line.split(',')
-			for country in arrLine:
-				country = country.lstrip().rstrip().strip('\n')
-				if country in countries:
-					countries[country] += 1
-				else: 
-					countries[country] = 1
+			countries = increment(arrLine, countries)
 	write_countries_csv(countries)
 
 def write_countries_csv(countries):
