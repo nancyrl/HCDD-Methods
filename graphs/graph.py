@@ -5,9 +5,7 @@ from networkx.readwrite import json_graph
 import csv
 import sys
 import pickle
-import matplotlib.pyplot as plt
 import json
-
 
 def read_from_csv(filename):
 	author_matrix, author_nodes_set = [], set()
@@ -110,19 +108,16 @@ def generate_networkX_graph_string():
 	return G
 
 def write_json(G, name=''):
-	f_output = 'data_weighted_' + name + '.json'
+	f_output = 'data_weighted' + name + '.json'
 	with open(f_output, 'w') as f:
 		f.write(json.dumps(json_graph.node_link_data(G)))
 	print('Dumped into file <' + f_output + '>.')
 
-def nx_draw_graph():
-	plt.figure(figsize=(8,8))
-	plt.xlim(-0.05,1.05)
-	plt.ylim(-0.05,1.05)
-	plt.axis('off')
-	nx.draw(G)
-	plt.savefig('graph_new.png')
-	plt.show()
+def delete_pickle_files(): 
+	files = ["author_int_dict.p", "adj_list.p", "adjacency_matrix.p", "author_matrix.p", "list_of_ints.p"]
+	for filename in files:
+		if os.path.exists(filename):
+    		os.remove(filename)
 
 def main():
 	try:
@@ -137,6 +132,8 @@ def main():
 
 		print("Now calculating metrics...")
 		metrics.calculate_metrics()
+		delete_pickle_files()
+		
 	except IndexError as err:
 		print('Please type python graph.py <input.txt> <output.csv>.')
 		sys.exit()
